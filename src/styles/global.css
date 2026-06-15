@@ -6,6 +6,16 @@
   --color-interior-designer: #3f3b31;
   --color-sepia: #896c55;
   --color-skin: #d1b49e;
+
+  /* Dim mode — slightly darker than light, still dark-on-light */
+  --color-dim-page: #e9e6df;
+  --color-dim-surface: #f2f0ea;
+  --color-dim-elevated: #f8f6f1;
+  --color-dim-muted: #dedad1;
+  --color-dim-text-muted: #5c574c;
+  --color-dim-highlight: #c9ae98;
+  --color-dim-gradient-from: #6b5e4a;
+  --color-dim-gradient-to: #a8b5a0;
 }
 
 @supports selector(::-webkit-scrollbar) {
@@ -34,6 +44,44 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--color-off-white);
   color: var(--color-dark-moss);
+}
+
+@layer components {
+  .brand-gradient {
+    @apply bg-gradient-to-tr from-yellow-950 to-indigo-200 dark:from-dim-gradient-from dark:to-dim-gradient-to;
+  }
+
+  .btn-soft {
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-interior-designer transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:focus-visible:outline-sepia;
+  }
+
+  .btn-soft-default {
+    @apply relative isolate overflow-hidden transition-[color] duration-200 ease-in-out;
+  }
+
+  .btn-soft-default::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-yellow-950 to-indigo-200 opacity-0 transition-opacity duration-200 ease-in-out dark:from-dim-gradient-from dark:to-dim-gradient-to;
+  }
+
+  .btn-soft-default:hover {
+    @apply text-white;
+  }
+
+  .btn-soft-default:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-gradient {
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal;
+  }
+
+  .btn-linkedin {
+    @apply hover:bg-[#0077B5] hover:text-white;
+  }
+
+  .btn-github {
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+  }
 }

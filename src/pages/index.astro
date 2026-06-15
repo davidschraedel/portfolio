@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
-import ForRecruiters from "../components/ForRecruiters.astro";
 import { projects } from "../data/projects";
 import { site } from "../data/site";
 
@@ -25,7 +24,7 @@ if (!flagship) {
     <SectionHeading
       id="projects-heading"
       title="Featured projects"
-      subtitle="One flagship plus two supporting builds — each with a live demo or repo you can evaluate in under a minute."
+      subtitle="Check out some of my projects I am proud of and enjoyed."
     />
 
     <div class="space-y-10">
@@ -40,8 +39,4 @@ if (!flagship) {
       </div>
     </div>
   </section>
-
-  <div class="my-16 border-t border-sepia/20 dark:border-gray-700" />
-
-  <ForRecruiters />
 </BaseLayout>

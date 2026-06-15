@@ -24,16 +24,16 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
-  <body class="bg-off-white text-dark-moss antialiased">
+  <body class="bg-off-white text-dark-moss antialiased dark:bg-dim-page">
     <div class="m-6 my-7 overflow-x-clip sm:m-10 md:m-20 md:my-10">
       <div class="overflow-hidden rounded-lg shadow-md">
-        <header class="bg-off-white text-center dark:bg-gray-900 dark:text-off-white">
+        <header class="bg-off-white text-center dark:bg-dim-surface">
           <slot name="hero" />
           <Nav />
         </header>
 
         <main
-          class="border-8 border-green-200 bg-off-white px-4 py-10 dark:border-green-900 dark:bg-gray-900 dark:text-off-white sm:px-12 md:px-20 lg:px-32 xl:px-48"
+          class="bg-off-white px-4 py-10 dark:bg-dim-surface sm:px-12 md:px-20 lg:px-32 xl:px-48"
         >
           <slot />
         </main>
