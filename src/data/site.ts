@@ -33,7 +33,7 @@ export const site: SiteConfig = {
     "Full-stack or backend-leaning roles at product-focused companies—especially teams building data tooling, internal platforms, or AI-assisted workflows.",
   contactPreference: "Email first",
   responseTime: "Within 2 business days",
-  resumePath: "/resume.pdf",
+  resumePath: `${import.meta.env.BASE_URL}resume.pdf`,
   hero: {
     roleHeadline:
       "Full-stack engineer · TypeScript, React, Python · shipping data pipelines and deployed web apps",

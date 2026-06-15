@@ -1,47 +1,47 @@
 ---
-import "../styles/global.css";
-import { site } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProjectShowcase from "../components/ProjectShowcase.astro";
+import ForRecruiters from "../components/ForRecruiters.astro";
 import { projects } from "../data/projects";
+import { site } from "../data/site";
+
+const flagship = projects.find((project) => project.isFlagship);
+const compactProjects = projects.filter((project) => project.featured && !project.isFlagship);
+
+if (!flagship) {
+  throw new Error("Exactly one flagship project is required.");
+}
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.name} — Portfolio</title>
-    <meta
-      name="description"
-      content="Full-stack engineer portfolio — deployed demos with clear problem, decision, and outcome."
+<BaseLayout
+  title={`${site.name} — ${site.hero.roleHeadline}`}
+  description={site.hero.outcomeStatement}
+>
+  <Hero slot="hero" />
+
+  <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
+    <SectionHeading
+      id="projects-heading"
+      title="Featured projects"
+      subtitle="One flagship plus two supporting builds — each with a live demo or repo you can evaluate in under a minute."
     />
-  </head>
-  <body class="bg-off-white text-dark-moss antialiased">
-    <main class="mx-auto max-w-3xl px-6 py-16">
-      <p class="text-sm uppercase tracking-wide text-sepia">Phase 1 scaffold</p>
-      <h1 class="mt-2 text-3xl font-semibold text-dark-moss">{site.name}</h1>
-      <p class="mt-4 text-lg text-interior-designer">{site.hero.outcomeStatement}</p>
 
-      <section class="mt-12" aria-label="Design token preview">
-        <h2 class="text-xl font-medium text-sepia">Design tokens</h2>
-        <ul class="mt-4 flex flex-wrap gap-3">
-          <li class="rounded-lg bg-off-white px-4 py-2 ring-1 ring-interior-designer/20">off-white</li>
-          <li class="rounded-lg bg-dark-moss px-4 py-2 text-off-white">dark-moss</li>
-          <li class="rounded-lg bg-interior-designer px-4 py-2 text-off-white">interior-designer</li>
-          <li class="rounded-lg bg-sepia px-4 py-2 text-off-white">sepia</li>
-          <li class="rounded-lg bg-skin px-4 py-2 text-dark-moss">skin</li>
-        </ul>
-      </section>
+    <div class="space-y-10">
+      <ProjectShowcase project={flagship} variant="flagship" />
 
-      <section class="mt-12" aria-label="Data module preview">
-        <h2 class="text-xl font-medium text-sepia">Featured projects ({projects.filter((p) => p.featured).length})</h2>
-        <ul class="mt-4 space-y-2 text-interior-designer">
-          {projects.filter((p) => p.featured).map((project) => (
-            <li>
-              {project.name}
-              {project.isFlagship ? " (flagship)" : ""}
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+      <div class="grid gap-8 md:grid-cols-2">
+        {
+          compactProjects.map((project) => (
+            <ProjectShowcase project={project} variant="compact" />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="my-16 border-t border-sepia/20 dark:border-gray-700" />
+
+  <ForRecruiters />
+</BaseLayout>

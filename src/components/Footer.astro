@@ -1,0 +1,45 @@
+---
+import { site } from "../data/site";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: "LinkedIn", href: site.linkedInUrl, className: "hover:bg-[#0077B5]" },
+  { name: "GitHub", href: site.githubUrl, className: "hover:bg-[#2b3137] hover:text-[#fafbfc]" },
+] as const;
+---
+
+<footer
+  class="bg-gradient-to-tr from-yellow-950 to-indigo-200 px-4 pb-8 pt-6 text-center dark:from-indigo-200 dark:to-yellow-950"
+>
+  <ul class="mx-auto my-8 flex max-w-xs flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
+    {
+      socialLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class:list={[
+              "inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal",
+              link.className,
+            ]}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <a
+    href={`mailto:${site.email}`}
+    class="inline-flex min-h-11 items-center text-base text-white mix-blend-soft-light transition-colors hover:text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white"
+  >
+    {site.email}
+  </a>
+
+  <p class="pb-6 pt-2 text-sm text-white mix-blend-soft-light">
+    © {currentYear} {site.name}
+  </p>
+</footer>
