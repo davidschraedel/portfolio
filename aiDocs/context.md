@@ -4,7 +4,7 @@ Personal developer portfolio — recruiter-first, signal over spectacle. One-lin
 
 **Status:** Phase 1 complete — Astro scaffold + data modules in `src/`; `public/resume.pdf` added; legacy React app in `legacy/` runnable via `npm run dev:legacy` until Phase 5 deletion. Phase 2 (MVP build) unblocked.
 
-**Stack:** Astro · Tailwind v4 · React islands (sparingly) · Vercel
+**Stack:** Astro · Tailwind v4 · React islands (sparingly) · GitHub Pages
 
 ---
 

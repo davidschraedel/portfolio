@@ -2,6 +2,10 @@
 
 A concise history of changes.
 
+## 2026-06-15 (docs)
+
+- MVP deploy target updated to GitHub Pages across roadmaps, context, mvp, prd, and notes
+
 ## 2026-06-15 (Phase 1 fixes)
 
 - Added `public/resume.pdf`; `site.resumePath` now resolves at dev/build time

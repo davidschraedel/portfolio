@@ -132,7 +132,7 @@ _Deep-dive layer (required, appears below the TL;DR):_
 - **Outcome & Learning:** Measurable result + honest reflection on what you'd do differently
 
 **4. Live, Stable Deployments**
-Every featured project must link to a working, production-like deployment at all times. Hosted on Vercel, Netlify, or Render free tiers. UptimeRobot or equivalent monitoring configured before launch.
+Every featured project must link to a working, production-like deployment at all times. Project demos may be hosted on Vercel, Netlify, or Render free tiers. **The portfolio site itself deploys to GitHub Pages** (GitHub Actions, static `dist/` output). UptimeRobot or equivalent monitoring configured before launch.
 
 **5. Contact / Recruiter Action Path**
 A clear, frictionless contact mechanism. See "For Recruiters" section in P1 — promoted from optional to required.
@@ -311,7 +311,7 @@ The following are explicitly excluded from the current version to maintain focus
 
 | Risk                                                         | Likelihood | Impact | Mitigation                                                                                                                                                                                  |
 | ------------------------------------------------------------ | ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Live demos go down between recruiter visits                  | High       | High   | UptimeRobot monitoring required before Phase 3; Vercel/Netlify for near-zero downtime; "last verified" date badge on project cards                                                          |
+| Live demos go down between recruiter visits                  | High       | High   | UptimeRobot monitoring required before Phase 3; stable hosting for project demos (Vercel/Netlify/Render); portfolio site on GitHub Pages; "last verified" date badge on project cards       |
 | Portfolio looks like every other developer portfolio         | High       | Medium | Differentiate through specific, outcome-driven copy and case study depth — not visual flourishes; avoid icon-in-circle patterns and 3-column feature grids; enforce anti-pattern guardrails |
 | Tutorial or clone projects in the featured set               | High       | High   | Hard launch gate — zero tutorial/clone projects permitted. Enforced in Phase 1 review before any public sharing                                                                             |
 | Case studies too long for recruiter time budget              | Medium     | High   | Dual-layer structure (TL;DR + deep-dive) required by US-02 AC; TL;DR block must be fully informative on its own                                                                             |
@@ -339,6 +339,7 @@ The following are explicitly excluded from the current version to maintain focus
 - [ ] Verify stack coherence: ≥ 2 featured projects share a primary technology
 - [ ] Write hero headline and outcome statement (specific, first-person, no generic phrases)
 - [ ] Set up Astro + Tailwind v4 project scaffold
+- [ ] Configure GitHub Pages deploy (Actions workflow, `dist/` publish)
 - [ ] Write and QA all project card content (name, problem, stack, outcome, demo link)
 - [ ] ✅ Anti-pattern gate review before proceeding
 
