@@ -6,7 +6,7 @@ import { site } from "../data/site";
 ---
 
 <div
-  class="bg-gradient-to-tr from-yellow-950 to-indigo-200 px-4 pb-8 pt-10 dark:from-dim-gradient-from dark:to-dim-gradient-to"
+  class="brand-gradient px-4 pb-8 pt-10"
 >
   <Image
     src={headshot}
@@ -41,9 +41,17 @@ import { site } from "../data/site";
       href={site.linkedInUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="btn-soft btn-soft-linkedin"
+      class="btn-soft btn-linkedin"
     >
       LinkedIn
+    </a>
+    <a
+      href={site.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-soft btn-github"
+    >
+      Github
     </a>
   </div>
 </div>

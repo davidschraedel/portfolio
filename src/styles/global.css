@@ -48,31 +48,40 @@ body {
 }
 
 @layer components {
+  .brand-gradient {
+    @apply bg-gradient-to-tr from-yellow-950 to-indigo-200 dark:from-dim-gradient-from dark:to-dim-gradient-to;
+  }
+
   .btn-soft {
-    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-interior-designer transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:focus-visible:outline-sepia;
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-interior-designer transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:focus-visible:outline-sepia;
   }
 
   .btn-soft-default {
-    @apply hover:bg-dark-moss hover:text-off-white;
+    @apply relative isolate overflow-hidden transition-[color] duration-200 ease-in-out;
   }
 
-  .btn-soft-linkedin {
-    @apply hover:bg-[#0077B5] hover:text-white;
+  .btn-soft-default::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-yellow-950 to-indigo-200 opacity-0 transition-opacity duration-200 ease-in-out dark:from-dim-gradient-from dark:to-dim-gradient-to;
   }
 
-  .btn-soft-github {
-    @apply hover:bg-interior-designer hover:text-off-white;
+  .btn-soft-default:hover {
+    @apply text-white;
+  }
+
+  .btn-soft-default:hover::before {
+    @apply opacity-100;
   }
 
   .btn-gradient {
-    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal;
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal;
   }
 
-  .btn-gradient-linkedin {
-    @apply hover:bg-[#0077B5];
+  .btn-linkedin {
+    @apply hover:bg-[#0077B5] hover:text-white;
   }
 
-  .btn-gradient-github {
-    @apply hover:bg-dark-moss hover:text-off-white;
+  .btn-github {
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
   }
 }
