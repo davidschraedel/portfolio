@@ -31,9 +31,46 @@
   }
 }
 
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-gray-900);
+    color: var(--color-off-white);
+  }
+} */
+
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--color-off-white);
+  /* background-color: var(--color-off-white); */
   color: var(--color-dark-moss);
+}
+
+@layer components {
+  .btn-soft {
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-interior-designer transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-gray-200 dark:focus-visible:outline-gray-400;
+  }
+
+  .btn-soft-default {
+    @apply hover:bg-dark-moss hover:text-off-white dark:hover:bg-gray-700;
+  }
+
+  .btn-soft-linkedin {
+    @apply hover:bg-[#0077B5] hover:text-white;
+  }
+
+  .btn-soft-github {
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+  }
+
+  .btn-gradient {
+    @apply inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal;
+  }
+
+  .btn-gradient-linkedin {
+    @apply hover:bg-[#0077B5];
+  }
+
+  .btn-gradient-github {
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+  }
 }

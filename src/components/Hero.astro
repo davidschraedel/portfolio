@@ -3,9 +3,6 @@ import { Image } from "astro:assets";
 
 import headshot from "../assets/headshot.svg";
 import { site } from "../data/site";
-
-const ctaClass =
-  "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-2.5 text-base font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia";
 ---
 
 <div
@@ -37,24 +34,16 @@ const ctaClass =
     {site.hero.positioningLine}
   </p>
 
-  <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+  <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+    <a href={site.resumePath} target="_blank" class="btn-soft btn-soft-default">Resume</a>
+    <a href={`mailto:${site.email}`} class="btn-soft btn-soft-default">Email</a>
     <a
-      href="#projects"
-      class:list={[
-        ctaClass,
-        "bg-dark-moss text-off-white hover:bg-interior-designer dark:bg-indigo-900 dark:hover:bg-indigo-800",
-      ]}
+      href={site.linkedInUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-soft btn-soft-linkedin"
     >
-      Featured projects
-    </a>
-    <a
-      href={site.resumePath}
-      class:list={[
-        ctaClass,
-        "bg-skin text-dark-moss ring-1 ring-sepia/30 hover:bg-skin/80 dark:bg-gray-800 dark:text-off-white dark:ring-gray-600 dark:hover:bg-gray-700",
-      ]}
-    >
-      Download resume
+      LinkedIn
     </a>
   </div>
 </div>

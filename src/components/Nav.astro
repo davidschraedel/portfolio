@@ -1,25 +1,7 @@
----
-const navigation = [
-  { name: "Projects", href: "#projects" },
-  { name: "For Recruiters", href: "#contact" },
-];
----
-
 <nav aria-label="Main" class="pb-6 pt-2">
-  <ul
-    class="mx-auto flex max-w-md flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center"
-  >
-    {
-      navigation.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            class="inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-interior-designer transition-colors hover:bg-skin/40 hover:text-dark-moss focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-off-white"
-          >
-            {item.name}
-          </a>
-        </li>
-      ))
-    }
+  <ul class="mx-auto flex justify-center">
+    <li>
+      <a href="#projects" class="btn-soft btn-soft-default">Featured projects</a>
+    </li>
   </ul>
 </nav>

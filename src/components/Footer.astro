@@ -4,8 +4,8 @@ import { site } from "../data/site";
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
-  { name: "LinkedIn", href: site.linkedInUrl, className: "hover:bg-[#0077B5]" },
-  { name: "GitHub", href: site.githubUrl, className: "hover:bg-[#2b3137] hover:text-[#fafbfc]" },
+  { name: "LinkedIn", href: site.linkedInUrl, variant: "linkedin" },
+  { name: "GitHub", href: site.githubUrl, variant: "github" },
 ] as const;
 ---
 
@@ -21,8 +21,8 @@ const socialLinks = [
             target="_blank"
             rel="noopener noreferrer"
             class:list={[
-              "inline-flex min-h-11 min-w-24 items-center justify-center rounded-md px-4 py-2 text-base font-medium text-white mix-blend-soft-light transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-off-white hover:mix-blend-normal",
-              link.className,
+              "btn-gradient",
+              link.variant === "linkedin" ? "btn-gradient-linkedin" : "btn-gradient-github",
             ]}
           >
             {link.name}

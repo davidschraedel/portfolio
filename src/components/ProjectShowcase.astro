@@ -10,9 +10,6 @@ interface Props {
 
 const { project, variant } = Astro.props;
 
-const linkClass =
-  "inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2.5 text-base font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia";
-
 const mediaLink = project.videoUrl ?? project.demoUrl;
 const isFlagship = variant === "flagship";
 
@@ -23,8 +20,8 @@ const imageSizes = isFlagship
 
 <article
   class:list={[
-    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-gray-700",
-    isFlagship ? "bg-off-white dark:bg-gray-800" : "bg-off-white/80 dark:bg-gray-800/80",
+    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-mist-800",
+    isFlagship ? "bg-off-white dark:bg-mist-900" : "bg-off-white/80 dark:bg-mist-950/50",
   ]}
 >
   <div
@@ -124,10 +121,7 @@ const imageSizes = isFlagship
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class:list={[
-                linkClass,
-                "bg-dark-moss text-off-white hover:bg-interior-designer dark:bg-indigo-900 dark:hover:bg-indigo-800",
-              ]}
+              class="btn-soft btn-soft-default"
             >
               Live demo
             </a>
@@ -139,10 +133,7 @@ const imageSizes = isFlagship
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class:list={[
-                linkClass,
-                "bg-skin text-dark-moss ring-1 ring-sepia/30 hover:bg-skin/80 dark:bg-gray-700 dark:text-off-white dark:ring-gray-600 dark:hover:bg-gray-600",
-              ]}
+              class="btn-soft btn-soft-github"
             >
               GitHub
             </a>
