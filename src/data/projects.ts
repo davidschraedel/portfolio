@@ -29,11 +29,10 @@ export const projects: Project[] = [
     id: "soundwatch",
     name: "Soundwatch",
     problem:
-      "Morning routines with multiple timed activities meant constantly resetting timers instead of staying present.",
+      "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
     keyDecision:
       "Built an interval timer that tracks elapsed time (not countdown) with optional audio cues—so focus stays on the activity, not the clock.",
-    outcome:
-      "Deployed solo on Netlify; used daily for timed reading and exercise blocks.",
+    outcome: "Deployed on Netlify.",
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     demoUrl: "https://soundwatch.netlify.app/",
     githubUrl: "https://github.com/davidschraedel/stopwatch",
@@ -52,7 +51,7 @@ export const projects: Project[] = [
       "Structured identity and goal capture upfront instead of open-ended chat—so coaching prompts stay consistent across sessions.",
     outcome:
       "Shipped product with live user-facing flows; demo shows end-to-end coaching interaction.",
-    stack: ["React", "TypeScript", "Node.js", "LLM APIs"],
+    stack: ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
     demoUrl: "https://www.youtube.com/watch?v=__7cEyDlhgk",
     githubUrl: null,
     previewImage: iamPreview,
@@ -60,18 +59,17 @@ export const projects: Project[] = [
     videoUrl: "https://www.youtube.com/watch?v=__7cEyDlhgk",
     featured: true,
     isFlagship: false,
-    skillsFor: ["React", "TypeScript", "AI product development"],
+    skillsFor: ["React", "TypeScript", "Agentic development"],
   },
   {
     id: "youtube-transcript-pipeline",
     name: "YouTube Transcript Pipeline",
     problem:
       "Hours of spoken content in YouTube playlists are locked in the UI—not queryable, exportable, or usable for analysis.",
-    keyDecision:
-      "Ingest captions into local DuckDB (Bronze → Silver) with yt-dlp instead of paid scraping APIs—keeps cost at zero for personal-scale playlists.",
+    keyDecision: "Ingest captions into local DuckDB (Bronze → Silver).",
     outcome:
-      "Full playlist ingested to searchable SQL; bronze/silver layers with per-video fetch status and idempotent transforms.",
-    stack: ["Python", "DuckDB", "yt-dlp", "SQL"],
+      "Full playlist ingested to searchable SQL; bronze/silver layers with per-video fetch status and idempotent transforms",
+    stack: ["Python", "DuckDB", "SQL"],
     demoUrl: transcriptPipelineDemoVideoUrl,
     githubUrl: "https://github.com/davidschraedel/youtube-transcript-pipeline",
     previewImage: transcriptPreview,
