@@ -2,7 +2,7 @@
 
 Personal developer portfolio — recruiter-first, signal over spectacle. One-line pitch: [description.md](./description.md)
 
-**Status:** Refactoring from React/Vite to Astro + Tailwind v4. Legacy app lives in `src/`; target stack not scaffolded yet.
+**Status:** Phase 0 (content audit) complete — Phase 1 (Astro scaffold) unblocked. Legacy app lives in `src/`; target stack not scaffolded yet. Phase 0 deliverables: `ai/notes/2026-06-15_phase-0-exit.md`.
 
 **Stack (target):** Astro · Tailwind v4 · React islands (sparingly) · Vercel
 
