@@ -10,9 +10,6 @@ interface Props {
 
 const { project, variant } = Astro.props;
 
-const linkClass =
-  "inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2.5 text-base font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia";
-
 const mediaLink = project.videoUrl ?? project.demoUrl;
 const isFlagship = variant === "flagship";
 
@@ -23,8 +20,8 @@ const imageSizes = isFlagship
 
 <article
   class:list={[
-    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-gray-700",
-    isFlagship ? "bg-off-white dark:bg-gray-800" : "bg-off-white/80 dark:bg-gray-800/80",
+    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-dim-muted",
+    isFlagship ? "bg-off-white dark:bg-dim-elevated" : "bg-off-white/80 dark:bg-dim-surface",
   ]}
 >
   <div
@@ -71,7 +68,7 @@ const imageSizes = isFlagship
     <div class:list={[isFlagship ? "flex flex-col justify-center p-6 md:p-8" : "px-4 pb-5"]}>
       <h3
         class:list={[
-          "font-semibold text-dark-moss dark:text-off-white",
+          "font-semibold text-dark-moss",
           isFlagship ? "text-2xl" : "text-xl",
         ]}
       >
@@ -83,25 +80,25 @@ const imageSizes = isFlagship
         )}
       </h3>
 
-      <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-gray-300">
+      <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-dim-text-muted">
         <div>
           <dt class="sr-only">Problem</dt>
           <dd>
-            <span class="font-medium text-dark-moss dark:text-off-white">Problem ·</span>{" "}
+            <span class="font-medium text-dark-moss">Problem ·</span>{" "}
             {project.problem}
           </dd>
         </div>
         <div>
           <dt class="sr-only">Key decision</dt>
           <dd>
-            <span class="font-medium text-dark-moss dark:text-off-white">Decision ·</span>{" "}
+            <span class="font-medium text-dark-moss">Decision ·</span>{" "}
             {project.keyDecision}
           </dd>
         </div>
         <div>
           <dt class="sr-only">Outcome</dt>
           <dd>
-            <span class="font-medium text-dark-moss dark:text-off-white">Outcome ·</span>{" "}
+            <span class="font-medium text-dark-moss">Outcome ·</span>{" "}
             {project.outcome}
           </dd>
         </div>
@@ -110,7 +107,7 @@ const imageSizes = isFlagship
       <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
         {
           project.stack.map((tag) => (
-            <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-gray-700 dark:text-gray-200">
+            <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-dim-muted dark:text-dark-moss">
               {tag}
             </li>
           ))
@@ -124,10 +121,7 @@ const imageSizes = isFlagship
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class:list={[
-                linkClass,
-                "bg-dark-moss text-off-white hover:bg-interior-designer dark:bg-indigo-900 dark:hover:bg-indigo-800",
-              ]}
+              class="btn-soft btn-soft-default"
             >
               Live demo
             </a>
@@ -139,10 +133,7 @@ const imageSizes = isFlagship
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class:list={[
-                linkClass,
-                "bg-skin text-dark-moss ring-1 ring-sepia/30 hover:bg-skin/80 dark:bg-gray-700 dark:text-off-white dark:ring-gray-600 dark:hover:bg-gray-600",
-              ]}
+              class="btn-soft btn-github"
             >
               GitHub
             </a>
