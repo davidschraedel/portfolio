@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  variant: "flagship" | "compact";
+}
+
+const { project, variant } = Astro.props;
+
+const linkClass =
+  "inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2.5 text-base font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia";
+
+const mediaLink = project.videoUrl ?? project.demoUrl;
+const isFlagship = variant === "flagship";
+
+const imageSizes = isFlagship
+  ? "(max-width: 768px) 100vw, 720px"
+  : "(max-width: 768px) 100vw, 400px";
+---
+
+<article
+  class:list={[
+    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-gray-700",
+    isFlagship ? "bg-off-white dark:bg-gray-800" : "bg-off-white/80 dark:bg-gray-800/80",
+  ]}
+>
+  <div
+    class:list={[
+      isFlagship ? "grid gap-6 md:grid-cols-2 md:gap-8" : "flex flex-col gap-4",
+    ]}
+  >
+    <div class:list={[isFlagship ? "" : "order-first"]}>
+      {
+        mediaLink ? (
+          <a
+            href={mediaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia"
+            aria-label={`${project.name} demo preview`}
+          >
+            <Image
+              src={project.previewImage}
+              alt={project.previewAlt}
+              widths={isFlagship ? [400, 600, 800] : [300, 400, 500]}
+              sizes={imageSizes}
+              class:list={[
+                "h-auto w-full object-cover transition-opacity hover:opacity-95",
+                isFlagship ? "max-h-80 md:max-h-none" : "max-h-48",
+              ]}
+            />
+          </a>
+        ) : (
+          <Image
+            src={project.previewImage}
+            alt={project.previewAlt}
+            widths={isFlagship ? [400, 600, 800] : [300, 400, 500]}
+            sizes={imageSizes}
+            class:list={[
+              "h-auto w-full object-cover",
+              isFlagship ? "max-h-80 md:max-h-none" : "max-h-48",
+            ]}
+          />
+        )
+      }
+    </div>
+
+    <div class:list={[isFlagship ? "flex flex-col justify-center p-6 md:p-8" : "px-4 pb-5"]}>
+      <h3
+        class:list={[
+          "font-semibold text-dark-moss dark:text-off-white",
+          isFlagship ? "text-2xl" : "text-xl",
+        ]}
+      >
+        {project.name}
+        {project.isFlagship && (
+          <span class="ml-2 text-sm font-medium uppercase tracking-wide text-sepia">
+            Flagship
+          </span>
+        )}
+      </h3>
+
+      <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-gray-300">
+        <div>
+          <dt class="sr-only">Problem</dt>
+          <dd>
+            <span class="font-medium text-dark-moss dark:text-off-white">Problem ·</span>{" "}
+            {project.problem}
+          </dd>
+        </div>
+        <div>
+          <dt class="sr-only">Key decision</dt>
+          <dd>
+            <span class="font-medium text-dark-moss dark:text-off-white">Decision ·</span>{" "}
+            {project.keyDecision}
+          </dd>
+        </div>
+        <div>
+          <dt class="sr-only">Outcome</dt>
+          <dd>
+            <span class="font-medium text-dark-moss dark:text-off-white">Outcome ·</span>{" "}
+            {project.outcome}
+          </dd>
+        </div>
+      </dl>
+
+      <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
+        {
+          project.stack.map((tag) => (
+            <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-gray-700 dark:text-gray-200">
+              {tag}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        {
+          project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={[
+                linkClass,
+                "bg-dark-moss text-off-white hover:bg-interior-designer dark:bg-indigo-900 dark:hover:bg-indigo-800",
+              ]}
+            >
+              Live demo
+            </a>
+          )
+        }
+        {
+          project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={[
+                linkClass,
+                "bg-skin text-dark-moss ring-1 ring-sepia/30 hover:bg-skin/80 dark:bg-gray-700 dark:text-off-white dark:ring-gray-600 dark:hover:bg-gray-600",
+              ]}
+            >
+              GitHub
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>

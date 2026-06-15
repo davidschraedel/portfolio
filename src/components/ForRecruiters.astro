@@ -1,0 +1,71 @@
+---
+import RecruiterSkillMap from "./RecruiterSkillMap.astro";
+import { site } from "../data/site";
+---
+
+<section id="contact" aria-labelledby="contact-heading" class="scroll-mt-8">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2
+      id="contact-heading"
+      class="text-2xl font-semibold text-dark-moss dark:text-off-white sm:text-3xl"
+    >
+      For Recruiters
+    </h2>
+    <p class="mt-2 text-base text-interior-designer dark:text-gray-300">
+      Quick facts so you know if I am worth a conversation.
+    </p>
+  </div>
+
+  <dl
+    class="mx-auto mt-8 grid max-w-2xl gap-4 text-base text-interior-designer dark:text-gray-300 sm:grid-cols-2"
+  >
+    <div class="rounded-lg bg-off-white px-4 py-3 ring-1 ring-sepia/20 dark:bg-gray-800 dark:ring-gray-700">
+      <dt class="font-medium text-dark-moss dark:text-off-white">Roles sought</dt>
+      <dd class="mt-1">{site.rolesSought}</dd>
+    </div>
+    <div class="rounded-lg bg-off-white px-4 py-3 ring-1 ring-sepia/20 dark:bg-gray-800 dark:ring-gray-700">
+      <dt class="font-medium text-dark-moss dark:text-off-white">Location & timezone</dt>
+      <dd class="mt-1">
+        {site.location} · {site.timezone}
+      </dd>
+    </div>
+    <div class="rounded-lg bg-off-white px-4 py-3 ring-1 ring-sepia/20 dark:bg-gray-800 dark:ring-gray-700">
+      <dt class="font-medium text-dark-moss dark:text-off-white">Contact preference</dt>
+      <dd class="mt-1">{site.contactPreference}</dd>
+    </div>
+    <div class="rounded-lg bg-off-white px-4 py-3 ring-1 ring-sepia/20 dark:bg-gray-800 dark:ring-gray-700">
+      <dt class="font-medium text-dark-moss dark:text-off-white">Response time</dt>
+      <dd class="mt-1">{site.responseTime}</dd>
+    </div>
+  </dl>
+
+  <div class="mx-auto mt-8 flex max-w-md flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+    <a
+      href={`mailto:${site.email}`}
+      class="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-dark-moss px-5 py-2.5 text-base font-medium text-off-white transition-colors hover:bg-interior-designer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:bg-indigo-900 dark:hover:bg-indigo-800 sm:w-auto"
+    >
+      {site.email}
+    </a>
+    <a
+      href={site.resumePath} target="_blank"
+      class="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-skin px-5 py-2.5 text-base font-medium text-dark-moss ring-1 ring-sepia/30 transition-colors hover:bg-skin/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:bg-gray-700 dark:text-off-white dark:ring-gray-600 dark:hover:bg-gray-600 sm:w-auto"
+    >
+      Resume
+    </a>
+    <a
+      href={site.linkedInUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex min-h-11 w-full items-center justify-center rounded-md px-5 py-2.5 text-base font-medium text-interior-designer ring-1 ring-sepia/30 transition-colors hover:bg-skin/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-gray-200 dark:ring-gray-600 dark:hover:bg-gray-800 sm:w-auto"
+    >
+      LinkedIn
+    </a>
+  </div>
+
+  <div class="mx-auto mt-10 max-w-2xl">
+    <h3 class="mb-4 text-center text-lg font-medium text-dark-moss dark:text-off-white">
+      Skill map
+    </h3>
+    <RecruiterSkillMap />
+  </div>
+</section>

@@ -2,9 +2,9 @@
 
 Personal developer portfolio — recruiter-first, signal over spectacle. One-line pitch: [description.md](./description.md)
 
-**Status:** Refactoring from React/Vite to Astro + Tailwind v4. Legacy app lives in `src/`; target stack not scaffolded yet.
+**Status:** Phase 1 complete — Astro scaffold + data modules in `src/`; `public/resume.pdf` added; legacy React app in `legacy/` runnable via `npm run dev:legacy` until Phase 5 deletion. Phase 2 (MVP build) unblocked.
 
-**Stack (target):** Astro · Tailwind v4 · React islands (sparingly) · Vercel
+**Stack:** Astro · Tailwind v4 · React islands (sparingly) · GitHub Pages
 
 ---
 
@@ -32,9 +32,9 @@ Notable notes: [techstack report](../ai/notes/2026-06-14_techstack-report.md) ·
 
 ---
 
-## scripts/ — CLI entry points _(not created yet)_
+## scripts/ — CLI entry points
 
-Planned: `dev.sh` · `build.sh` · `run.sh` · `test.sh` · `lint.sh`
+`dev.sh` · `dev-legacy.sh` · `build.sh` · `lint.sh` — wrap npm commands (`dev:legacy` runs the preserved React/Vite app in `legacy/`).
 
 ---
 

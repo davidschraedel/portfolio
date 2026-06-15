@@ -57,7 +57,7 @@ portfolio/
 - **Astro** static output — you already know it, zero JS shipped by default [perplexity](https://www.perplexity.ai/search/fb0e4f06-b978-4995-a3e7-e9648c07d8a3)
 - **Tailwind v4** inline — you already have it set up [perplexity](https://www.perplexity.ai/search/b0584c27-d985-4547-9d9f-2339e991b6cc)
 - **No React islands** at MVP — nothing on this page needs interactivity. Pure `.astro` components only.
-- **Vercel** deploy — one `git push`, done
+- **GitHub Pages** deploy — GitHub Actions runs `astro build`, publishes `dist/`; push to main to update
 - **No headless CMS, no content collections** — hardcode the 3 project cards directly in the template. You have 3 projects, not 300.
 
 When you're ready to add case study pages (P1), that's when you introduce Astro content collections and dynamic routes. Not now.
