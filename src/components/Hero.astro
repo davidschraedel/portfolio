@@ -6,7 +6,7 @@ import { site } from "../data/site";
 ---
 
 <div
-  class="bg-gradient-to-tr from-yellow-950 to-indigo-200 px-4 pb-8 pt-10 dark:from-indigo-200 dark:to-yellow-950"
+  class="bg-gradient-to-tr from-yellow-950 to-indigo-200 px-4 pb-8 pt-10 dark:from-dim-gradient-from dark:to-dim-gradient-to"
 >
   <Image
     src={headshot}
@@ -19,18 +19,18 @@ import { site } from "../data/site";
 </div>
 
 <div class="px-4 pb-4 pt-8 text-center sm:px-8">
-  <p class="text-lg font-medium text-sepia dark:text-skin">{site.name}</p>
+  <p class="text-lg font-medium text-sepia dark:text-dim-highlight">{site.name}</p>
   <h1
-    class="mx-auto mt-3 max-w-3xl text-2xl font-semibold leading-snug text-dark-moss dark:text-off-white sm:text-3xl"
+    class="mx-auto mt-3 max-w-3xl text-2xl font-semibold leading-snug text-dark-moss sm:text-3xl"
   >
     {site.hero.roleHeadline}
   </h1>
   <p
-    class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-interior-designer dark:text-gray-300"
+    class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-interior-designer dark:text-dim-text-muted"
   >
     {site.hero.outcomeStatement}
   </p>
-  <p class="mx-auto mt-3 max-w-2xl text-base text-interior-designer/90 dark:text-gray-400">
+  <p class="mx-auto mt-3 max-w-2xl text-base text-interior-designer/90 dark:text-dim-text-muted/80">
     {site.hero.positioningLine}
   </p>
 
