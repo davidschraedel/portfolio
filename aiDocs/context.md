@@ -1,8 +1,10 @@
 # Project Context
 
-Personal developer portfolio — recruiter-first, signal over spectacle. One-line pitch: [description.md](./description.md)
+Personal developer portfolio — recruiter-scannable and voice-first. One-line pitch: [description.md](./description.md)
 
-**Status:** Phase 1 complete — Astro scaffold + data modules in `src/`; `public/resume.pdf` added; legacy React app in `legacy/` runnable via `npm run dev:legacy` until Phase 5 deletion. Phase 2 (MVP build) unblocked.
+**Status:** Initial refactor shipped (Astro site, case studies, GitHub Pages deploy). **Differentiation revision not started** — see [differentiation roadmap](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md) (steps D0–D4). Legacy React app in `legacy/` runnable via `npm run dev:legacy` until legacy deletion in initial refactor roadmap.
+
+**Product docs:** [prd.md](./prd.md) v3.0 · [mvp.md](./mvp.md) v2.0 · Content model: `src/data/profile.json` (planned single source of truth)
 
 **Stack:** Astro · Tailwind v4 · React islands (sparingly) · GitHub Pages
 
@@ -12,8 +14,8 @@ Personal developer portfolio — recruiter-first, signal over spectacle. One-lin
 
 | File                                 | What's in it                                                                 |
 | ------------------------------------ | ---------------------------------------------------------------------------- |
-| [prd.md](./prd.md)                   | Product requirements — source of truth for features, users, and launch gates |
-| [mvp.md](./mvp.md)                   | Minimum first deploy — what to cut, what to validate                         |
+| [prd.md](./prd.md)                   | Product requirements — features, users, success criteria (v3.0)              |
+| [mvp.md](./mvp.md)                   | Minimum product for success — validation gates (v2.0)                        |
 | [coding-style.md](./coding-style.md) | How to write code in this repo                                               |
 | [architecture.md](./architecture.md) | System architecture _(not written yet)_                                      |
 | [changelog.md](./changelog.md)       | Concise change history - update with every commit                            |

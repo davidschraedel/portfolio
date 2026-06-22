@@ -1,99 +1,91 @@
 # Portfolio Website MVP
 
-## 1. The ONE Core Problem
+**Version:** 2.0  
+**Last Updated:** June 22, 2026  
+**Changelog:** v2.0 — Aligned with differentiation revision: voice-first story arc, timeline, trade-off cards, Presence links, `profile.json` maintenance, Handshake replaces “For Recruiters” block. Removed development phase references (those live in roadmaps).
+
+**Implementation:** See [differentiation revision roadmap](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md) (steps D0–D4).
+
+---
+
+## 1. The core problem
 
 **A recruiter lands on your portfolio and can't answer "what does this person do and can they actually ship?" in 60 seconds — so they move on.**
 
-Everything else (animations, chatbot, blog, SEO) is downstream of this. If you can't pass the 60-second scan, none of it matters.
+The site also needs to sound like a real person, not a LinkedIn summary. Those goals are compatible: brief, scannable, genuine.
 
 ---
 
-## 2. Minimum Feature Set
+## 2. Minimum feature set
 
-Three things only. Everything the PRD calls P0 collapses into this:
+Everything required for a successful portfolio **after the differentiation revision**. Shipped case study pages from the initial refactor remain part of the product.
 
-| #     | What                                                                                                   | Why It's Minimum                                   |
-| ----- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
-| **A** | **Hero block** — specific role headline + one-sentence outcome + two links (featured projects, resume) | Fails the cold-read test without it                |
-| **B** | **3 project cards** — problem, stack tags, outcome, live demo link, GitHub link                        | The only thing recruiters actually evaluate in 60s |
-| **C** | **"For Recruiters" contact block** — roles sought, time zone, email, resume PDF                        | Without this, interest has nowhere to go           |
+| # | What | Why it's minimum |
+| - | ---- | ---------------- |
+| **A** | **Hero** — contrast lead + professional sentence (Input → Output, still signals role/stack/domain) + primary CTAs (Resume, Email, LinkedIn) | First impression + contact path |
+| **B** | **Timeline** — interleaved credentials and human details (`#experience`) | Replaces flat About; recruiter facts (location, timezone) visible |
+| **C** | **2–3 project cards** — objective, stack tags, trade-off + live demo, GitHub, case study links | What recruiters evaluate in 60s |
+| **D** | **Presence** — secondary links (GitHub, Substack, …) in “Where to find me” | Public presence without competing with primary CTAs |
+| **E** | **Handshake footer** — specific “open to…” line + repeated primary links | Replaces standalone “For Recruiters” block |
+| **F** | **Case study pages** — TL;DR (problem / decision / outcome) + deep-dive | Hiring manager depth (already shipped) |
+| **G** | **`profile.json`** — single file you edit for all content | Maintenance without hunting multiple modules |
 
-That's it. No case study pages, no About section, no mobile polish pass, no analytics — **for the first deployed version**. A single `index.astro` file with three sections.
-
----
-
-## 3. What to Cut That _Feels_ Important But Isn't
-
-These all feel load-bearing. They aren't — at MVP stage:
-
-**Case study pages** — Feels critical. Actually, the TL;DR block on the project card itself carries 80% of the signal. Full case study pages are a P1 feature for hiring managers who've already decided to advance you. Recruiters doing first-pass screening never read them.
-
-**About section** — Feels personal and humanizing. Actually, your role headline and outcome statement in the hero already do this job. An About page is empty calories at MVP.
-
-**Mobile optimization pass** — Feels like table stakes. Actually, the cold-read test (your primary validator) will be done on desktop by technical peers. Mobile matters for launch — not for MVP validation.
-
-**GitHub README cleanup** — Feels like it's tied to the portfolio. Actually it's a separate workstream on your repos, not the portfolio site itself. Do it in parallel, not as a blocker.
-
-**Visual polish / animations** — Feels like it signals craft. Actually the research was explicit: hiring managers specifically flag over-engineered portfolio sites as a red flag. Plain and clear beats clever and slow.
-
-**Analytics setup** — Feels like you need data from day one. Actually your validator at MVP is the cold-read test (qualitative), not click-through rates. Add analytics at Phase 3.
+**Not required:** on-site blog, Substack post cards, RSS sync, analytics, chatbot, animations before hero content.
 
 ---
 
-## 4. Simplest Technical Approach
+## 3. Link tiers
 
-**One static Astro page. No router. No CMS. No database.**
-
-```
-portfolio/
-├── src/
-│   └── pages/
-│       └── index.astro      ← entire MVP lives here
-├── public/
-│   └── resume.pdf
-└── astro.config.mjs
-```
-
-- **Astro** static output — you already know it, zero JS shipped by default [perplexity](https://www.perplexity.ai/search/fb0e4f06-b978-4995-a3e7-e9648c07d8a3)
-- **Tailwind v4** inline — you already have it set up [perplexity](https://www.perplexity.ai/search/b0584c27-d985-4547-9d9f-2339e991b6cc)
-- **No React islands** at MVP — nothing on this page needs interactivity. Pure `.astro` components only.
-- **GitHub Pages** deploy — GitHub Actions runs `astro build`, publishes `dist/`; push to main to update
-- **No headless CMS, no content collections** — hardcode the 3 project cards directly in the template. You have 3 projects, not 300.
-
-When you're ready to add case study pages (P1), that's when you introduce Astro content collections and dynamic routes. Not now.
+| Tier | Examples | Placement |
+| ---- | -------- | --------- |
+| Primary | Email, LinkedIn, Resume | Hero + Handshake |
+| Secondary | GitHub, Substack | Presence (+ optional footer mention) |
 
 ---
 
-## 5. How to Validate with Users
+## 4. Technical minimum
 
-Directly from the PRD's US-08 cold-read test — but simplified for MVP:
+- **Astro** static output on GitHub Pages
+- **Tailwind v4** — no React islands unless a task requires it
+- **`profile.json`** → derived `site.ts`, `timeline.ts`, `projects.ts`
+- **JSON-LD** on homepage (`@graph`, separated professional / interests / projects) and case studies
+- **Technical SEO baseline:** sitemap, `robots.txt`, canonicals, OG tags
 
-**The test:**
-Share the URL (no context, no pitch) with exactly 3 people: one technical peer, one person adjacent to hiring (recruiter, eng manager, or someone who's hired before), one person who doesn't know your work well.
+---
 
-**The question:**
+## 5. How to validate
+
+Share the URL with 3 people (technical peer, hiring-adjacent contact, someone who doesn't know your work). No context, no pitch.
+
+**Question:**
 
 > _"Look at this for 60 seconds. What does this person do, and which project would you click first?"_
 
 **Pass criteria — all 3 must:**
 
-- Correctly describe your role/stack
-- Name a specific project (not "some projects")
-- Identify a live demo or GitHub link without being told it exists
+- Describe your **role and stack/domain** (not “some developer”)
+- Name a **specific project**
+- Find a **live demo or GitHub link** without being told
 
-**Fail signals and what they mean:**
+**Soft guidelines (spot-check, not hard fail):**
 
-| What They Say                              | What It Means                                                | Fix                                                       |
-| ------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------------------- |
-| "Some kind of developer?"                  | Hero headline is too generic                                 | Rewrite headline with specific stack + domain             |
-| "I'm not sure what problem they solve"     | Outcome statement is missing or vague                        | Add one-sentence business-value statement                 |
-| "I didn't see a project I wanted to click" | Project cards aren't scannable or problems aren't compelling | Rewrite problem statements, make demo link more prominent |
-| "I didn't know where to contact them"      | "For Recruiters" block isn't visible or clear                | Move it above the fold or into the nav                    |
+- Copy sounds human when read aloud
+- Easy to read and navigate; no walls of text
+- Avoid em-dashes
 
-**The rule:** Don't send this to a single real recruiter until all 3 cold-read testers pass. One failed cold-read = rewrite + retest. This costs you 30 minutes. A failed recruiter impression costs you an opportunity.
+**Fail signals:**
+
+| What they say | Fix |
+| ------------- | --- |
+| "Some kind of developer?" | Strengthen `professionalSentence` with role + stack/domain |
+| Can't name a project | Rewrite objectives; check card scannability |
+| Can't find demo/GitHub | Make links more prominent on cards |
+| Don't know how to contact you | Strengthen Handshake + hero primary CTAs |
+
+Don't send to real recruiters until all 3 pass the hard criteria.
 
 ---
 
-## MVP in One Sentence
+## MVP in one sentence
 
-**A single deployed Astro page with a specific hero, 3 real project cards with live demos, and a "For Recruiters" block — validated by a 3-person cold-read test before any recruiter sees it.**
+**A deployed Astro site with a genuine hero, interleaved timeline, 2–3 project cards with demos, secondary presence links, a specific handshake footer, case study depth, and one `profile.json` to maintain — validated by a 3-person cold-read test.**
