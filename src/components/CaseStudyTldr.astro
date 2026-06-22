@@ -1,0 +1,32 @@
+---
+interface Props {
+  problem: string;
+  keyDecision: string;
+  outcome: string;
+}
+
+const { problem, keyDecision, outcome } = Astro.props;
+---
+
+<aside
+  class="rounded-xl border border-sepia/30 bg-skin/30 p-6 dark:border-sepia/20 dark:bg-dim-muted/50"
+  aria-label="Case study summary"
+>
+  <p class="text-sm font-semibold uppercase tracking-wide text-sepia dark:text-dim-highlight">
+    TL;DR
+  </p>
+  <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-dim-text-muted">
+    <div>
+      <dt class="font-medium text-dark-moss">Problem</dt>
+      <dd class="mt-1">{problem}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-dark-moss">Key decision</dt>
+      <dd class="mt-1">{keyDecision}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-dark-moss">Outcome</dt>
+      <dd class="mt-1">{outcome}</dd>
+    </div>
+  </dl>
+</aside>

@@ -2,6 +2,15 @@
 
 A concise history of changes.
 
+## 2026-06-20 (Phase 4 — P1 depth)
+
+- Added Astro content collections (`src/content.config.ts`, `src/content/projects/`) with Zod schema for TL;DR, production-thinking, and optional my-role fields
+- Created case study pages at `projects/[slug].astro` for Soundwatch, I AM, and YouTube Transcript Pipeline
+- Added `CaseStudyTldr`, `ProductionThinking`, `MyRole`, and `TechStack` components
+- Linked each `ProjectShowcase` to its case study; added `slug` to `projects.ts`
+- Added About and Tech stack homepage sections; nav anchors for `#about`, `#projects`, `#stack`
+- Added custom `404.astro` using `BaseLayout`
+
 ## 2026-06-15 (docs)
 
 - MVP deploy target updated to GitHub Pages across roadmaps, context, mvp, prd, and notes

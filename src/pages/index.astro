@@ -20,7 +20,18 @@ if (!flagship) {
 >
   <Hero slot="hero" />
 
-  <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
+  <section id="about" aria-labelledby="about-heading" class="scroll-mt-8">
+    <SectionHeading
+      id="about-heading"
+      title="About"
+      subtitle="Background and what I'm looking for."
+    />
+    <div class="mx-auto max-w-2xl space-y-4 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
+      {site.about.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-heading" class="mt-16 scroll-mt-8">
     <SectionHeading
       id="projects-heading"
       title="Featured projects"
