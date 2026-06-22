@@ -11,7 +11,7 @@
     "contrastLead": "From playing live improv music for contemporary dance to earning a minor in Family Life, I'm not your typical guy in tech.",
     "professionalSentence": "I bring that same practical attention to detail, empathy, and collaboration to everything I build."
   },
-  "handshakeLine": "My inbox is open for data engineering, BI, and AI-adjacent roles at teams solving real operational problems with data, not just adding AI to the pitch deck.",
+  "handshakeLine": "Working on something meaningful? I'd love to connect.",
   "presence": {
     "github": "https://github.com/davidschraedel",
     "linkedin": "https://www.linkedin.com/in/david-schraedel",
@@ -23,18 +23,22 @@
       "label": "Earned Eagle Scout — the project required planning, leadership, follow-through, sewing skills."
     },
     {
+      "date": "2016-05",
+      "label": "Busser at The Old Spaghetti Factory — 600 guests a night, ten-person team, no slack. Learned what it feels like when coordination fails and everyone notices immediately."
+    },
+    {
       "start": "2016-01",
       "end": "2018-01",
-      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word."
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language."
     },
     {
       "start": "2019-04",
       "end": "2023-04",
-      "label": "Joined Brigham Young University Department of Dance as a Contemporary Dance Accompanist — improvised live music for 15–75 dancers across 4 years using 13 instruments and music software."
+      "label": "Joined Brigham Young University Department of Dance as a Contemporary Dance Accompanist, improvising live music for 15–75 dancers across 4 years using 13 instruments and music software."
     },
     {
       "start": "2020-09",
-      "label": "Started Bachelor of Science in Information Systems at Brigham Young University, with a Minor in Family Life. Chose IS over music intentionally — looked at the whole picture."
+      "label": "I started my Bachelor of Science in Information Systems program at Brigham Young University. I deliberately chose an unfamiliar path to challenge myself. I took many opporutities to expand my perspective, such as studying abroad in the United Kingdom, Switzerland, and Italy, taking diverse elective courses, and earning a minor in Family Life."
     },
     {
       "start": "2021-04",
@@ -43,6 +47,14 @@
     {
       "start": "2021-08",
       "label": "First Teaching Assistant role at BYU Marriott School of Business — facilitated labs and reviews for 60 students covering Python, PostgreSQL, Django, HTML/CSS, and OOP."
+    },
+    {
+      "date": "2022-01",
+      "label": "INTEX 5-day project at BYU: consolidated and normalized 7 data sources, built a working web app in C#, ASP.NET, and AWS, and presented a fully functional archeological fieldwork data entry system — in a week."
+    },
+    {
+      "date": "2021-05",
+      "label": "WordPress Developer at BYU College of Fine Arts and Communications — audited 50+ undocumented workflow files, cut storage 19% across 8 department sites, and trained my replacement. First time I left something cleaner than I found it."
     },
     {
       "start": "2022-09",
@@ -116,7 +128,7 @@
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI: not queryable, exportable, or usable for analysis.",
-      "tradeOff": "I chose to build a custom Python regex pipeline over an off-the-shelf transcript API to get fine-grained control over chunking and metadata for AI ingestion, even though it took roughly three times as long.",
+      "tradeOff": "I chose to build a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It cost me more time than using a service, but provided me experience, complete control, and flexibility in end-goal use cases.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,
