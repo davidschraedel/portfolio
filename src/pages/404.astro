@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout title={`Page not found — ${site.name}`} description="This page does not exist.">
+  <section class="py-16 text-center">
+    <h1 class="text-2xl font-semibold text-dark-moss sm:text-3xl">Page not found</h1>
+    <p class="mx-auto mt-4 max-w-md text-base text-interior-designer dark:text-dim-text-muted ">
+      This URL doesn't exist. Head back to the portfolio to see featured projects and case studies.
+    </p>
+    <a href={import.meta.env.BASE_URL} class="btn btn-soft btn-soft-default mt-8">
+      Back to home
+    </a>
+  </section>
+</BaseLayout>

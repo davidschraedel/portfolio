@@ -1,0 +1,44 @@
+---
+interface ProductionThinking {
+  tests: string;
+  errorHandling: string;
+  deployment: string;
+  monitoring?: string;
+}
+
+interface Props {
+  productionThinking: ProductionThinking;
+}
+
+const { productionThinking } = Astro.props;
+
+const items = [
+  { label: "Tests", value: productionThinking.tests },
+  { label: "Error handling", value: productionThinking.errorHandling },
+  { label: "Deployment", value: productionThinking.deployment },
+  ...(productionThinking.monitoring
+    ? [{ label: "Monitoring", value: productionThinking.monitoring }]
+    : []),
+];
+---
+
+<section aria-labelledby="production-thinking-heading" class="mt-12">
+  <h2
+    id="production-thinking-heading"
+    class="text-xl font-semibold text-dark-moss sm:text-2xl"
+  >
+    Production thinking
+  </h2>
+  <dl class="mt-6 space-y-6">
+    {
+      items.map((item) => (
+        <div class="rounded-lg bg-off-white/80 p-5 ring-1 ring-sepia/20 dark:bg-dim-elevated dark:ring-dim-muted">
+          <dt class="font-medium text-sepia dark:text-dim-highlight">{item.label}</dt>
+          <dd class="mt-2 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
+            {item.value}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>
