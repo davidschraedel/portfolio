@@ -1,0 +1,129 @@
+{
+  "person": {
+    "name": "David Schraedel",
+    "email": "davidschraedel@gmail.com",
+    "location": "Salt Lake City, UT",
+    "timezone": "America/Denver",
+    "openToWork": true,
+    "resume": "resume.pdf"
+  },
+  "hero": {
+    "contrastLead": "From playing live improv music for contemporary dance to earning a minor in Family Life, I'm not your typical guy in tech.",
+    "professionalSentence": "I bring that same practical attention to detail, empathy, and collaboration to everything I build."
+  },
+  "handshakeLine": "My inbox is open for data engineering, BI, and AI-adjacent roles at teams solving real operational problems with data, not just adding AI to the pitch deck.",
+  "presence": {
+    "github": "https://github.com/davidschraedel",
+    "linkedin": "https://www.linkedin.com/in/david-schraedel",
+    "substack": "https://substack.com/@davidschraedel"
+  },
+  "timeline": [
+    {
+      "start": "2015-01",
+      "label": "Earned Eagle Scout — the project required planning, leadership, follow-through, sewing skills."
+    },
+    {
+      "start": "2016-01",
+      "end": "2018-01",
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word."
+    },
+    {
+      "start": "2019-04",
+      "end": "2023-04",
+      "label": "Joined Brigham Young University Department of Dance as a Contemporary Dance Accompanist — improvised live music for 15–75 dancers across 4 years using 13 instruments and music software."
+    },
+    {
+      "start": "2020-09",
+      "label": "Started Bachelor of Science in Information Systems at Brigham Young University, with a Minor in Family Life. Chose IS over music intentionally — looked at the whole picture."
+    },
+    {
+      "start": "2021-04",
+      "label": "Web Developer at Brigham Young University — built and maintained pages for campus PR and inclusivity initiatives."
+    },
+    {
+      "start": "2021-08",
+      "label": "First Teaching Assistant role at BYU Marriott School of Business — facilitated labs and reviews for 60 students covering Python, PostgreSQL, Django, HTML/CSS, and OOP."
+    },
+    {
+      "start": "2022-09",
+      "label": "Consultant Intern at The Church of Jesus Christ of Latter-day Saints — researched data sources for a world crisis information management tool; prototyped a solution that surfaced the organization's structural advantages."
+    },
+    {
+      "start": "2023-04",
+      "label": "Graduated with a B.S. in Information Systems from Brigham Young University. Received the Alumni Choice Award for integrity. Studied abroad across the United Kingdom, Switzerland, and Italy."
+    },
+    {
+      "start": "2024-04",
+      "label": "Full Stack Development Intern at OCSC — shipped 20+ full-stack changes to a production SaaS web application in six months."
+    },
+    {
+      "start": "2024-08",
+      "label": "UX and Web Developer at The LTN Foundation — led development of a responsive React site, designed and normalized a relational database, and clarified the organization's branding and information architecture."
+    },
+    {
+      "start": "2025-01",
+      "label": "Partnered with a local business to design and test agentic AI systems using LangChain — first time taking a real client's workflow friction and resolving it end-to-end with AI tooling."
+    },
+    {
+      "start": "2025-01",
+      "label": "Engineered a Python extraction pipeline processing 6.7M+ words of YouTube transcript data into AI-ready structured context — first large-scale data project built entirely solo."
+    },
+    {
+      "start": "2025-04",
+      "label": "Delivered AI B2B growth recommendations at the BYU Marriott Case Competition — earned Best of Room."
+    },
+    {
+      "start": "2025-09",
+      "label": "Data & Systems Teaching Assistant at BYU Marriott — taught 50+ graduate students Excel statistics, Tableau, data lifecycle, and SQL; debugged student work across five languages in TA labs."
+    },
+    {
+      "start": "2026-04",
+      "label": "Master of Information Systems Management, BYU Marriott School of Business. Emphasis in Data Engineering and Business Intelligence. Coursework: Agentic AI Systems, Data Engineering (Python, dbt, Snowflake), Data Science (R, scikit-learn), Cloud Engineering (AWS, Terraform)."
+    }
+  ],
+  "projects": [
+    {
+      "id": "soundwatch",
+      "slug": "soundwatch",
+      "name": "Soundwatch",
+      "objective": "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
+      "tradeOff": "I chose elapsed time over countdown because focus should stay on the activity, not how much is left; that meant the UX had to work harder than a standard countdown timer to feel natural.",
+      "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      "layout": "media-left",
+      "featured": true,
+      "demoUrl": "https://soundwatch.netlify.app/",
+      "githubUrl": "https://github.com/davidschraedel/stopwatch",
+      "previewImageKey": "soundwatch",
+      "previewAlt": "Soundwatch interval timer running in the browser"
+    },
+    {
+      "id": "iam",
+      "slug": "iam",
+      "name": "I AM",
+      "objective": "People struggle to articulate identity and goals in a way AI coaching products can act on consistently.",
+      "tradeOff": "We chose AWS Bedrock over OpenAI because the client needed enterprise-grade auditability and the knowledge base tooling fit their existing infrastructure, accepting a steeper learning curve and thinner community documentation.",
+      "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk",
+      "githubUrl": null,
+      "previewImageKey": "iam-demo-video",
+      "previewAlt": "I AM product demo video thumbnail on YouTube",
+      "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
+    },
+    {
+      "id": "youtube-transcript-pipeline",
+      "slug": "youtube-transcript-pipeline",
+      "name": "YouTube Transcript Pipeline",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI: not queryable, exportable, or usable for analysis.",
+      "tradeOff": "I chose to build a custom Python regex pipeline over an off-the-shelf transcript API to get fine-grained control over chunking and metadata for AI ingestion, even though it took roughly three times as long.",
+      "stack": ["Python", "DuckDB", "SQL"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
+      "previewImageKey": "youtube-transcript-pipeline",
+      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow"
+    }
+  ]
+}

@@ -88,4 +88,8 @@ body {
   .btn-github {
     @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
   }
+
+  .btn-substack {
+    @apply hover:bg-[#ff6719] hover:text-[#2b2823];
+  }
 }
