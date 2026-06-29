@@ -92,4 +92,12 @@ body {
   .btn-substack {
     @apply hover:bg-[#ff6719] hover:text-[#2b2823];
   }
+
+  .nav-link {
+    @apply text-base text-interior-designer underline-offset-4 transition-colors duration-200 ease-in-out hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-text-muted dark:focus-visible:outline-sepia;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply underline;
+  }
 }
