@@ -1,24 +1,49 @@
-<nav aria-label="Main" class="pb-6 pt-2">
+---
+const base = import.meta.env.BASE_URL;
+const { pathname } = Astro.url;
+
+const isHome = pathname === base || pathname === base.replace(/\/$/, "");
+const isAbout = pathname.startsWith(`${base}about`);
+---
+
+<nav aria-label="Main" class="relative pb-6 pt-2">
   <ul class="mx-auto flex flex-wrap justify-center gap-6 sm:gap-8">
     <li>
-      <a href="#about" class="nav-link">About</a>
+      <a
+        href={base}
+        class="nav-link"
+        aria-current={isHome ? "page" : undefined}
+      >
+        Featured Projects
+      </a>
     </li>
     <li>
-      <a href="#projects" class="nav-link">Featured projects</a>
+      <a
+        href={`${base}about`}
+        class="nav-link"
+        aria-current={isAbout ? "page" : undefined}
+      >
+        About
+      </a>
     </li>
+    
   </ul>
 </nav>
 
-<script>
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>('nav[aria-label="Main"] a[href^="#"]');
-
-  function updateActive() {
-    const hash = window.location.hash;
-    navLinks.forEach((link) => {
-      link.setAttribute("aria-current", link.getAttribute("href") === hash ? "page" : "false");
-    });
+<style>
+  nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #c7d2fe 50%, transparent);
   }
 
-  updateActive();
-  window.addEventListener("hashchange", updateActive);
-</script>
+  @media (prefers-color-scheme: dark) {
+    nav::after {
+      background: linear-gradient(to right, transparent, #a8b5a0 50%, transparent);
+    }
+  }
+</style>

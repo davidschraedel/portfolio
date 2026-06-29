@@ -5,18 +5,7 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="brand-gradient px-4 pb-8 pt-6 text-center">
-  <p
-    class="mx-auto max-w-xl text-base leading-relaxed text-white mix-blend-soft-light"
-  >
-    {site.handshakeLine}
-  </p>
-
   <ul class="mx-auto my-8 flex max-w-xs flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
-    <li>
-      <a href={`mailto:${site.email}`} class="btn btn-footer btn-soft-default">
-        Email
-      </a>
-    </li>
     <li>
       <a
         href={site.linkedInUrl}
@@ -28,10 +17,31 @@ const currentYear = new Date().getFullYear();
       </a>
     </li>
     <li>
-      <a href={site.resumePath} target="_blank" class="btn btn-footer btn-soft-default">
-        Resume
+      <a
+        href={site.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-footer btn-github"
+      >
+        GitHub
       </a>
     </li>
+    {
+      site.substackUrl && (
+        <li>
+          <a
+            href={site.substackUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-footer btn-substack"
+          >
+            Substack
+          </a>
+        </li>
+      )
+    }
+    
+    
   </ul>
 
   <p class="pb-6 pt-2 text-sm text-white mix-blend-soft-light">

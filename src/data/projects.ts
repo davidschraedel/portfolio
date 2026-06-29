@@ -77,7 +77,7 @@ export const projects: Project[] = [
     outcome:
       "Full playlist ingested to searchable SQL; bronze/silver layers with per-video fetch status and idempotent transforms",
     stack: ["Python", "DuckDB", "SQL"],
-    demoUrl: transcriptPipelineDemoVideoUrl,
+    demoUrl: "https://github.com/davidschraedel/youtube-transcript-pipeline",
     githubUrl: "https://github.com/davidschraedel/youtube-transcript-pipeline",
     previewImage: transcriptPreview,
     previewAlt:

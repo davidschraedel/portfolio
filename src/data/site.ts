@@ -5,6 +5,7 @@ export interface SiteConfig {
   email: string;
   linkedInUrl: string;
   githubUrl: string;
+  substackUrl: string | null;
   resumePath: string;
   hero: {
     contrastLead: string;
@@ -18,6 +19,7 @@ export const site: SiteConfig = {
   email: profile.person.email,
   linkedInUrl: profile.presence.linkedin,
   githubUrl: profile.presence.github,
+  substackUrl: profile.presence.substack,
   resumePath: `${import.meta.env.BASE_URL}${profile.person.resume}`,
   hero: {
     contrastLead: profile.hero.contrastLead,
