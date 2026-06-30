@@ -2,6 +2,45 @@
 
 A concise history of changes.
 
+## 2026-06-30 (fix — case study placeholder)
+
+- Removed hallucinated content from `src/content/projects/*.md` (all three case study files deleted)
+- Simplified `[slug].astro` — drops content collections entirely; reads from `projects.ts` directly and renders a "coming soon" placeholder card with project links
+- `ProjectShowcase` card link now points to `/projects/[slug]` consistently
+
+## 2026-06-29 (docs — aiDocs expansion)
+
+- Added `aiDocs/architecture.md` — documents data layer (`profile.json` → `site.ts` → components), layout shell, button system, dim mode, and content collection schema
+- Expanded `aiDocs/coding-style.md` — added `profile.json`/`site.ts` section and button system reference table
+- Updated `aiDocs/context.md` — status note and links reflect current `architecture.md` entry
+
+## 2026-06-29 (D0/D1 — project showcase refactor)
+
+- Removed flagship standout layout from `ProjectShowcase`; all projects now render in a uniform two-column grid
+- `ProjectShowcase` reads `problem`, `keyDecision`, `outcome` fields from `projects.ts`; displays as labeled `<dl>` rows
+- Removed `layout` and `isFlagship` rendering logic from component (fields still exist in `projects.ts` but are unused)
+- Image opacity softened to `opacity-80` by default; hover lifts to `opacity-95` on linked previews
+
+## 2026-06-29 (D0 — about page and timeline)
+
+- Added `src/pages/about.astro` — About section driven by `profile.about.paragraphs` and Timeline section driven by `profile.timeline`
+- Added `about` key (heading + paragraphs array + images placeholder) and `timeline` array to `profile.json`
+- Timeline entries render year-only from ISO `start` date; layout is `year · label` row list
+
+## 2026-06-29 (D0/D1 — nav, copy, styling)
+
+- `site.ts` now reads all values from `profile.json` (`person`, `hero`, `presence`, `handshakeLine`); no more hardcoded strings
+- `Hero` component moved into `BaseLayout` header — renders on every page
+- Nav simplified; `aria-current="page"` wired to active route
+- Footer refactored to use `site.*` values; social links driven by `profile.presence`
+- Added `@layer components` button and nav-link system to `global.css` (see coding-style.md)
+- Added `dim-*` palette tokens to `@theme` block; `dark:` variants now use warm parchment dim mode, not true dark
+
+## 2026-06-22 (D0 — content model)
+
+- Created `profile.json` as the single hand-edited content source; initial fields: `person`, `hero`, `handshakeLine`, `presence`, `projects` (with `objective`/`tradeOff` fields)
+- Added `dim-*` color token stubs to `global.css`
+
 ## 2026-06-22 (docs — differentiation strategy)
 
 - **PRD v3.0** — voice-first + recruiter-scannable dual audience; homepage arc Hook → Track → Proof → Presence → Handshake; `profile.json` content model; Handshake replaces “For Recruiters” block; JSON-LD `@graph` with separated lists; development phase gates removed
