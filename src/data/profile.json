@@ -141,7 +141,6 @@
       "previewAlt": "I AM product demo video thumbnail on YouTube",
       "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
     },
-
     {
       "id": "soundwatch",
       "slug": "soundwatch",
@@ -155,6 +154,66 @@
       "githubUrl": "https://github.com/davidschraedel/stopwatch",
       "previewImageKey": "soundwatch",
       "previewAlt": "Soundwatch interval timer running in the browser",
+      "videoUrl": null
+    },
+    {
+      "id": "youtube-kpi-framework",
+      "slug": "youtube-kpi-framework",
+      "name": "YouTube KPI Framework",
+      "objective": "I was tasked with measuring a digital product's performance, by creating a KPI framework that would measure valuable outcomes for that product (not just outputs).",
+      "tradeOff": "I designed a KPI framework for the YouTube platform, with the aim of metrics that strategically measure real value provided, rather than measuring shallow value or the lack thereof with vanity metrics.",
+      "stack": ["Canva", "Product Management", "Data Strategy"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": "https://www.canva.com/design/DAG69PGZ5Uo/blz7EcwbksNU1IQpN-pL_Q/view?utm_content=DAG69PGZ5Uo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "githubUrl": null,
+      "previewImageKey": "youtube-kpi-framework",
+      "previewAlt": "YouTube KPI Framework Canva design overview",
+      "videoUrl": null
+    },
+    {
+      "id": "microdeck",
+      "slug": "microdeck",
+      "name": "MicroDeck",
+      "objective": "People with ADHD, executive dysfunction, or digital burnout struggle to bridge the intention-behavior gap; trackers and blockers often add friction instead of helping them start.",
+      "tradeOff": "We built a minimalist iOS habit initiation tool with user-authored micro-action cards and 2-minute timers. It avoids streaks, history, and intoxicating gamification, and is focused entirely on initiating new habits.",
+      "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": "https://drive.google.com/file/d/1rtUzsS0hy0itJA98710SXTc5JRWi5kaa/view?usp=sharing",
+      "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
+      "previewImageKey": "microdeck",
+      "previewAlt": "MicroDeck iOS habit initiation app concept",
+      "videoUrl": null
+    },
+    {
+      "id": "midi-morph",
+      "slug": "midi-morph",
+      "name": "Midi Randomizer",
+      "objective": "In trying to generate new ideas, humans are contrained by their prior behavior or inputs. But machines can imitate randomness in a way that surprises humans. I had no tool to do this for me with MIDI in music software.",
+      "tradeOff": "I built a browser-based MIDI randomization tool for lazy experimentation. This was my first truly vibe-coded project, built with Google's AI Studio, and refined afterward with Cursor.",
+      "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
+      "layout": "media-left",
+      "featured": true,
+      "demoUrl": "https://davidschraedel.github.io/midi-morph-gui/",
+      "githubUrl": "https://github.com/davidschraedel/midi-morph-gui",
+      "previewImageKey": "midi-morph",
+      "previewAlt": "Midi Morph browser MIDI GUI on GitHub Pages",
+      "videoUrl": null
+    },
+    {
+      "id": "calendar-dashboard",
+      "slug": "calendar-dashboard",
+      "name": "Calendar Dashboard",
+      "objective": "Personal time allocation across Google Calendars stays invisible until manually audited. After doing some timeboxing with different calendars in a Google account, I wanted raw event data and insight into how hours in the calendar map planned hours, week to week.",
+      "tradeOff": "I wrote a Google Apps Script to sync events into Sheets, compute durations and weekly percentages, and feed a Looker Studio dashboard. It is automatically triggered regularly and let's me see how I planned to allocate my time, or if I planned at all.",
+      "stack": ["Google Apps Script", "Google Sheets", "Looker Studio"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": "https://datastudio.google.com/reporting/8ff7c15f-e20f-4436-8bce-302d6903a504",
+      "githubUrl": "https://github.com/davidschraedel/google-apps-script",
+      "previewImageKey": "calendar-dashboard",
+      "previewAlt": "Looker Studio calendar time allocation dashboard",
       "videoUrl": null
     }
   ]
