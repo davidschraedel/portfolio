@@ -2,6 +2,11 @@
 
 A concise history of changes.
 
+## 2026-06-30 (projects — four new entries)
+
+- Added YouTube KPI Framework, MicroDeck, Midi Morph, and Calendar Dashboard to `profile.json`
+- Added placeholder preview images in `src/assets/portfolio/` for each new project (replace with real screenshots when available)
+
 ## 2026-06-30 (D1/D3 — projects.ts derived from profile.json)
 
 - `projects.ts` rewritten as a derived module: `import.meta.glob` loads all `src/assets/portfolio/*.png` at build time; `profileData.projects` is mapped to `Project[]` by looking up images via `previewImageKey`
