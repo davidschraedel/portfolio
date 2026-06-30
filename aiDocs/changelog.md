@@ -2,6 +2,29 @@
 
 A concise history of changes.
 
+## 2026-06-30 (copy)
+
+- Revised `profile.json` hero copy (`contrastLead` rewritten; `professionalSentence` tightened)
+- Added opening paragraph to `profile.about.paragraphs`
+- `ProjectShowcase` label updated: "Key decision" → "Solution"; case study link text changed to "Read more..."
+- Nav "About" link renamed to "Story"
+
+## 2026-06-30 (sticky nav, layout)
+
+- Nav made sticky (`sticky top-0 z-50`); moved outside `<header>` in `BaseLayout` so it scrolls with the page independently
+- Header gets `rounded-t-4xl`; footer gets `rounded-b-4xl`; container `shadow-md` removed
+- `off-white` token nudged from `#fcfcfc` to `#fafafa`
+- Nav `position: relative` rule removed from `global.css` (sticky handles positioning now)
+- Projects page section subtitle copy updated
+
+## 2026-06-30 (copy and styling — corrections)
+
+- Rewrote all three project `problem` / `keyDecision` / `outcome` fields in `projects.ts` (I AM framing significantly corrected to audience-connection angle)
+- Added favicon using headshot SVG (`<link rel="icon">` in `BaseLayout`)
+- Removed container `shadow-md`; narrowed max content width at `lg`/`xl` breakpoints
+- Hero `contrastLead` and `professionalSentence` updated in `profile.json`
+- Hero font size adjusted for mobile
+
 ## 2026-06-30 (fix — case study placeholder)
 
 - Removed hallucinated content from `src/content/projects/*.md` (all three case study files deleted)
