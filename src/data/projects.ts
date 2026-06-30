@@ -34,10 +34,10 @@ export const projects: Project[] = [
     id: "soundwatch",
     name: "Soundwatch",
     problem:
-      "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
+      "Morning routines with multiple timed activities require constantly starting timers or watching a clock.",
     keyDecision:
-      "Built an interval timer that tracks elapsed time (not countdown) with optional audio cues—so focus stays on the activity, not the clock.",
-    outcome: "Deployed on Netlify.",
+      "I built an interval timer that tracks elapsed time with optional audio cues, so focus can stay on the activity, not the clock.",
+    outcome: "Deployed and used on Netlify.",
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     demoUrl: "https://soundwatch.netlify.app/",
     githubUrl: "https://github.com/davidschraedel/stopwatch",
@@ -52,11 +52,11 @@ export const projects: Project[] = [
     id: "iam",
     name: "I AM",
     problem:
-      "People struggle to articulate identity and goals in a way AI coaching products can act on consistently.",
+      "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
     keyDecision:
-      "Structured identity and goal capture upfront instead of open-ended chat—so coaching prompts stay consistent across sessions.",
+      "I integrated and optimized Amazon Bedrock models and knowledge base tools to match a creator's voice and brand.",
     outcome:
-      "Shipped product with live user-facing flows; demo shows end-to-end coaching interaction.",
+      "Live user-facing flows with a positive UX; demo shows end-to-end interactions for one feature.",
     stack: ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
     demoUrl: "https://www.youtube.com/watch?v=__7cEyDlhgk",
     githubUrl: null,
@@ -72,8 +72,8 @@ export const projects: Project[] = [
     id: "youtube-transcript-pipeline",
     name: "YouTube Transcript Pipeline",
     problem:
-      "Hours of spoken content in YouTube playlists are locked in the UI—not queryable, exportable, or usable for analysis.",
-    keyDecision: "Ingest captions into local DuckDB (Bronze → Silver).",
+      "Hours of spoken content in YouTube playlists are locked in the UI;not queryable, exportable, or usable for analysis.",
+    keyDecision: "Ingest captions into local DuckDB database",
     outcome:
       "Full playlist ingested to searchable SQL; bronze/silver layers with per-video fetch status and idempotent transforms",
     stack: ["Python", "DuckDB", "SQL"],
