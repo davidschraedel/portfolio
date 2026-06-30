@@ -8,7 +8,7 @@
     "resume": "resume.pdf"
   },
   "about": {
-    "heading": "About",
+    "heading": "About Me",
     "paragraphs": [
       "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
       "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
@@ -112,11 +112,26 @@
   ],
   "projects": [
     {
+      "id": "youtube-transcript-pipeline",
+      "slug": "youtube-transcript-pipeline",
+      "name": "YouTube Transcript Pipeline",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI;not queryable, exportable, or usable for analysis.",
+      "tradeOff": "I built a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It allows full playlist ingestion for SQL querying, bronze/silver layers with per-video fetch status, and idempotent transformations.",
+      "stack": ["Python", "DuckDB", "SQL"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
+      "previewImageKey": "youtube-transcript-pipeline",
+      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow",
+      "videoUrl": null
+    },
+    {
       "id": "iam",
       "slug": "iam",
       "name": "I AM",
       "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
-      "tradeOff": "We chose AWS Bedrock over OpenAI because the client needed enterprise-grade auditability and the knowledge base tooling fit their existing infrastructure, accepting a steeper learning curve and thinner community documentation.",
+      "tradeOff": "I integrated and optimized Amazon Bedrock models and knowledge base tools to match a creator's voice and brand, and debugged/optimized the core features for a positive user experience.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
@@ -126,33 +141,21 @@
       "previewAlt": "I AM product demo video thumbnail on YouTube",
       "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
     },
-    {
-      "id": "youtube-transcript-pipeline",
-      "slug": "youtube-transcript-pipeline",
-      "name": "YouTube Transcript Pipeline",
-      "objective": "Hours of spoken content in YouTube playlists are locked in the UI: not queryable, exportable, or usable for analysis.",
-      "tradeOff": "I chose to build a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It cost me more time than using a service, but provided me experience, complete control, and flexibility in end-goal use cases.",
-      "stack": ["Python", "DuckDB", "SQL"],
-      "layout": "text-only",
-      "featured": true,
-      "demoUrl": null,
-      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
-      "previewImageKey": "youtube-transcript-pipeline",
-      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow"
-    },
+
     {
       "id": "soundwatch",
       "slug": "soundwatch",
       "name": "Soundwatch",
-      "objective": "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
-      "tradeOff": "I chose elapsed time over countdown because focus should stay on the activity, not how much is left; that meant the UX had to work harder than a standard countdown timer to feel natural.",
+      "objective": "Morning routines with multiple timed activities require repeatedly starting timers or watching a clock.",
+      "tradeOff": "I built an stopwatch that tracks elapsed time with optional audio cues at intervals, so focus can stay on the activity, not the clock.",
       "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
       "layout": "media-left",
       "featured": true,
       "demoUrl": "https://soundwatch.netlify.app/",
       "githubUrl": "https://github.com/davidschraedel/stopwatch",
       "previewImageKey": "soundwatch",
-      "previewAlt": "Soundwatch interval timer running in the browser"
+      "previewAlt": "Soundwatch interval timer running in the browser",
+      "videoUrl": null
     }
   ]
 }

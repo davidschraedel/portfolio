@@ -2,6 +2,14 @@
 
 A concise history of changes.
 
+## 2026-06-30 (D1/D3 — projects.ts derived from profile.json)
+
+- `projects.ts` rewritten as a derived module: `import.meta.glob` loads all `src/assets/portfolio/*.png` at build time; `profileData.projects` is mapped to `Project[]` by looking up images via `previewImageKey`
+- `Project` interface updated: `problem`/`keyDecision`/`outcome` removed; replaced with `objective`/`tradeOff`; `isFlagship` and `skillsFor` removed (unused); `transcriptPipelineDemoVideoUrl` export removed
+- `profile.json` is now the only place project content is edited; adding a new project requires only a `profile.json` entry + dropping a `.png` in `src/assets/portfolio/`
+- `ProjectShowcase.astro` updated to use `project.objective` and `project.tradeOff`; Outcome row removed; labels updated to "Objective ·" / "Trade-off ·"
+- `[slug].astro` meta description updated from `project.problem` to `project.objective`
+
 ## 2026-06-30 (copy)
 
 - Revised `profile.json` hero copy (`contrastLead` rewritten; `professionalSentence` tightened)
