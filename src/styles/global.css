@@ -7,6 +7,7 @@
   --color-interior-designer: #3f3b31;
   --color-sepia: #896c55;
   --color-skin: #d1b49e;
+  --color-brand-indigo: #616152;
 
   /* Dim mode — slightly darker than light, still dark-on-light */
   --color-dim-page: #e9e6df;
@@ -66,7 +67,7 @@ body {
   }
 
   .btn-soft-default:hover {
-    @apply bg-sepia text-white;
+    @apply bg-brand-indigo text-white;
   }
 
   .btn-footer {
