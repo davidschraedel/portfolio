@@ -29,14 +29,12 @@ const {
     <meta name="description" content={description} />
     <ViewTransitions />
   </head>
-  <body class="bg-off-white text-dark-moss antialiased dark:bg-dim-page text-pretty">
-    <div class="m-6 my-7 overflow-x-clip sm:m-10 md:m-20 md:my-10">
-      <div class="overflow-hidden rounded-lg">
-        <header class="bg-off-white text-center dark:bg-dim-surface">
+  <body class=" bg-off-white text-dark-moss antialiased dark:bg-dim-page text-pretty">
+    <div class="m-6 my-7 sm:m-10 md:m-20 md:my-10">
+        <header class="rounded-t-4xl overflow-hidden bg-off-white text-center dark:bg-dim-surface">
           <Hero />
-          <Nav />
         </header>
-
+        <Nav />
         <main
           class="bg-off-white px-4 py-10 dark:bg-dim-surface sm:px-12 md:px-20 lg:px-24 xl:px-44"
         >
@@ -44,7 +42,7 @@ const {
         </main>
 
         <Footer />
-      </div>
+      
     </div>
   </body>
 </html>
