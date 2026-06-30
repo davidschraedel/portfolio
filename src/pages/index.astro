@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
+
 import { projects } from "../data/projects";
 import { site } from "../data/site";
 
@@ -15,11 +15,9 @@ if (!flagship) {
 ---
 
 <BaseLayout
-  title={`${site.name} — ${site.hero.roleHeadline}`}
-  description={site.hero.outcomeStatement}
+  title={site.name}
+  description={site.hero.professionalSentence}
 >
-  <Hero slot="hero" />
-
   <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
     <SectionHeading
       id="projects-heading"

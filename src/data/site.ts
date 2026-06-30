@@ -1,28 +1,29 @@
+import profile from "./profile.json";
+
 export interface SiteConfig {
   name: string;
   email: string;
   linkedInUrl: string;
   githubUrl: string;
+  substackUrl: string | null;
   resumePath: string;
   hero: {
-    roleHeadline: string;
-    outcomeStatement: string;
-    positioningLine: string;
+    contrastLead: string;
+    professionalSentence: string;
   };
+  handshakeLine: string;
 }
 
 export const site: SiteConfig = {
-  name: "David Schraedel",
-  email: "davidschraedel@gmail.com",
-  linkedInUrl: "https://www.linkedin.com/in/david-schraedel/",
-  githubUrl: "https://github.com/davidschraedel",
-  resumePath: `${import.meta.env.BASE_URL}resume.pdf`,
+  name: profile.person.name,
+  email: profile.person.email,
+  linkedInUrl: profile.presence.linkedin,
+  githubUrl: profile.presence.github,
+  substackUrl: profile.presence.substack,
+  resumePath: `${import.meta.env.BASE_URL}${profile.person.resume}`,
   hero: {
-    roleHeadline:
-      "Full-stack engineer · TypeScript, React, Python · shipping data pipelines and deployed web apps",
-    outcomeStatement:
-      "I build tools that turn messy real-world inputs—timers, transcripts, product workflows—into software recruiters can click through in under a minute.",
-    positioningLine:
-      "Each featured project is a working demo with a clear problem, decision, and outcome—not a repo dump.",
+    contrastLead: profile.hero.contrastLead,
+    professionalSentence: profile.hero.professionalSentence,
   },
+  handshakeLine: profile.handshakeLine,
 };

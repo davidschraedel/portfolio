@@ -5,9 +5,7 @@ import headshot from "../assets/headshot.svg";
 import { site } from "../data/site";
 ---
 
-<div
-  class="brand-gradient px-4 pb-8 pt-10"
->
+<div class="brand-gradient px-4 pb-8 pt-10">
   <Image
     src={headshot}
     alt="Portrait of David Schraedel"
@@ -19,39 +17,15 @@ import { site } from "../data/site";
 </div>
 
 <div class="px-4 pb-4 pt-8 text-center sm:px-8">
-  <p class="text-lg font-medium text-sepia dark:text-dim-highlight">{site.name}</p>
+  <p class="text-5xl font-medium text-sepia dark:text-dim-highlight">{site.name}</p>
   <h1
-    class="mx-auto mt-3 max-w-3xl text-2xl font-semibold leading-snug text-dark-moss sm:text-3xl"
+    class="mx-auto mt-3 max-w-4xl text-2xl font-semibold leading-snug text-dark-moss sm:text-2xl"
   >
-    {site.hero.roleHeadline}
+    {site.hero.contrastLead}
   </h1>
   <p
-    class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-interior-designer dark:text-dim-text-muted"
+    class="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-interior-designer dark:text-dim-text-muted"
   >
-    {site.hero.outcomeStatement}
+    {site.hero.professionalSentence}
   </p>
-  <p class="mx-auto mt-3 max-w-2xl text-base text-interior-designer/90 dark:text-dim-text-muted/80">
-    {site.hero.positioningLine}
-  </p>
-
-  <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-    <a href={site.resumePath} target="_blank" class="btn btn-soft btn-soft-default">Resume</a>
-    <a href={`mailto:${site.email}`} class="btn btn-soft btn-soft-default">Email</a>
-    <a
-      href={site.linkedInUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-soft btn-linkedin"
-    >
-      LinkedIn
-    </a>
-    <a
-      href={site.githubUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-soft btn-github"
-    >
-      Github
-    </a>
-  </div>
 </div>

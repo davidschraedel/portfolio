@@ -1,7 +1,30 @@
+---
+const base = import.meta.env.BASE_URL;
+const { pathname } = Astro.url;
+
+const isHome = pathname === base || pathname === base.replace(/\/$/, "");
+const isAbout = pathname.startsWith(`${base}about`);
+---
+
 <nav aria-label="Main" class="pb-6 pt-2">
-  <ul class="mx-auto flex justify-center">
+  <ul class="mx-auto flex flex-wrap justify-center gap-6 sm:gap-8">
     <li>
-      <a href="#projects" class="btn btn-soft btn-soft-default">Featured projects</a>
+      <a
+        href={base}
+        class="nav-link"
+        aria-current={isHome ? "page" : undefined}
+      >
+        Featured Projects
+      </a>
+    </li>
+    <li>
+      <a
+        href={`${base}about`}
+        class="nav-link"
+        aria-current={isAbout ? "page" : undefined}
+      >
+        About
+      </a>
     </li>
   </ul>
 </nav>

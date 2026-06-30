@@ -1,0 +1,162 @@
+{
+  "person": {
+    "name": "David Schraedel",
+    "email": "davidschraedel@gmail.com",
+    "location": "Salt Lake City, UT",
+    "timezone": "America/Denver",
+    "openToWork": true,
+    "resume": "resume.pdf"
+  },
+  "about": {
+    "heading": "About",
+    "paragraphs": [
+      "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
+      "I recently finished a Master of Information Systems Management, where I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
+      "My general background is all over the place in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, family studies, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings.",
+      "I took a pretty broad approach to undergrad, minoring in Family Life and taking courses in anthropology, yoga, philosophy, religious text analysis, and interior design. One of my favorite subjects was negotiation, which changed how I approach conflict in ideas or relationships. I also sang for two years in BYU's selective choral program, first in the BYU Men's Chorus and then Concert Choir. Outside of coursework, I was involved in the Mindfulness and Meditation Club, Introverts in Business, UX Design Association, AI in Business Society, Association for Information Systems, and Product Management Association. I also enjoyed international film showings, where I was exposed to perspectives from and about other cultures.",
+      "Before university, I earned the Eagle Scout award. My project involved organizing and leading the production of 37 pairs of pajama pants donated to patients at the Utah Valley Regional Medical Center. In high school, I served as head editor for our 2015 graduation video.",
+      "The through-line in how people describe me has been that I listen well and stay genuinely curious. I think before I speak, I care about getting details right, and I am genuinely interested in the people I work with. If there is anything I’m most proud of, it’s that I have an open mind with high standards."
+    ],
+    "images": {
+      "image-1": "image-1.jpg",
+      "image-2": "image-2.jpg",
+      "image-3": "image-3.jpg"
+    }
+  },
+  "hero": {
+    "contrastLead": "From playing live improv music for contemporary dance to earning a minor in Family Life, I'm not your typical guy in tech.",
+    "professionalSentence": "I bring that same practical attention to detail, empathy, and collaboration to everything I build."
+  },
+  "handshakeLine": "Working on something meaningful? I'd love to connect.",
+  "presence": {
+    "github": "https://github.com/davidschraedel",
+    "linkedin": "https://www.linkedin.com/in/david-schraedel",
+    "substack": "https://substack.com/@davidschraedel"
+  },
+  "timeline": [
+    {
+      "start": "2015-01",
+      "label": "Earned Eagle Scout — the project required planning, leadership, follow-through, sewing skills."
+    },
+    {
+      "date": "2016-05",
+      "label": "Busser at The Old Spaghetti Factory — 600 guests a night, ten-person team, no slack. Learned what it feels like when coordination fails and everyone notices immediately."
+    },
+    {
+      "start": "2016-01",
+      "end": "2018-01",
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language."
+    },
+    {
+      "start": "2019-04",
+      "end": "2023-04",
+      "label": "Joined Brigham Young University Department of Dance as a Contemporary Dance Accompanist, improvising live music for 15–75 dancers across 4 years using 13 instruments and music software."
+    },
+    {
+      "start": "2020-09",
+      "label": "I started my Bachelor of Science in Information Systems program at Brigham Young University. I deliberately chose an unfamiliar path to challenge myself. I took many opportunities to expand my perspective, such as studying abroad in the United Kingdom, Switzerland, and Italy, taking diverse elective courses, and earning a minor in Family Life."
+    },
+    {
+      "start": "2021-04",
+      "label": "As a Web Developer at Brigham Young University, built and maintained pages for the Arts' websites, PR, and inclusivity initiatives. I also helped them diagnose and plan to improve their website storage issues."
+    },
+    {
+      "start": "2021-08",
+      "label": "First Teaching Assistant role at BYU Marriott School of Business. I facilitated answering questions and presenting reviews for 60 students covering Python, PostgreSQL, Django, HTML/CSS, and OOP."
+    },
+    {
+      "date": "2022-01",
+      "label": "INTEX 5-day project at BYU: consolidated and normalized 7 data sources, built a working web app in C#, ASP.NET, and AWS, and presented a fully functional archeological fieldwork data entry system."
+    },
+    {
+      "date": "2021-05",
+      "label": "As a WordPress Developer at BYU College of Fine Arts and Communications, I audited 50+ undocumented workflow files, cut storage 19% across 8 department sites, and trained my replacement. I also maintained and built webpages for the Arts' websites, PR, and inclusivity initiatives"
+    },
+    {
+      "date": "2022-05",
+      "label": "Studied abroad across the United Kingdom, Switzerland, and Italy, where 30 students and I saw everyday uses of technology and the progression of tech into the Fourth Industrial Revolution."
+    },
+    {
+      "start": "2022-09",
+      "label": "Consultant Intern for The Church of Jesus Christ of Latter-day Saints. For this project, I researched data sources for a world crisis information management tool, brainstormed strategic options, and prototyped a simple solution to show the pros and cons of the initial approach pursued by the team."
+    },
+    {
+      "start": "2023-04",
+      "label": "Graduated with a Bachelor of Science in Information Systems from Brigham Young University. Received the IS Alumni Choice Award for integrity."
+    },
+    {
+      "start": "2024-04",
+      "label": "Full Stack Development Intern at OCSC, where I shipped 20+ full-stack changes to a production SaaS web application in six months."
+    },
+    {
+      "start": "2024-08",
+      "label": "UX and Web Developer at The LTN Foundation, where I led development of a responsive React site, designed and normalized a relational database, and clarified the organization's branding and information architecture."
+    },
+    {
+      "start": "2025-01",
+      "label": "Partnered with a local business to design and test agentic AI systems using LangChain — first time taking a real client's workflow friction and resolving it end-to-end with AI tooling."
+    },
+
+    {
+      "start": "2025-09",
+      "label": "Data & Systems Teaching Assistant at BYU Marriott — taught 50+ graduate students Excel statistics, Tableau, data lifecycle, and SQL; debugged student work across five languages in TA labs."
+    },
+    {
+      "start": "2025-11",
+      "label": "Delivered AI B2B growth recommendations at the BYU Marriott Case Competition — earned Best of Room."
+    },
+    {
+      "start": "2026-04",
+      "label": "Master of Information Systems Management, BYU Marriott School of Business. Emphasis in Data Engineering and Business Intelligence. Coursework: Agentic AI Systems, Data Engineering (Python, dbt, Snowflake), Data Science (R, scikit-learn), Cloud Engineering (AWS, Terraform)."
+    },
+    {
+      "start": "2026-04",
+      "label": "Engineered a Python extraction pipeline processing 6.7M+ words of YouTube transcript data into AI-ready structured context."
+    }
+  ],
+  "projects": [
+    {
+      "id": "iam",
+      "slug": "iam",
+      "name": "I AM",
+      "objective": "People struggle to articulate identity and goals in a way AI coaching products can act on consistently.",
+      "tradeOff": "We chose AWS Bedrock over OpenAI because the client needed enterprise-grade auditability and the knowledge base tooling fit their existing infrastructure, accepting a steeper learning curve and thinner community documentation.",
+      "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk",
+      "githubUrl": null,
+      "previewImageKey": "iam-demo-video",
+      "previewAlt": "I AM product demo video thumbnail on YouTube",
+      "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
+    },
+    {
+      "id": "youtube-transcript-pipeline",
+      "slug": "youtube-transcript-pipeline",
+      "name": "YouTube Transcript Pipeline",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI: not queryable, exportable, or usable for analysis.",
+      "tradeOff": "I chose to build a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It cost me more time than using a service, but provided me experience, complete control, and flexibility in end-goal use cases.",
+      "stack": ["Python", "DuckDB", "SQL"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
+      "previewImageKey": "youtube-transcript-pipeline",
+      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow"
+    },
+    {
+      "id": "soundwatch",
+      "slug": "soundwatch",
+      "name": "Soundwatch",
+      "objective": "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
+      "tradeOff": "I chose elapsed time over countdown because focus should stay on the activity, not how much is left; that meant the UX had to work harder than a standard countdown timer to feel natural.",
+      "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      "layout": "media-left",
+      "featured": true,
+      "demoUrl": "https://soundwatch.netlify.app/",
+      "githubUrl": "https://github.com/davidschraedel/stopwatch",
+      "previewImageKey": "soundwatch",
+      "previewAlt": "Soundwatch interval timer running in the browser"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+---
+interface Props {
+  contributions: string[];
+  notMyWork?: string;
+}
+
+const { contributions, notMyWork } = Astro.props;
+---
+
+<section aria-labelledby="my-role-heading" class="mt-12">
+  <h2 id="my-role-heading" class="text-xl font-semibold text-dark-moss sm:text-2xl">
+    My role
+  </h2>
+  <p class="mt-3 text-base text-interior-designer dark:text-dim-text-muted">
+    This was a collaborative product—the demo and app reflect team output. My contributions:
+  </p>
+  <ul class="mt-4 list-disc space-y-2 pl-5 text-base text-interior-designer dark:text-dim-text-muted">
+    {contributions.map((item) => <li>{item}</li>)}
+  </ul>
+  {
+    notMyWork && (
+      <p class="mt-4 text-base text-interior-designer dark:text-dim-text-muted">
+        <span class="font-medium text-dark-moss">Not my work:</span> {notMyWork}
+      </p>
+    )
+  }
+</section>
