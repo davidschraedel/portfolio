@@ -162,6 +162,12 @@ For markdown-driven content, use Astro content collections with typed frontmatte
 
 Constants used in multiple places (site name, email, social URLs) belong in one module (e.g. `src/data/site.ts`), not repeated as magic strings.
 
+### `profile.json` and `site.ts`
+
+`profile.json` is the only hand-edited content file. All components import from `site.ts` (the typed adapter), never directly from `profile.json`. This keeps the JSON format-agnostic and centralizes any derivation logic (e.g. `BASE_URL` prefixing for `resumePath`).
+
+`profile.json` is designed to be reused as a starting template across projects — copy and refine per site.
+
 ---
 
 ## Styling (Tailwind v4)
@@ -184,6 +190,31 @@ Constants used in multiple places (site name, email, social URLs) belong in one 
 ```
 
 Use theme tokens (`bg-off-white`) instead of raw hex in components.
+
+### Button system
+
+Buttons use a composable `@layer components` class system in `global.css`. Compose classes rather than writing one-off Tailwind strings for interactive elements:
+
+```html
+<!-- standard action button -->
+<a class="btn btn-soft btn-soft-default">Live demo</a>
+
+<!-- brand-specific hover -->
+<a class="btn btn-soft btn-github">GitHub</a>
+
+<!-- footer context -->
+<a class="btn btn-footer btn-linkedin">LinkedIn</a>
+```
+
+| Class | Role |
+| --- | --- |
+| `btn` | Base sizing, flex centering, border-radius, focus ring |
+| `btn-soft` | Text color + focus ring color for light-surface buttons |
+| `btn-soft-default` | Hover: sepia fill + white text |
+| `btn-footer` | White text with `mix-blend-soft-light`; hover drops blend |
+| `btn-linkedin` / `btn-github` / `btn-substack` / `btn-gmail` | Brand hover colors |
+
+Add new brand variants to `global.css` following the same `hover:bg-[hex] hover:text-[hex]` pattern.
 
 ### Rules
 
