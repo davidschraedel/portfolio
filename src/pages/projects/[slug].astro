@@ -1,35 +1,22 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection, render } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CaseStudyTldr from "../../components/CaseStudyTldr.astro";
-import MyRole from "../../components/MyRole.astro";
-import ProductionThinking from "../../components/ProductionThinking.astro";
-import { getProjectBySlug } from "../../data/projects";
+import { projects } from "../../data/projects";
 
-export async function getStaticPaths() {
-  const entries = await getCollection("projects");
-
-  return entries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
   }));
 }
 
-const { entry } = Astro.props;
-const project = getProjectBySlug(entry.id);
-
-if (!project) {
-  throw new Error(`No project metadata found for case study slug "${entry.id}".`);
-}
-
-const { Content } = await render(entry);
+const { project } = Astro.props;
 ---
 
 <BaseLayout
-  title={`${entry.data.title} — Case study`}
-  description={entry.data.problem}
+  title={`${project.name} — More`}
+  description={project.problem}
 >
   <article class="mx-auto max-w-3xl">
     <nav aria-label="Breadcrumb" class="mb-8 text-sm">
@@ -40,11 +27,11 @@ const { Content } = await render(entry);
         Home
       </a>
       <span class="mx-2 text-interior-designer/60" aria-hidden="true">/</span>
-      <span class="text-interior-designer dark:text-dim-text-muted">Case study</span>
+      <span class="text-interior-designer dark:text-dim-text-muted">{project.name}</span>
     </nav>
 
     <header>
-      <h1 class="text-3xl font-semibold text-dark-moss sm:text-4xl">{entry.data.title}</h1>
+      <h1 class="text-3xl font-semibold text-dark-moss sm:text-4xl">{project.name}</h1>
 
       <div class="mt-6 overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-dim-muted">
         <Image
@@ -57,30 +44,12 @@ const { Content } = await render(entry);
       </div>
     </header>
 
-    <div class="mt-8">
-      <CaseStudyTldr
-        problem={entry.data.problem}
-        keyDecision={entry.data.keyDecision}
-        outcome={entry.data.outcome}
-      />
+    <div class="mt-10 rounded-xl border border-sepia/20 bg-off-white/60 px-6 py-8 text-center dark:border-dim-muted dark:bg-dim-surface">
+      <p class="text-lg font-medium text-dark-moss">Coming soon</p>
+      <p class="mt-2 text-base text-interior-designer dark:text-dim-text-muted">
+        More detail on this project is in the works.
+      </p>
     </div>
-
-    <div
-      class="prose-case-study mt-10 space-y-6 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-dark-moss [&_h2:first-child]:mt-0 sm:[&_h2]:text-2xl"
-    >
-      <Content />
-    </div>
-
-    <ProductionThinking productionThinking={entry.data.productionThinking} />
-
-    {
-      entry.data.myRole && (
-        <MyRole
-          contributions={entry.data.myRole.contributions}
-          notMyWork={entry.data.myRole.notMyWork}
-        />
-      )
-    }
 
     <footer class="mt-12 flex flex-wrap gap-3 border-t border-sepia/20 pt-8 dark:border-dim-muted">
       {
