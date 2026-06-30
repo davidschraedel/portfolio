@@ -84,6 +84,10 @@ body {
     @apply hover:bg-[#ff6719] hover:text-white;
   }
 
+  .btn-gmail {
+    @apply hover:bg-[#4285F4] hover:text-white;
+  }
+
   .nav-link {
     @apply text-base text-interior-designer underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-text-muted dark:focus-visible:outline-sepia;
     opacity: 0.5;
@@ -105,5 +109,30 @@ body {
   .nav-link[aria-current="page"] {
     text-decoration-line: underline;
     opacity: 1;
+  }
+}
+
+nav[aria-label="Main"] {
+  position: relative;
+}
+
+nav[aria-label="Main"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #c7d2fe 50%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[aria-label="Main"]::after {
+    background: linear-gradient(
+      to right,
+      transparent,
+      #a8b5a0 50%,
+      transparent
+    );
   }
 }

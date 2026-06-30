@@ -6,7 +6,7 @@ const isHome = pathname === base || pathname === base.replace(/\/$/, "");
 const isAbout = pathname.startsWith(`${base}about`);
 ---
 
-<nav aria-label="Main" class="relative pb-6 pt-2">
+<nav aria-label="Main" class="pb-6 pt-2">
   <ul class="mx-auto flex flex-wrap justify-center gap-6 sm:gap-8">
     <li>
       <a
@@ -26,24 +26,5 @@ const isAbout = pathname.startsWith(`${base}about`);
         About
       </a>
     </li>
-    
   </ul>
 </nav>
-
-<style>
-  nav::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-    right: 20%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #c7d2fe 50%, transparent);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    nav::after {
-      background: linear-gradient(to right, transparent, #a8b5a0 50%, transparent);
-    }
-  }
-</style>
