@@ -21,7 +21,12 @@ export interface Project {
   videoUrl?: string;
   featured: boolean;
   isFlagship: boolean;
+  slug: string;
   skillsFor: string[];
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug);
 }
 
 export const projects: Project[] = [
@@ -40,6 +45,7 @@ export const projects: Project[] = [
     previewAlt: "Soundwatch interval timer running in the browser",
     featured: true,
     isFlagship: true,
+    slug: "soundwatch",
     skillsFor: ["React", "TypeScript", "front-end deployment"],
   },
   {
@@ -59,6 +65,7 @@ export const projects: Project[] = [
     videoUrl: "https://www.youtube.com/watch?v=__7cEyDlhgk",
     featured: true,
     isFlagship: false,
+    slug: "iam",
     skillsFor: ["React", "TypeScript", "Agentic development"],
   },
   {
@@ -70,13 +77,14 @@ export const projects: Project[] = [
     outcome:
       "Full playlist ingested to searchable SQL; bronze/silver layers with per-video fetch status and idempotent transforms",
     stack: ["Python", "DuckDB", "SQL"],
-    demoUrl: transcriptPipelineDemoVideoUrl,
+    demoUrl: "",
     githubUrl: "https://github.com/davidschraedel/youtube-transcript-pipeline",
     previewImage: transcriptPreview,
     previewAlt:
       "YouTube Transcript Pipeline CLI and DuckDB workflow — screenshot pending Streamlit/CLI capture",
     featured: true,
     isFlagship: false,
+    slug: "youtube-transcript-pipeline",
     skillsFor: ["Python", "data pipelines", "SQL"],
   },
 ];

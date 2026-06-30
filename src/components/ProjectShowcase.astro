@@ -5,31 +5,16 @@ import type { Project } from "../data/projects";
 
 interface Props {
   project: Project;
-  variant: "flagship" | "compact";
 }
 
-const { project, variant } = Astro.props;
+const { project } = Astro.props;
 
 const mediaLink = project.videoUrl ?? project.demoUrl;
-const isFlagship = variant === "flagship";
-
-const imageSizes = isFlagship
-  ? "(max-width: 768px) 100vw, 720px"
-  : "(max-width: 768px) 100vw, 400px";
 ---
 
-<article
-  class:list={[
-    "overflow-hidden rounded-xl ring-1 ring-sepia/25 dark:ring-dim-muted",
-    isFlagship ? "bg-off-white dark:bg-dim-elevated" : "bg-off-white/80 dark:bg-dim-surface",
-  ]}
->
-  <div
-    class:list={[
-      isFlagship ? "grid gap-6 md:grid-cols-2 md:gap-8" : "flex flex-col gap-4",
-    ]}
-  >
-    <div class:list={[isFlagship ? "" : "order-first"]}>
+<article class="overflow-hidden rounded-xl bg-off-white/80 ring-1 ring-sepia/25 dark:bg-dim-surface dark:ring-dim-muted">
+  <div class="flex flex-col gap-4">
+    <div class="order-first">
       {
         mediaLink ? (
           <a
@@ -42,43 +27,25 @@ const imageSizes = isFlagship
             <Image
               src={project.previewImage}
               alt={project.previewAlt}
-              widths={isFlagship ? [400, 600, 800] : [300, 400, 500]}
-              sizes={imageSizes}
-              class:list={[
-                "h-auto w-full object-cover transition-opacity hover:opacity-95",
-                isFlagship ? "max-h-80 md:max-h-none" : "max-h-48",
-              ]}
+              widths={[300, 400, 500]}
+              sizes="(max-width: 768px) 100vw, 400px"
+              class="h-auto max-h-48 w-full object-cover opacity-80 transition-opacity hover:opacity-95"
             />
           </a>
         ) : (
           <Image
             src={project.previewImage}
             alt={project.previewAlt}
-            widths={isFlagship ? [400, 600, 800] : [300, 400, 500]}
-            sizes={imageSizes}
-            class:list={[
-              "h-auto w-full object-cover",
-              isFlagship ? "max-h-80 md:max-h-none" : "max-h-48",
-            ]}
+            widths={[300, 400, 500]}
+            sizes="(max-width: 768px) 100vw, 400px"
+            class="h-auto max-h-48 w-full object-cover opacity-80"
           />
         )
       }
     </div>
 
-    <div class:list={[isFlagship ? "flex flex-col justify-center p-6 md:p-8" : "px-4 pb-5"]}>
-      <h3
-        class:list={[
-          "font-semibold text-dark-moss",
-          isFlagship ? "text-2xl" : "text-xl",
-        ]}
-      >
-        {project.name}
-        {project.isFlagship && (
-          <span class="ml-2 text-sm font-medium uppercase tracking-wide text-sepia">
-            Flagship
-          </span>
-        )}
-      </h3>
+    <div class="px-4 pb-5">
+      <h3 class="text-xl font-semibold text-dark-moss">{project.name}</h3>
 
       <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-dim-text-muted">
         <div>
@@ -107,7 +74,7 @@ const imageSizes = isFlagship
       <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
         {
           project.stack.map((tag) => (
-            <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-dim-muted dark:text-dark-moss">
+            <li class="rounded-full bg-skin/50 px-3 py-1 text-xs text-dark-moss dark:bg-dim-muted dark:text-dark-moss">
               {tag}
             </li>
           ))
@@ -139,6 +106,12 @@ const imageSizes = isFlagship
             </a>
           )
         }
+        <a
+          href={`${import.meta.env.BASE_URL}projects/${project.slug}/`}
+          class="btn btn-soft btn-soft-default"
+        >
+          Case study →
+        </a>
       </div>
     </div>
   </div>

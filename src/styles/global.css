@@ -61,20 +61,11 @@ body {
   }
 
   .btn-soft-default {
-    @apply relative isolate overflow-hidden transition-[color] duration-200 ease-in-out;
-  }
-
-  .btn-soft-default::before {
-    content: "";
-    @apply pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-yellow-950 to-indigo-200 opacity-0 transition-opacity duration-200 ease-in-out dark:from-dim-gradient-from dark:to-dim-gradient-to;
+    @apply transition-[color,background-color] duration-200 ease-in-out;
   }
 
   .btn-soft-default:hover {
-    @apply text-white;
-  }
-
-  .btn-soft-default:hover::before {
-    @apply opacity-100;
+    @apply bg-sepia text-white;
   }
 
   .btn-footer {
@@ -87,5 +78,61 @@ body {
 
   .btn-github {
     @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+  }
+
+  .btn-substack {
+    @apply hover:bg-[#ff6719] hover:text-white;
+  }
+
+  .btn-gmail {
+    @apply hover:bg-[#4285F4] hover:text-white;
+  }
+
+  .nav-link {
+    @apply text-base text-interior-designer underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-text-muted dark:focus-visible:outline-sepia;
+    opacity: 0.5;
+    transition:
+      opacity 200ms ease-in-out,
+      color 200ms ease-in-out,
+      text-shadow 200ms ease-in-out,
+      text-decoration-color 200ms ease-in-out;
+  }
+
+  .nav-link:hover {
+    text-decoration-line: underline;
+    opacity: 1;
+    text-shadow:
+      0 0 8px rgba(137, 108, 85, 0.3),
+      0 0 20px rgba(137, 108, 85, 0.1);
+  }
+
+  .nav-link[aria-current="page"] {
+    text-decoration-line: underline;
+    opacity: 1;
+  }
+}
+
+nav[aria-label="Main"] {
+  position: relative;
+}
+
+nav[aria-label="Main"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #c7d2fe 50%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[aria-label="Main"]::after {
+    background: linear-gradient(
+      to right,
+      transparent,
+      #a8b5a0 50%,
+      transparent
+    );
   }
 }
