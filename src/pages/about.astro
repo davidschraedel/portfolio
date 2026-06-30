@@ -23,7 +23,7 @@ import profile from "../data/profile.json";
       {profile.timeline.map((entry) => (
         <li class="flex gap-4">
           <span class="mt-1 w-16 shrink-0 text-sm text-sepia dark:text-dim-highlight">
-            {(entry.start ?? entry.date ?? "").slice(0, 4)}
+            {(entry.start ?? "").slice(0, 4)}
           </span>
           <p class="text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
             {entry.label}
