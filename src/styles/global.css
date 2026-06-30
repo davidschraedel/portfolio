@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-off-white: #fcfcfc;
+  /* --color-off-white: #fcfcfc; */
+  --color-off-white: #fafafa;
   --color-dark-moss: #1d2019;
   --color-interior-designer: #3f3b31;
   --color-sepia: #896c55;
@@ -110,10 +111,6 @@ body {
     text-decoration-line: underline;
     opacity: 1;
   }
-}
-
-nav[aria-label="Main"] {
-  position: relative;
 }
 
 nav[aria-label="Main"]::after {

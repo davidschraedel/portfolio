@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
 import { site } from "../data/site";
+import headshotUrl from "../assets/headshot.svg?url";
 
 interface Props {
   title?: string;
@@ -23,26 +24,25 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={headshotUrl} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <ViewTransitions />
   </head>
-  <body class="bg-off-white text-dark-moss antialiased dark:bg-dim-page text-pretty">
-    <div class="m-6 my-7 overflow-x-clip sm:m-10 md:m-20 md:my-10">
-      <div class="overflow-hidden rounded-lg shadow-md">
-        <header class="bg-off-white text-center dark:bg-dim-surface">
+  <body class=" bg-off-white text-dark-moss antialiased dark:bg-dim-page text-pretty">
+    <div class="m-6 my-7 sm:m-10 md:m-20 md:my-10">
+        <header class="rounded-t-4xl overflow-hidden bg-off-white text-center dark:bg-dim-surface">
           <Hero />
-          <Nav />
         </header>
-
+        <Nav />
         <main
-          class="bg-off-white px-4 py-10 dark:bg-dim-surface sm:px-12 md:px-20 lg:px-32 xl:px-48"
+          class="bg-off-white px-4 py-10 dark:bg-dim-surface sm:px-12 md:px-20 lg:px-24 xl:px-44"
         >
           <slot />
         </main>
 
         <Footer />
-      </div>
+      
     </div>
   </body>
 </html>

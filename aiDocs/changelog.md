@@ -2,6 +2,18 @@
 
 A concise history of changes.
 
+## 2026-06-30 (fix — case study placeholder)
+
+- Removed hallucinated content from `src/content/projects/*.md` (all three case study files deleted)
+- Simplified `[slug].astro` — drops content collections entirely; reads from `projects.ts` directly and renders a "coming soon" placeholder card with project links
+- `ProjectShowcase` card link now points to `/projects/[slug]` consistently
+
+## 2026-06-29 (docs — aiDocs expansion)
+
+- Added `aiDocs/architecture.md` — documents data layer (`profile.json` → `site.ts` → components), layout shell, button system, dim mode, and content collection schema
+- Expanded `aiDocs/coding-style.md` — added `profile.json`/`site.ts` section and button system reference table
+- Updated `aiDocs/context.md` — status note and links reflect current `architecture.md` entry
+
 ## 2026-06-29 (D0/D1 — project showcase refactor)
 
 - Removed flagship standout layout from `ProjectShowcase`; all projects now render in a uniform two-column grid
