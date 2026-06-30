@@ -115,7 +115,7 @@
       "id": "iam",
       "slug": "iam",
       "name": "I AM",
-      "objective": "People struggle to articulate identity and goals in a way AI coaching products can act on consistently.",
+      "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
       "tradeOff": "We chose AWS Bedrock over OpenAI because the client needed enterprise-grade auditability and the knowledge base tooling fit their existing infrastructure, accepting a steeper learning curve and thinner community documentation.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
