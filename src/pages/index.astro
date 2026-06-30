@@ -6,12 +6,7 @@ import ProjectShowcase from "../components/ProjectShowcase.astro";
 import { projects } from "../data/projects";
 import { site } from "../data/site";
 
-const flagship = projects.find((project) => project.isFlagship);
-const compactProjects = projects.filter((project) => project.featured && !project.isFlagship);
-
-if (!flagship) {
-  throw new Error("Exactly one flagship project is required.");
-}
+const featuredProjects = projects.filter((project) => project.featured);
 ---
 
 <BaseLayout
@@ -25,16 +20,12 @@ if (!flagship) {
       subtitle="Check out some of my projects I am proud of and enjoyed."
     />
 
-    <div class="space-y-10">
-      <ProjectShowcase project={flagship} variant="flagship" />
-
-      <div class="grid gap-8 md:grid-cols-2">
-        {
-          compactProjects.map((project) => (
-            <ProjectShowcase project={project} variant="compact" />
-          ))
-        }
-      </div>
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        featuredProjects.map((project) => (
+          <ProjectShowcase project={project} />
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
