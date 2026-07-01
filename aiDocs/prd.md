@@ -2,7 +2,7 @@
 
 **Product:** Personal Developer Portfolio Site  
 **Author:** David Schraedel  
-**Version:** 3.1  
+**Version:** 3.2  
 **Status:** Active  
 **Last Updated:** June 30, 2026
 
@@ -20,20 +20,20 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 
 **Dual audience, one visit:**
 
-| Audience                        | Needs                                    | How the site delivers                                                                                                  |
-| ------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, professional sentence with domain/stack signal, primary CTAs, timeline with location/timezone |
-| **Hiring managers (secondary)** | Depth, trade-offs, case studies          | Trade-off/solution on cards, dedicated case study pages with TL;DR + deep-dive                                         |
-| **Anyone reading for you**      | Genuine voice, memorable background      | Contrast hero, interleaved timeline                                                                                    |
+| Audience                        | Needs                                    | How the site delivers                                                                     |
+| ------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero copy with domain/stack signal, contact and resume reachable |
+| **Hiring managers (secondary)** | Depth, judgment, repos                   | Problem/Solution on cards; optional case study pages when relevant context is available   |
+| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                        |
 
-**Link tiers:**
+**Link tiers** (content priority — not layout prescription):
 
-- **Primary (hire/collaborate):** Email, LinkedIn, Resume — Hook and Handshake close
-- **Secondary (public presence):** GitHub, Substack — Presence section; not hero CTAs
+- **Primary (hire/collaborate):** Email, LinkedIn, Resume — `person.email`, `person.resume`, `presence.linkedin`
+- **Secondary (public presence):** GitHub, Substack — `presence.github`, `presence.substack`
 
 Long-form writing stays on Substack (link out only). No on-site blog or post mirroring.
 
-**Content maintenance:** All copy and facts live in **`profile.json`**. The site may use derived code modules at build time to type and expose that data to components — those modules are not hand-edited content sources.
+**Content maintenance:** All copy and facts live in **`profile.json`**. The site will use derived code modules at build time to type and expose that data to components — those modules are not hand-edited content sources. Agents must not edit `profile.json`.
 
 ---
 
@@ -46,7 +46,7 @@ Long-form writing stays on Substack (link out only). No on-site blog or post mir
 
 ### Secondary: Engineering hiring manager
 
-- Spends 3–10 minutes; reads case studies, skims repos, looks for production thinking
+- Spends 3–10 minutes; reads project detail, skims repos, looks for production thinking
 - **Success:** Enough signal for an interview decision without a take-home
 
 ### Not for
@@ -79,13 +79,12 @@ Before sharing with recruiters:
 
 ### Quantitative metrics (optional — when analytics added)
 
-| Metric             | Target              | Notes            |
-| ------------------ | ------------------- | ---------------- |
-| Scroll past hero   | ≥ 70%               | Plausible/Fathom |
-| Demo click-through | ≥ 50% of card views | Link events      |
-| GitHub engagement  | ≥ 30% of sessions   | Outbound clicks  |
-| LCP (mobile)       | < 1.5s              | PageSpeed        |
-| Mobile usability   | No issues at 375px  | Manual QA        |
+| Metric             | Target              | Notes           |
+| ------------------ | ------------------- | --------------- |
+| Demo click-through | ≥ 50% of card views | Link events     |
+| GitHub engagement  | ≥ 30% of sessions   | Outbound clicks |
+| LCP (mobile)       | < 1.5s              | PageSpeed       |
+| Mobile usability   | Readable on phone   | Manual QA       |
 
 Not required for launch. Track after deploy if useful.
 
@@ -95,33 +94,32 @@ Not required for launch. Track after deploy if useful.
 
 Hard disqualifiers — fix before public recruiter sharing:
 
-| Anti-pattern                       | Launch gate                                               |
-| ---------------------------------- | --------------------------------------------------------- |
-| Tutorial/clone featured projects   | Zero in featured set                                      |
-| Broken demo links                  | Every demo resolves in < 3s; no unhandled errors          |
-| Single "initial commit" repo dumps | ≥ 15 commits, ≥ 3 named commits in top 10, ≥ 2 weeks span |
-| Portfolio site as featured project | Not in project section                                    |
-| Unclear individual contribution    | Explicit on collaborative projects                        |
-| Technology tourism                 | ≥ 2 of 3 projects share a primary stack                   |
-| Abandoned public GitHub repos      | Archive/delete repos with < 5 commits or no README        |
+| Anti-pattern                       | Launch gate                                                                                 |
+| ---------------------------------- | ------------------------------------------------------------------------------------------- |
+| Tutorial/clone featured projects   | Zero in featured set                                                                        |
+| Broken demo links                  | Every demo resolves in < 3s; no unhandled errors                                            |
+| Single "initial commit" repo dumps | ≥ 15 commits, ≥ 3 named commits in top 10, ≥ 2 weeks span                                   |
+| Portfolio site as featured project | Not in project section                                                                      |
+| Unclear individual contribution    | Explicit on collaborative projects                                                          |
+| Technology tourism                 | Featured projects should read as a coherent professional story, not unrelated stack hopping |
+| Abandoned public GitHub repos      | Archive/delete repos with < 5 commits or no README                                          |
 
 ---
 
 ## Site story architecture
 
-The site tells one story in five beats. **Layout is flexible** — single scroll, multiple pages, or a mix — as long as every beat is easy to find and the story reads in order. The site should be simple, and match the styling of the original template.
+The site tells one story in four content beats. **Layout is flexible** — single scroll, multiple pages, or a mix. Visual design should be professional and distinctive; preserve each project's existing style when refactoring.
 
-**Hook → Track → Proof → Presence → Handshake**
+**Hook → Story → Projects → Contact**
 
-| Beat      | Purpose          | Contents                                                                |
-| --------- | ---------------- | ----------------------------------------------------------------------- |
-| Hook      | First impression | Contrast lead, professional sentence, primary CTAs, photo               |
-| Track     | Story arc        | Interleaved timeline — credentials + human details                      |
-| Proof     | Evidence         | 2–3 project cards: objective, stack, trade-off + demo/GitHub/case study |
-| Presence  | Secondary reach  | GitHub, Substack, and other public profiles                             |
-| Handshake | Close            | Specific invitation + primary CTAs repeated                             |
+| Beat     | Content from `profile.json`                                                                  |
+| -------- | -------------------------------------------------------------------------------------------- |
+| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
+| Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
+| Projects | All entries where `featured: true` — Problem, Solution, stack, outbound links                |
+| Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
 
-**Nav:** Clear paths to story, projects, and contact — labels and routes may vary by design.
+Navigation labels and page structure may vary by design.
 
 ---
 
@@ -129,91 +127,46 @@ The site tells one story in five beats. **Layout is flexible** — single scroll
 
 ### Must have
 
-**1. Hero**
+**1. Hero (Hook)**
 
-- Contrast lead (what makes you unusual) + one **Input → Output** professional sentence
-- Professional sentence must still signal **role, domain, and stack** — not generic
+- `hero.contrastLead` and `hero.professionalSentence` rendered on the site
+- Professional sentence signals **role, domain, and stack** — not generic
 
-**2. Timeline**
+**2. Story**
 
-- The Track beat — credentials interleaved with human details, not a generic bio wall
-- Single chronological list
-- Location and timezone visible (in timeline or person facts)
-- Semantic markup where possible (`<ol>`, `<li>`, `<time datetime="...">`)
+- `about.paragraphs` and `about.heading` available on the site
+- `timeline` as a chronological list — credentials interleaved with human details
 
-**3. Featured project cards (2–3)**
+**3. Featured projects**
 
-The Proof beat shows:
+- All projects with `featured: true` in `profile.json` (count is dynamic)
+- Each card shows **Problem** and **Solution** (sourced from `objective` and `tradeOff` in JSON)
+- Stack tags per project
+- Live demo and GitHub links when URLs are set in `profile.json`
 
-- Objective (one-sentence problem)
-- Stack tags (scannable without hover)
-- Trade-off (what you gave up and why)
+**4. Contact and links**
 
-Also on each card (recruiter actions preserved):
+- Resume PDF reachable from the site
+- Email, LinkedIn, GitHub, and Substack links reachable without hunting (`person.email`, `person.resume`, `presence.*`)
+- No contact forms
 
-- Live demo link (when available)
-- GitHub link (when available)
-- Case study link
+**5. Stack and deploy**
 
-Outcome stays on case study pages only — not homepage cards.
+- Astro static site, Tailwind v4, deployed to GitHub Pages
+- Working demos where `demoUrl` is provided
 
-Content-driven card layout.
+**6. Mobile-readable**
 
-**4. Presence (“Where to find me”)**
+- Usable on a phone; no horizontal scroll; readable type
 
-- Secondary links: GitHub, Substack, future profiles
-- No post list, no RSS sync, no on-site writing section
+### Nice to have
 
-**5. Handshake (close)**
-
-- One specific sentence about conversations you're open to (role types, domains)
-- Repeats primary links: Email, LinkedIn, Resume
-- Integrates recruiter-relevant facts into the story arc — no standalone “For Recruiters” block
-
-**6. Case study pages**
-
-Each featured project gets a dedicated case study page, if there is enough information to give the project one.
-
-_Skim layer (top):_
-
-- Problem / Key decision / Outcome — one sentence each; fully informative alone
-
-_Deep-dive layer:_
-
-- Context, your role, technical decisions with rationale, outcome and learning
-
-**7. Live, stable deployments**
-
-- Working demos where applicable; portfolio on GitHub Pages
-- Uptime monitoring on demo links before broad recruiter sharing
-
-**8. Resume download**
-
-- PDF linked from and Handshake close
-
-**9. Mobile-first**
-
-- Usable at 375px; touch targets ≥ 44px; body text ≥ 16px; no horizontal scroll
-
-**10. Structured data and technical SEO**
-
-- JSON-LD only (no microdata)
-- Site homepage: `@graph` with separated Person, professional experience list, interests list, projects list
-- Case studies: `Article` or `CreativeWork` + author → Person
-- Sitemap, `robots.txt`, canonicals, OG/Twitter meta, alt text on project images
-- Optional `llms.txt`
-
-Crawlability choices favor structured HTML and JSON-LD over gimmicks — not prescriptive content shape. Audit if visibility issues appear.
-
----
-
-### Nice to have (after launch validation)
-
+- Case study pages with real depth — only when sufficient content exists; never hallucinate
+- `handshakeLine` surfaced on the site
+- JSON-LD, sitemap, `robots.txt`, canonicals, OG/Twitter meta, `llms.txt`
 - Privacy-friendly analytics (Plausible/Fathom)
 - One technical blog post on Substack (not mirrored on-site)
-- Scroll-based interactivity (one moment max — must not overshadow projects)
-- AI “ask my portfolio” chatbot (only if outreach is healthy but depth conversations are rare)
-- Hidden creative easter-egg page (`noindex`, excluded from sitemap and professional schema)
+- Hidden creative easter-egg page (`noindex`, excluded from sitemap)
 
 ---
 
@@ -223,15 +176,14 @@ Crawlability choices favor structured HTML and JSON-LD over gimmicks — not pre
 _As a recruiter with 60 seconds, I want role, stack, and real projects immediately, so I can decide whether to advance this profile._
 
 - Professional sentence signals role/domain/stack without reading paragraphs
-- 2–3 project cards visible in first scroll with stack tags and demo/GitHub links
+- Featured projects visible with stack tags and demo/GitHub links where available
 - No tutorial clones in featured set
 
-**US-02 — Hiring manager deep dive**  
-_As a hiring manager, I want a structured case study with TL;DR and depth, so I can assess judgment without a take-home._
+**US-02 — Hiring manager depth**  
+_As a hiring manager, I want enough project detail to assess judgment._
 
-- TL;DR: problem / decision / outcome
-- Deep-dive includes at least one “chose X over Y because Z” rationale
-- GitHub link on case study where applicable
+- Problem and Solution on each card
+- GitHub link on card or case study where applicable
 
 **US-03 — Live demo verification**  
 _As a hiring manager, I want working demos, so I can assess deployment ability._
@@ -239,28 +191,25 @@ _As a hiring manager, I want working demos, so I can assess deployment ability._
 - Demo links resolve in < 3s where provided
 
 **US-04 — Contact action**  
-_As a recruiter ready to reach out, I want role preferences and contact in under 5 seconds._
+_As a recruiter ready to reach out, I want contact and resume without hunting._
 
-- Handshake close states what you're open to
-- Email, LinkedIn, Resume reachable in one click
-- Location/timezone visible on page (timeline or person facts)
+- Email, LinkedIn, Resume reachable in one click from the site
 
 **US-05 — Mobile screening**  
-_As a recruiter on my phone, I want fast load and readable layout._
+_As a recruiter on my phone, I want a readable layout._
 
-- LCP < 1.5s target; no overflow at 375px
+- Fast load; readable on mobile
 
 **US-06 — GitHub credibility**  
 _As a hiring manager, I want clean repos with meaningful history._
 
 - Featured repos meet anti-pattern commit thresholds
-- GitHub accessible from Presence and project cards
+- GitHub accessible from the site and project cards
 
 **US-07 — Stack relevance**  
-_As a recruiter matching stack, I want to scan tags on cards without opening case studies._
+_As a recruiter matching stack, I want to scan tags on cards._
 
-- Stack tags visible on each card
-- ≥ 2 of 3 projects share a primary technology
+- Stack tags visible on each featured project card
 
 **US-08 — Cold-read validation**  
 _As the site owner, I want peers to describe my role and name a project after 60 seconds before I share with recruiters._
@@ -283,17 +232,16 @@ _As the site owner, I want peers to describe my role and name a project after 60
 
 ## Risks and mitigations
 
-| Risk                                    | Mitigation                                             |
-| --------------------------------------- | ------------------------------------------------------ |
-| Live demos go down                      | UptimeRobot; monthly link audit                        |
-| Looks like every other portfolio        | Voice-first copy + trade-offs; not visual gimmicks     |
-| Tutorial projects featured              | Hard gate — zero clones                                |
-| Differentiation buries recruiter signal | Professional sentence + stack on cards; cold-read test |
-| Content drift across files              | Single `profile.json` source of truth                  |
-| Over-engineered portfolio site          | No featured self-link; plain Astro                     |
-| AI-sounding copy                        | Read-aloud test; specific first-person voice           |
-| Broken GitHub links                     | Full link audit before sharing                         |
-| JSON-LD misleading agents               | Separated `@graph` lists; match visible HTML           |
+| Risk                             | Mitigation                                                             |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| Live demos go down               | UptimeRobot; monthly link audit                                        |
+| Looks like every other portfolio | Voice-first copy + Problem/Solution framing; distinctive visual design |
+| Tutorial projects featured       | Hard gate — zero clones                                                |
+| Copy buries recruiter signal     | Professional sentence + stack on cards; cold-read test                 |
+| Content drift across files       | Single `profile.json` source of truth                                  |
+| Over-engineered portfolio site   | No featured self-link; plain Astro                                     |
+| AI-sounding copy                 | Read-aloud test; specific first-person voice                           |
+| Broken GitHub links              | Full link audit before sharing                                         |
 
 ---
 

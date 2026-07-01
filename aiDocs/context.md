@@ -2,23 +2,25 @@
 
 Personal developer portfolio — recruiter-scannable and voice-first. One-line pitch: [description.md](./description.md)
 
-**Status:** Initial refactor shipped. **D0 substantially complete** — `profile.json` wired as SSOT, `site.ts` adapter, About page + Timeline, Hero in layout, dim mode, button system. D1–D4 not started — see [differentiation roadmap](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md). Legacy React app in `legacy/` runnable via `npm run dev:legacy` until legacy deletion in initial refactor roadmap.
+**Status:** MVP shipped on Astro. Hero (layout shell), Story page (`/about`), featured projects grid, and contact links are implemented; `profile.json` is the single content source with `site.ts` and `projects.ts` adapters. Deploys to GitHub Pages from the `staging` branch. Legacy React/Vite app remains in `legacy/` (`npm run dev:legacy`).
 
-**Product docs:** [prd.md](./prd.md) v3.0 · [mvp.md](./mvp.md) v2.0 · Content model: `src/data/profile.json` (active single source of truth — reusable template for other projects)
+**Post-MVP (not blocking launch):** Case study routes exist as “coming soon” stubs; `handshakeLine` is in data but not rendered; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. Hero and about copy still need cold-read validation before recruiter outreach — see [mvp.md](./mvp.md) §5.
 
-**Stack:** Astro · Tailwind v4 · React islands (sparingly) · GitHub Pages
+**Product docs:** [prd.md](./prd.md) v3.2 · [mvp.md](./mvp.md) v2.2 · Content model: `src/data/profile.json` (single source of truth — reusable template for other projects)
+
+**Stack:** Astro · Tailwind v4 · React integration configured (no islands in use yet) · GitHub Pages
 
 ---
 
 ## aiDocs/ — permanent knowledge (tracked)
 
-| File                                 | What's in it                                                                 |
-| ------------------------------------ | ---------------------------------------------------------------------------- |
-| [prd.md](./prd.md)                   | Product requirements — features, users, success criteria (v3.0)              |
-| [mvp.md](./mvp.md)                   | Minimum product for success — validation gates (v2.0)                        |
-| [coding-style.md](./coding-style.md) | How to write code in this repo                                               |
-| [architecture.md](./architecture.md) | Data layer, layout shell, dim mode, button system                            |
-| [changelog.md](./changelog.md)       | Concise change history - update with every commit                            |
+| File                                 | What's in it                                                    |
+| ------------------------------------ | --------------------------------------------------------------- |
+| [prd.md](./prd.md)                   | Product requirements — features, users, success criteria (v3.2) |
+| [mvp.md](./mvp.md)                   | Minimum product for success — validation gates (v2.2)           |
+| [coding-style.md](./coding-style.md) | How to write code in this repo                                  |
+| [architecture.md](./architecture.md) | Data layer, layout shell, pages, dim mode, button system        |
+| [changelog.md](./changelog.md)       | Concise change history — update with every commit               |
 
 ---
 
