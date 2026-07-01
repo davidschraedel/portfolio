@@ -1,13 +1,13 @@
 # Portfolio
 
-Personal developer portfolio — recruiter-scannable, voice-first. Refactored from a legacy React/Vite site to **Astro + Tailwind v4**, with updated copy, styling, and a content model built for reuse.
+Personal developer portfolio. Refactored from a legacy React/Vite site to **Astro + Tailwind v4**, with updated copy, styling, and a single source-of-truth content model built for reuse.
 
 ## What changed
 
 - **Framework:** React SPA → Astro static site (React islands where needed)
 - **Content:** `src/data/profile.json` is the single source of truth; `site.ts` and `projects.ts` adapt it for components
 - **Pages:** Home (hero + projects), Story (`/about`), project case studies (`/projects/[slug]`), 404
-- **Design:** Dim mode, sticky nav, button system, recruiter-focused project cards (objective / trade-off)
+- **Design:** Dim mode, sticky nav, button system, recruiter-focused project cards
 - **Deploy:** GitHub Pages via `.github/workflows/deploy.yml`
 - **Legacy:** Original app preserved in `legacy/` — `npm run dev:legacy` for side-by-side comparison
 
