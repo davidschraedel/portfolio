@@ -1,10 +1,7 @@
 # Portfolio Website MVP
 
-**Version:** 2.0  
-**Last Updated:** June 22, 2026  
-**Changelog:** v2.0 — Aligned with differentiation revision: voice-first story arc, timeline, trade-off cards, Presence links, `profile.json` maintenance, Handshake replaces “For Recruiters” block. Removed development phase references (those live in roadmaps).
-
-**Implementation:** See [differentiation revision roadmap](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md) (steps D0–D4).
+**Version:** 2.2  
+**Last Updated:** June 30, 2026
 
 ---
 
@@ -18,28 +15,28 @@ The site also needs to sound like a real person, not a LinkedIn summary. Those g
 
 ## 2. Minimum feature set
 
-Everything required for a successful portfolio **after the differentiation revision**. Shipped case study pages from the initial refactor remain part of the product.
+The minimum set required for a successful portfolio launch:
 
-| # | What | Why it's minimum |
-| - | ---- | ---------------- |
-| **A** | **Hero** — contrast lead + professional sentence (Input → Output, still signals role/stack/domain) + primary CTAs (Resume, Email, LinkedIn) | First impression + contact path |
-| **B** | **Timeline** — interleaved credentials and human details (`#experience`) | Replaces flat About; recruiter facts (location, timezone) visible |
-| **C** | **2–3 project cards** — objective, stack tags, trade-off + live demo, GitHub, case study links | What recruiters evaluate in 60s |
-| **D** | **Presence** — secondary links (GitHub, Substack, …) in “Where to find me” | Public presence without competing with primary CTAs |
-| **E** | **Handshake footer** — specific “open to…” line + repeated primary links | Replaces standalone “For Recruiters” block |
-| **F** | **Case study pages** — TL;DR (problem / decision / outcome) + deep-dive | Hiring manager depth (already shipped) |
-| **G** | **`profile.json`** — single file you edit for all content | Maintenance without hunting multiple modules |
+| #     | What                                                                                                     | Why it's minimum                            |
+| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| **A** | **Hero** — `contrastLead` + `professionalSentence` from `profile.json`                                   | First impression; signals role/stack/domain |
+| **B** | **Story** — `about` paragraphs + `timeline`                                                              | Voice and background beyond a headline      |
+| **C** | **Featured projects** — all `featured: true` entries with Problem, Solution, stack, demo/GitHub when set | What recruiters evaluate in 60s             |
+| **D** | **Contact links** — resume, email, LinkedIn, GitHub, Substack from `profile.json`                        | Reachable without hunting                   |
+| **E** | **`profile.json`** — single content source; agents do not edit it                                        | One place for all copy and facts            |
 
-**Not required:** on-site blog, Substack post cards, RSS sync, analytics, chatbot, animations before hero content.
+**Not required for launch:** dedicated case study depth, `handshakeLine` on the site, JSON-LD, on-site blog, Substack post cards, RSS sync, analytics, chatbot.
 
 ---
 
 ## 3. Link tiers
 
-| Tier | Examples | Placement |
-| ---- | -------- | --------- |
-| Primary | Email, LinkedIn, Resume | Hero + Handshake |
-| Secondary | GitHub, Substack | Presence (+ optional footer mention) |
+Which URLs matter most — not where they appear on the page:
+
+| Tier      | Examples                | Source in `profile.json`                             |
+| --------- | ----------------------- | ---------------------------------------------------- |
+| Primary   | Email, LinkedIn, Resume | `person.email`, `presence.linkedin`, `person.resume` |
+| Secondary | GitHub, Substack        | `presence.github`, `presence.substack`               |
 
 ---
 
@@ -47,9 +44,8 @@ Everything required for a successful portfolio **after the differentiation revis
 
 - **Astro** static output on GitHub Pages
 - **Tailwind v4** — no React islands unless a task requires it
-- **`profile.json`** → derived `site.ts`, `timeline.ts`, `projects.ts`
-- **JSON-LD** on homepage (`@graph`, separated professional / interests / projects) and case studies
-- **Technical SEO baseline:** sitemap, `robots.txt`, canonicals, OG tags
+- **`profile.json`** as the single content source, with derived code adapters where the stack requires them (e.g. image imports, typed exports)
+- Basic page metadata (`<title>`, `<meta description>`)
 
 ---
 
@@ -75,12 +71,12 @@ Share the URL with 3 people (technical peer, hiring-adjacent contact, someone wh
 
 **Fail signals:**
 
-| What they say | Fix |
-| ------------- | --- |
-| "Some kind of developer?" | Strengthen `professionalSentence` with role + stack/domain |
-| Can't name a project | Rewrite objectives; check card scannability |
-| Can't find demo/GitHub | Make links more prominent on cards |
-| Don't know how to contact you | Strengthen Handshake + hero primary CTAs |
+| What they say                 | Fix                                                        |
+| ----------------------------- | ---------------------------------------------------------- |
+| "Some kind of developer?"     | Strengthen `professionalSentence` with role + stack/domain |
+| Can't name a project          | Strengthen Problem copy on cards; check scannability       |
+| Can't find demo/GitHub        | Make links more prominent on cards                         |
+| Don't know how to contact you | Make resume, email, and LinkedIn easier to find            |
 
 Don't send to real recruiters until all 3 pass the hard criteria.
 
@@ -88,4 +84,4 @@ Don't send to real recruiters until all 3 pass the hard criteria.
 
 ## MVP in one sentence
 
-**A deployed Astro site with a genuine hero, interleaved timeline, 2–3 project cards with demos, secondary presence links, a specific handshake footer, case study depth, and one `profile.json` to maintain — validated by a 3-person cold-read test.**
+**A deployed Astro site driven by `profile.json` — hero copy, about + timeline, featured projects with Problem/Solution and stack, contact links reachable, and a professional unique design.**

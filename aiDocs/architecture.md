@@ -2,96 +2,121 @@
 
 How this site is structured — data flow, file responsibilities, and notable design decisions.
 
-**Last updated:** June 29, 2026
+**Last updated:** July 1, 2026
+
+---
+
+## Site map
+
+Information architecture follows the PRD story beats (layout is split across routes):
+
+| Beat     | Route / location              | Source                                      |
+| -------- | ----------------------------- | ------------------------------------------- |
+| Hook     | Hero in layout (every page)   | `site.ts` → `profile.json` `hero`, `person` |
+| Story    | `/about`                      | `profile.json` `about`, `timeline`          |
+| Projects | `/` (home)                    | `projects.ts` → featured entries            |
+| Contact  | Footer in layout (every page) | `site.ts` → `person`, `presence`            |
+
+Nav links: **Featured Projects** (home) · **Story** (`/about`).
 
 ---
 
 ## Data layer
 
-Three files handle all data. Only one is hand-edited.
+Three files handle runtime data. Only one is hand-edited.
 
 ```
 profile.json          ← the only file a human edits
     ↓
-site.ts               ← typed adapter; re-exports profile.json as SiteConfig
-projects.ts           ← runtime data (image imports) + Project interface
+site.ts               ← typed adapter; SiteConfig for person, hero, presence, links
+projects.ts           ← maps profile projects + build-time image imports → Project[]
     ↓
-components / pages    ← import from site.ts and projects.ts, never from profile.json directly
+components / pages    ← import from site.ts and projects.ts (see exception below)
 ```
 
 ### `profile.json` — single source of truth
 
-The only hand-edited content file. Contains:
+The only hand-edited content file. Agents must not edit it. Contains:
 
 | Key | What it holds |
 | --- | --- |
 | `person` | Name, email, location, timezone, `openToWork`, resume filename |
 | `hero` | `contrastLead` and `professionalSentence` strings |
-| `handshakeLine` | The footer CTA sentence |
+| `handshakeLine` | Optional CTA copy (loaded in `site.ts`; not yet rendered on the site) |
 | `presence` | GitHub, LinkedIn, Substack URLs |
 | `about` | `heading`, `paragraphs[]`, `images` placeholder |
 | `timeline` | Array of `{ start, end?, label }` entries with ISO-date `start` |
-| `projects` | Array with `objective` and `tradeOff` per project (content fields) |
+| `projects` | Array with `objective`, `tradeOff`, stack, URLs, `featured`, `previewImageKey`, etc. |
 
 `profile.json` is reusable across projects as a starting template — copy and refine per site.
 
 ### `site.ts` — typed adapter
 
-Reads `profile.json` and re-exports values as the `SiteConfig` interface. Handles the `BASE_URL` prefix for `resumePath`. Components always import from `site.ts`, not directly from `profile.json`. This keeps `profile.json` format-agnostic and centralizes any derivation logic.
+Reads `profile.json` and re-exports values as the `SiteConfig` interface. Handles the `BASE_URL` prefix for `resumePath`. Most components import from `site.ts`, not directly from `profile.json`.
 
-### `projects.ts` — runtime data
+### `projects.ts` — derived runtime data
 
-Holds everything that cannot live in plain JSON:
+Maps `profile.json` projects to typed `Project[]` at build time. Appends what JSON cannot hold:
 
-- `ImageMetadata` imports (Astro's `<Image />` requires imported assets, not string paths)
-- The typed `Project` interface
-- `problem`, `keyDecision`, `outcome` — the display fields used by `ProjectShowcase`
-- `getProjectBySlug()` helper
+- `ImageMetadata` via `import.meta.glob("../assets/portfolio/*.png")` — keyed by `previewImageKey`
+- The typed `Project` interface and `getProjectBySlug()` helper
 
-**Note on divergence:** `profile.json` also has a `projects` array with `objective`/`tradeOff` fields. These are D0 content drafts and are not yet consumed by any component. The roadmap goal is for `projects.ts` to become a derived re-export of `profile.json` (with image imports appended), eliminating the duplicate. Until that migration is complete, `projects.ts` is the authoritative runtime source.
+**Adding a project:** one `profile.json` entry + a matching `.png` in `src/assets/portfolio/`.
+
+**Display mapping:** `objective` → “Problem ·”, `tradeOff` → “Solution ·” in `ProjectShowcase`.
+
+### Import convention exception
+
+`about.astro` imports `profile.json` directly for `about` and `timeline` (not yet exposed through `site.ts`). Prefer `site.ts` / `projects.ts` for new work.
 
 ---
 
 ## Layout shell
 
-`BaseLayout.astro` wraps every page. It owns the full HTML document, the rounded container shell, and the persistent header (Hero + Nav) and Footer. Pages only control the `<main>` slot.
+`BaseLayout.astro` wraps every page. It owns the full HTML document, the rounded container shell, and the persistent Hero, Nav, and Footer. Pages only control the `<main>` slot.
 
 ```
 BaseLayout
-├── <head>   title, description, ViewTransitions
-├── <header> Hero + Nav  (always present, not per-page)
-├── <main>   <slot />    (per-page content goes here)
-└── Footer
+├── <head>   title, description, favicon, ViewTransitions
+├── <header> Hero only (rounded top)
+├── Nav      sticky; outside header
+├── <main>   <slot />
+└── Footer   contact links (rounded bottom)
 ```
 
-`Hero` renders the name/tagline banner. `Nav` renders page links with `aria-current="page"` on the active route. Both are layout-level — they are not imported by individual pages.
+`Hero` renders name and hero copy. `Nav` renders route links with `aria-current="page"`. Neither is imported by individual pages.
 
 ---
 
-## Pages
+## Pages and components
 
 Pages are thin: frontmatter prepares data, template composes components.
 
 | Page | What it renders |
 | --- | --- |
-| `index.astro` | Featured projects grid via `ProjectShowcase` |
-| `about.astro` | About paragraphs + Timeline from `profile.json` |
-| `projects/[slug].astro` | Case study from Astro content collection |
+| `index.astro` | Featured projects grid (`featured: true`) via `ProjectShowcase` |
+| `about.astro` | About paragraphs + timeline from `profile.json` |
+| `projects/[slug].astro` | Per-project stub (“coming soon”) with preview image and outbound links |
 | `404.astro` | Fallback using `BaseLayout` |
+
+**Active components:** `Hero`, `Nav`, `Footer`, `SectionHeading`, `ProjectShowcase`.
+
+**Reserved for future case studies (unused):** `CaseStudyTldr`, `MyRole`, `ProductionThinking`.
 
 ---
 
-## Content collections
+## Case studies (future)
 
-Long-form case study content lives in `src/content/projects/` as MDX files with typed frontmatter validated by `content.config.ts`. The `[slug].astro` page fetches and renders them. New projects get a corresponding MDX file; no page file changes needed.
+`content.config.ts` defines a typed Astro content collection schema for long-form project MDX. **`src/content/projects/` is empty** — prior placeholder MDX was removed. `[slug].astro` reads from `projects.ts` and shows a stub card. “Read more…” links on project cards are commented out until real case study content exists.
 
 ---
 
 ## Styling — dim mode
 
-This site does not use a true dark mode. The `dark:` Tailwind variant activates a **dim mode**: a warm parchment palette where backgrounds step down slightly in brightness but remain light-on-light. The `--color-dim-page` token is `#e9e6df` (warm off-white), not a dark background. Do not "fix" this into a true dark theme — the choice is intentional.
+This site does not use a true dark mode. The `dark:` Tailwind variant activates a **dim mode**: a warm parchment palette where backgrounds step down slightly in brightness but remain light-on-light. The `--color-dim-page` token is `#e9e6df` (warm off-white), not a dark background. Do not “fix” this into a true dark theme — the choice is intentional.
 
 Token prefixes:
+
 - `off-white`, `dark-moss`, `interior-designer`, `sepia`, `skin` — base light mode
 - `dim-page`, `dim-surface`, `dim-elevated`, `dim-muted`, `dim-text-muted`, `dim-highlight`, `dim-gradient-*` — dim mode overrides
 
@@ -114,5 +139,7 @@ Buttons use a composable class system defined in `@layer components` in `global.
 ## Build and deploy
 
 - Static output via `astro build` — no server runtime
-- GitHub Pages deploy via `.github/workflows/deploy.yml` targeting the `staging` branch
-- `BASE_URL` is set by the Astro config; use `import.meta.env.BASE_URL` for all internal asset paths (see `resumePath` in `site.ts`)
+- Site URL: `https://davidschraedel.github.io/portfolio/` (`base: "/portfolio/"` in `astro.config.mjs`)
+- GitHub Pages deploy via `.github/workflows/deploy.yml` on push to `staging`
+- `BASE_URL` comes from Astro config; use `import.meta.env.BASE_URL` for internal asset paths (see `resumePath` in `site.ts`)
+- Resume PDF lives in `public/resume.pdf`

@@ -19,13 +19,13 @@ How code in this repo should be written — conventions, patterns, and quality b
 
 ## Naming and files
 
-| Item | Convention | Example |
-| --- | --- | --- |
-| Components & layouts | PascalCase | `ProjectCard.astro`, `BaseLayout.astro` |
-| Pages | lowercase, match route | `index.astro`, `[slug].astro` |
-| Data / config modules | camelCase | `projects.ts`, `site.ts` |
-| React islands | PascalCase `.tsx` | `ContactForm.tsx` |
-| CSS files | kebab-case | `global.css` |
+| Item                  | Convention             | Example                                 |
+| --------------------- | ---------------------- | --------------------------------------- |
+| Components & layouts  | PascalCase             | `ProjectCard.astro`, `BaseLayout.astro` |
+| Pages                 | lowercase, match route | `index.astro`, `[slug].astro`           |
+| Data / config modules | camelCase              | `projects.ts`, `site.ts`                |
+| React islands         | PascalCase `.tsx`      | `ContactForm.tsx`                       |
+| CSS files             | kebab-case             | `global.css`                            |
 
 **Exports:** `export default` for components and layouts.
 
@@ -50,10 +50,10 @@ import { default as Hero } from "../components/Hero.astro";
 
 ### Frontmatter vs template
 
-| Frontmatter (`---`) | Template (below) |
-| --- | --- |
+| Frontmatter (`---`)                                     | Template (below)                                |
+| ------------------------------------------------------- | ----------------------------------------------- |
 | Imports, data fetching, variable prep, `getStaticPaths` | HTML markup, Astro components, Tailwind classes |
-| Runs at build time on the server | No client-side logic |
+| Runs at build time on the server                        | No client-side logic                            |
 
 ```astro
 ---
@@ -88,11 +88,11 @@ const featured = projects.filter((p) => p.featured);
 
 Default to `.astro`. Use a React island only when you can name the specific client-side behavior that requires it (state, form validation, browser APIs).
 
-| `.astro` | React island (`.tsx`) |
-| --- | --- |
-| Static markup, layouts, content | Client state or event handlers |
-| Build-time data | Browser-only APIs |
-| Zero JS shipped | Third-party widgets that need hydration |
+| `.astro`                        | React island (`.tsx`)                   |
+| ------------------------------- | --------------------------------------- |
+| Static markup, layouts, content | Client state or event handlers          |
+| Build-time data                 | Browser-only APIs                       |
+| Zero JS shipped                 | Third-party widgets that need hydration |
 
 Pass only **serializable** props to hydrated components (no functions). Astro components cannot be imported inside framework components — the dependency flows one way.
 
@@ -177,44 +177,7 @@ Constants used in multiple places (site name, email, social URLs) belong in one 
 - Tailwind v4 via the Vite plugin (`@tailwindcss/vite`) — not the legacy `@astrojs/tailwind` integration.
 - Import Tailwind once in `src/styles/global.css`; load that file in the base layout.
 
-```css
-@import "tailwindcss";
-
-@theme {
-  --color-off-white: #fcfcfc;
-  --color-dark-moss: #1d2019;
-  --color-interior-designer: #3f3b31;
-  --color-sepia: #896c55;
-  --color-skin: #d1b49e;
-}
-```
-
 Use theme tokens (`bg-off-white`) instead of raw hex in components.
-
-### Button system
-
-Buttons use a composable `@layer components` class system in `global.css`. Compose classes rather than writing one-off Tailwind strings for interactive elements:
-
-```html
-<!-- standard action button -->
-<a class="btn btn-soft btn-soft-default">Live demo</a>
-
-<!-- brand-specific hover -->
-<a class="btn btn-soft btn-github">GitHub</a>
-
-<!-- footer context -->
-<a class="btn btn-footer btn-linkedin">LinkedIn</a>
-```
-
-| Class | Role |
-| --- | --- |
-| `btn` | Base sizing, flex centering, border-radius, focus ring |
-| `btn-soft` | Text color + focus ring color for light-surface buttons |
-| `btn-soft-default` | Hover: sepia fill + white text |
-| `btn-footer` | White text with `mix-blend-soft-light`; hover drops blend |
-| `btn-linkedin` / `btn-github` / `btn-substack` / `btn-gmail` | Brand hover colors |
-
-Add new brand variants to `global.css` following the same `hover:bg-[hex] hover:text-[hex]` pattern.
 
 ### Rules
 
@@ -308,17 +271,17 @@ Do not add a general-purpose utils library or one-line wrappers that should stay
 
 ## Code anti-patterns
 
-| Avoid | Do instead |
-| --- | --- |
-| Hydrating entire pages or layouts with React | `.astro` for static shell; small islands for interactivity |
-| Client-side fetch for static content | `await` in frontmatter at build time |
-| `crypto.randomUUID()` for list keys | Stable string IDs |
-| Large commented-out blocks | Delete; rely on git |
-| Magic strings repeated across files | Shared constants module |
-| Mixing Tailwind v3 integration with v4 Vite plugin | One Tailwind setup only |
-| Secrets in client code | Server frontmatter + env vars |
-| Unused imports, state, or effects | Remove before committing |
-| Over-abstracting for one use case | Inline until the pattern repeats |
+| Avoid                                              | Do instead                                                 |
+| -------------------------------------------------- | ---------------------------------------------------------- |
+| Hydrating entire pages or layouts with React       | `.astro` for static shell; small islands for interactivity |
+| Client-side fetch for static content               | `await` in frontmatter at build time                       |
+| `crypto.randomUUID()` for list keys                | Stable string IDs                                          |
+| Large commented-out blocks                         | Delete; rely on git                                        |
+| Magic strings repeated across files                | Shared constants module                                    |
+| Mixing Tailwind v3 integration with v4 Vite plugin | One Tailwind setup only                                    |
+| Secrets in client code                             | Server frontmatter + env vars                              |
+| Unused imports, state, or effects                  | Remove before committing                                   |
+| Over-abstracting for one use case                  | Inline until the pattern repeats                           |
 
 ---
 
