@@ -2,6 +2,42 @@
 
 A concise history of changes.
 
+## 2026-06-30 (projects — four new entries)
+
+- Added YouTube KPI Framework, MicroDeck, Midi Morph, and Calendar Dashboard to `profile.json`
+- Added placeholder preview images in `src/assets/portfolio/` for each new project (replace with real screenshots when available)
+
+## 2026-06-30 (D1/D3 — projects.ts derived from profile.json)
+
+- `projects.ts` rewritten as a derived module: `import.meta.glob` loads all `src/assets/portfolio/*.png` at build time; `profileData.projects` is mapped to `Project[]` by looking up images via `previewImageKey`
+- `Project` interface updated: `problem`/`keyDecision`/`outcome` removed; replaced with `objective`/`tradeOff`; `isFlagship` and `skillsFor` removed (unused); `transcriptPipelineDemoVideoUrl` export removed
+- `profile.json` is now the only place project content is edited; adding a new project requires only a `profile.json` entry + dropping a `.png` in `src/assets/portfolio/`
+- `ProjectShowcase.astro` updated to use `project.objective` and `project.tradeOff`; Outcome row removed; labels updated to "Objective ·" / "Trade-off ·"
+- `[slug].astro` meta description updated from `project.problem` to `project.objective`
+
+## 2026-06-30 (copy)
+
+- Revised `profile.json` hero copy (`contrastLead` rewritten; `professionalSentence` tightened)
+- Added opening paragraph to `profile.about.paragraphs`
+- `ProjectShowcase` label updated: "Key decision" → "Solution"; case study link text changed to "Read more..."
+- Nav "About" link renamed to "Story"
+
+## 2026-06-30 (sticky nav, layout)
+
+- Nav made sticky (`sticky top-0 z-50`); moved outside `<header>` in `BaseLayout` so it scrolls with the page independently
+- Header gets `rounded-t-4xl`; footer gets `rounded-b-4xl`; container `shadow-md` removed
+- `off-white` token nudged from `#fcfcfc` to `#fafafa`
+- Nav `position: relative` rule removed from `global.css` (sticky handles positioning now)
+- Projects page section subtitle copy updated
+
+## 2026-06-30 (copy and styling — corrections)
+
+- Rewrote all three project `problem` / `keyDecision` / `outcome` fields in `projects.ts` (I AM framing significantly corrected to audience-connection angle)
+- Added favicon using headshot SVG (`<link rel="icon">` in `BaseLayout`)
+- Removed container `shadow-md`; narrowed max content width at `lg`/`xl` breakpoints
+- Hero `contrastLead` and `professionalSentence` updated in `profile.json`
+- Hero font size adjusted for mobile
+
 ## 2026-06-30 (fix — case study placeholder)
 
 - Removed hallucinated content from `src/content/projects/*.md` (all three case study files deleted)

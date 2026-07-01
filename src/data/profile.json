@@ -8,8 +8,9 @@
     "resume": "resume.pdf"
   },
   "about": {
-    "heading": "About",
+    "heading": "About Me",
     "paragraphs": [
+      "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
       "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
       "I recently finished a Master of Information Systems Management, where I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
       "My general background is all over the place in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, family studies, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings.",
@@ -94,11 +95,11 @@
     },
     {
       "start": "2025-09",
-      "label": "Data & Systems Teaching Assistant at BYU Marriott — taught 50+ graduate students Excel statistics, Tableau, data lifecycle, and SQL; debugged student work across five languages in TA labs."
+      "label": "As a Data & Systems Teaching Assistant at BYU Marriott, I taught 50+ graduate students Excel statistics, Tableau, data lifecycle, and SQL; debugged student work across five languages in TA labs."
     },
     {
       "start": "2025-11",
-      "label": "Delivered AI B2B growth recommendations at the BYU Marriott Case Competition — earned Best of Room."
+      "label": "Delivered AI B2B growth recommendations at the BYU Marriott Case Competition, and earned Best of Room."
     },
     {
       "start": "2026-04",
@@ -111,11 +112,26 @@
   ],
   "projects": [
     {
+      "id": "youtube-transcript-pipeline",
+      "slug": "youtube-transcript-pipeline",
+      "name": "YouTube Transcript Pipeline",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI;not queryable, exportable, or usable for analysis.",
+      "tradeOff": "I built a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It allows full playlist ingestion for SQL querying, bronze/silver layers with per-video fetch status, and idempotent transformations.",
+      "stack": ["Python", "DuckDB", "SQL"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
+      "previewImageKey": "youtube-transcript-pipeline",
+      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow",
+      "videoUrl": null
+    },
+    {
       "id": "iam",
       "slug": "iam",
       "name": "I AM",
-      "objective": "People struggle to articulate identity and goals in a way AI coaching products can act on consistently.",
-      "tradeOff": "We chose AWS Bedrock over OpenAI because the client needed enterprise-grade auditability and the knowledge base tooling fit their existing infrastructure, accepting a steeper learning curve and thinner community documentation.",
+      "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
+      "tradeOff": "I integrated and optimized Amazon Bedrock models and knowledge base tools to match a creator's voice and brand, and debugged/optimized the core features for a positive user experience.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
@@ -126,32 +142,79 @@
       "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
     },
     {
-      "id": "youtube-transcript-pipeline",
-      "slug": "youtube-transcript-pipeline",
-      "name": "YouTube Transcript Pipeline",
-      "objective": "Hours of spoken content in YouTube playlists are locked in the UI: not queryable, exportable, or usable for analysis.",
-      "tradeOff": "I chose to build a custom local pipeline to get fine-grained control over chunking and metadata for AI ingestion. It cost me more time than using a service, but provided me experience, complete control, and flexibility in end-goal use cases.",
-      "stack": ["Python", "DuckDB", "SQL"],
-      "layout": "text-only",
-      "featured": true,
-      "demoUrl": null,
-      "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
-      "previewImageKey": "youtube-transcript-pipeline",
-      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow"
-    },
-    {
       "id": "soundwatch",
       "slug": "soundwatch",
       "name": "Soundwatch",
-      "objective": "Morning routines with multiple timed activities meant constantly starting timers instead of staying present.",
-      "tradeOff": "I chose elapsed time over countdown because focus should stay on the activity, not how much is left; that meant the UX had to work harder than a standard countdown timer to feel natural.",
+      "objective": "Morning routines with multiple timed activities require repeatedly starting timers or watching a clock.",
+      "tradeOff": "I built an stopwatch that tracks elapsed time with optional audio cues at intervals, so focus can stay on the activity, not the clock.",
       "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
       "layout": "media-left",
       "featured": true,
       "demoUrl": "https://soundwatch.netlify.app/",
       "githubUrl": "https://github.com/davidschraedel/stopwatch",
       "previewImageKey": "soundwatch",
-      "previewAlt": "Soundwatch interval timer running in the browser"
+      "previewAlt": "Soundwatch interval timer running in the browser",
+      "videoUrl": null
+    },
+    {
+      "id": "youtube-kpi-framework",
+      "slug": "youtube-kpi-framework",
+      "name": "YouTube KPI Framework",
+      "objective": "I was tasked with measuring a digital product's performance, by creating a KPI framework that would measure valuable outcomes for that product (not just outputs).",
+      "tradeOff": "I designed a KPI framework for the YouTube platform, with the aim of metrics that strategically measure real value provided, rather than measuring shallow value or the lack thereof with vanity metrics.",
+      "stack": ["Canva", "Product Management", "Data Strategy"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": "https://www.canva.com/design/DAG69PGZ5Uo/blz7EcwbksNU1IQpN-pL_Q/view?utm_content=DAG69PGZ5Uo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+      "githubUrl": null,
+      "previewImageKey": "youtube-kpi-framework",
+      "previewAlt": "YouTube KPI Framework Canva design overview",
+      "videoUrl": null
+    },
+    {
+      "id": "microdeck",
+      "slug": "microdeck",
+      "name": "MicroDeck",
+      "objective": "People with ADHD, executive dysfunction, or digital burnout struggle to bridge the intention-behavior gap; trackers and blockers often add friction instead of helping them start.",
+      "tradeOff": "We built a minimalist iOS habit initiation tool with user-authored micro-action cards and 2-minute timers. It avoids streaks, history, and intoxicating gamification, and is focused entirely on initiating new habits.",
+      "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": "",
+      "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
+      "previewImageKey": "microdeck",
+      "previewAlt": "MicroDeck iOS habit initiation app concept",
+      "videoUrl": null
+    },
+    {
+      "id": "midi-morph",
+      "slug": "midi-morph",
+      "name": "Midi Randomizer",
+      "objective": "In trying to generate fresh ideas, humans appear to be constrained by their prior behavior and inputs, and current imagination. Machines can imitate randomness in a way that surprises humans with unexpected ideas. I had no tool to do this for me with MIDI in my music productionsoftware.",
+      "tradeOff": "I built a browser-based MIDI randomization tool for lazy experimentation. This was my first and only one-shot vibe-coded project, built with Google's AI Studio, and refined afterward with Cursor.",
+      "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
+      "layout": "media-left",
+      "featured": true,
+      "demoUrl": "https://davidschraedel.github.io/midi-morph-gui/",
+      "githubUrl": "https://github.com/davidschraedel/midi-morph-gui",
+      "previewImageKey": "midi-morph",
+      "previewAlt": "Midi Morph browser MIDI GUI on GitHub Pages",
+      "videoUrl": null
+    },
+    {
+      "id": "calendar-dashboard",
+      "slug": "calendar-dashboard",
+      "name": "Calendar Dashboard",
+      "objective": "Personal time allocation across Google Calendars stays invisible until manually audited. After doing some timeboxing with different calendars in a Google account, I wanted raw event data and insight into how hours in the calendar map planned hours, week to week.",
+      "tradeOff": "I wrote a Google Apps Script to sync events into Sheets, compute durations and weekly percentages, and feed a Looker Studio dashboard. It is automatically triggered regularly and let's me see how I planned to allocate my time, or if I planned at all.",
+      "stack": ["Google Apps Script", "Google Sheets", "Looker Studio"],
+      "layout": "text-only",
+      "featured": true,
+      "demoUrl": "https://datastudio.google.com/reporting/8ff7c15f-e20f-4436-8bce-302d6903a504",
+      "githubUrl": "https://github.com/davidschraedel/google-apps-script",
+      "previewImageKey": "calendar-dashboard",
+      "previewAlt": "Looker Studio calendar time allocation dashboard",
+      "videoUrl": null
     }
   ]
 }
