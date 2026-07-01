@@ -26,11 +26,11 @@ Personal developer portfolio — recruiter-scannable and voice-first. One-line p
 
 ## ai/ — working space (gitignored)
 
-| Folder                       | Use                                       |
-| ---------------------------- | ----------------------------------------- |
-| [notes/](../ai/notes/)       | Research and brainstorming                |
-| [roadmaps/](../ai/roadmaps/) | Plans and implementation checklists       |
-| [guides/](../ai/guides/)     | Library docs and external research output |
+| Folder                       | Use                                                                                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [notes/](../ai/notes/)       | Research and brainstorming — start with [initial-agent-instructions.md](../ai/notes/initial-agent-instructions.md) for new refactor context |
+| [roadmaps/](../ai/roadmaps/) | Plans and implementation checklists                                                                                                         |
+| [guides/](../ai/guides/)     | Library docs and external research output                                                                                                   |
 
 Notable notes: [techstack report](../ai/notes/2026-06-14_techstack-report.md) · [Astro research](../ai/notes/2026-06-14_astro-framework-research.md)
 
