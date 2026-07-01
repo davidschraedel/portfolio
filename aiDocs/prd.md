@@ -2,12 +2,9 @@
 
 **Product:** Personal Developer Portfolio Site  
 **Author:** David Schraedel  
-**Version:** 3.0  
+**Version:** 3.1  
 **Status:** Active  
-**Last Updated:** June 22, 2026  
-**Changelog:** v3.0 — Aligned with differentiation revision: voice-first story arc (Hook → Track → Proof → Presence → Handshake), contrast hero + professional sentence, timeline replaces About, trade-off on homepage cards, Presence secondary links, Handshake replaces “For Recruiters” block, `profile.json` content model, separated JSON-LD `@graph`. Removed development phase gates and timeline section (implementation lives in roadmaps). v2.0 — Anti-pattern guardrails, skim-layer requirements, GitHub standards, cold-read validation.
-
-**Implementation roadmap:** [differentiation revision](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md) (steps D0–D4)
+**Last Updated:** June 30, 2026
 
 ---
 
@@ -21,22 +18,22 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 
 ## Product strategy
 
-**Dual audience, one page:**
+**Dual audience, one visit:**
 
-| Audience | Needs | How the site delivers |
-| -------- | ----- | --------------------- |
-| **Recruiters (primary)** | Role, stack, demos, GitHub, fast contact | Scannable project cards, professional sentence with domain/stack signal, primary CTAs, timeline with location/timezone |
-| **Hiring managers (secondary)** | Depth, trade-offs, case studies | Trade-off on cards, `/projects/[slug]` TL;DR + deep-dive |
-| **Anyone reading for you** | Genuine voice, memorable background | Contrast hero, interleaved timeline |
+| Audience                        | Needs                                    | How the site delivers                                                                                                  |
+| ------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, professional sentence with domain/stack signal, primary CTAs, timeline with location/timezone |
+| **Hiring managers (secondary)** | Depth, trade-offs, case studies          | Trade-off/solution on cards, dedicated case study pages with TL;DR + deep-dive                                         |
+| **Anyone reading for you**      | Genuine voice, memorable background      | Contrast hero, interleaved timeline                                                                                    |
 
 **Link tiers:**
 
-- **Primary (hire/collaborate):** Email, LinkedIn, Resume — hero and Handshake footer
+- **Primary (hire/collaborate):** Email, LinkedIn, Resume — Hook and Handshake close
 - **Secondary (public presence):** GitHub, Substack — Presence section; not hero CTAs
 
 Long-form writing stays on Substack (link out only). No on-site blog or post mirroring.
 
-**Content maintenance:** All copy and facts live in **`src/data/profile.json`**. Derived TypeScript modules (`site.ts`, `timeline.ts`, `projects.ts`) are build-time re-exports — not hand-edited.
+**Content maintenance:** All copy and facts live in **`profile.json`**. The site may use derived code modules at build time to type and expose that data to components — those modules are not hand-edited content sources.
 
 ---
 
@@ -82,13 +79,13 @@ Before sharing with recruiters:
 
 ### Quantitative metrics (optional — when analytics added)
 
-| Metric | Target | Notes |
-| ------ | ------ | ----- |
-| Scroll past hero | ≥ 70% | Plausible/Fathom |
-| Demo click-through | ≥ 50% of card views | Link events |
-| GitHub engagement | ≥ 30% of sessions | Outbound clicks |
-| LCP (mobile) | < 1.5s | PageSpeed |
-| Mobile usability | No issues at 375px | Manual QA |
+| Metric             | Target              | Notes            |
+| ------------------ | ------------------- | ---------------- |
+| Scroll past hero   | ≥ 70%               | Plausible/Fathom |
+| Demo click-through | ≥ 50% of card views | Link events      |
+| GitHub engagement  | ≥ 30% of sessions   | Outbound clicks  |
+| LCP (mobile)       | < 1.5s              | PageSpeed        |
+| Mobile usability   | No issues at 375px  | Manual QA        |
 
 Not required for launch. Track after deploy if useful.
 
@@ -98,33 +95,33 @@ Not required for launch. Track after deploy if useful.
 
 Hard disqualifiers — fix before public recruiter sharing:
 
-| Anti-pattern | Launch gate |
-| ------------ | ----------- |
-| Tutorial/clone featured projects | Zero in featured set |
-| Broken demo links | Every demo resolves in < 3s; no unhandled errors |
+| Anti-pattern                       | Launch gate                                               |
+| ---------------------------------- | --------------------------------------------------------- |
+| Tutorial/clone featured projects   | Zero in featured set                                      |
+| Broken demo links                  | Every demo resolves in < 3s; no unhandled errors          |
 | Single "initial commit" repo dumps | ≥ 15 commits, ≥ 3 named commits in top 10, ≥ 2 weeks span |
-| Portfolio site as featured project | Not in project section |
-| Unclear individual contribution | Explicit on collaborative projects |
-| Technology tourism | ≥ 2 of 3 projects share a primary stack |
-| Abandoned public GitHub repos | Archive/delete repos with < 5 commits or no README |
+| Portfolio site as featured project | Not in project section                                    |
+| Unclear individual contribution    | Explicit on collaborative projects                        |
+| Technology tourism                 | ≥ 2 of 3 projects share a primary stack                   |
+| Abandoned public GitHub repos      | Archive/delete repos with < 5 commits or no README        |
 
 ---
 
-## Homepage architecture
+## Site story architecture
 
-Single scroll on `index.astro`:
+The site tells one story in five beats. **Layout is flexible** — single scroll, multiple pages, or a mix — as long as every beat is easy to find and the story reads in order. The site should be simple, and match the styling of the original template.
 
 **Hook → Track → Proof → Presence → Handshake**
 
-| Section | ID | Contents |
-| ------- | -- | -------- |
-| Hook | (hero) | Contrast lead, professional sentence, primary CTAs, photo |
-| Track | `#experience` | Interleaved timeline — credentials + human details |
-| Proof | `#projects` | 2–3 cards: objective, stack, trade-off + demo/GitHub/case study |
-| Presence | `#presence` | Secondary links: GitHub, Substack, … |
-| Handshake | (footer) | Specific invitation + primary CTAs repeated |
+| Beat      | Purpose          | Contents                                                                |
+| --------- | ---------------- | ----------------------------------------------------------------------- |
+| Hook      | First impression | Contrast lead, professional sentence, primary CTAs, photo               |
+| Track     | Story arc        | Interleaved timeline — credentials + human details                      |
+| Proof     | Evidence         | 2–3 project cards: objective, stack, trade-off + demo/GitHub/case study |
+| Presence  | Secondary reach  | GitHub, Substack, and other public profiles                             |
+| Handshake | Close            | Specific invitation + primary CTAs repeated                             |
 
-**Nav:** Story · Projects · Find me
+**Nav:** Clear paths to story, projects, and contact — labels and routes may vary by design.
 
 ---
 
@@ -136,20 +133,17 @@ Single scroll on `index.astro`:
 
 - Contrast lead (what makes you unusual) + one **Input → Output** professional sentence
 - Professional sentence must still signal **role, domain, and stack** — not generic
-- Primary CTAs: Resume, Email, LinkedIn
-- Real photo; no splash animations or auto-play video
-- GitHub **not** in hero primary row
 
 **2. Timeline**
 
-- Replaces flat About section
-- Single chronological list — credentials interleaved with human details
+- The Track beat — credentials interleaved with human details, not a generic bio wall
+- Single chronological list
 - Location and timezone visible (in timeline or person facts)
-- Semantic `<ol>` / `<li>` / `<time datetime="...">`
+- Semantic markup where possible (`<ol>`, `<li>`, `<time datetime="...">`)
 
 **3. Featured project cards (2–3)**
 
-Homepage shows:
+The Proof beat shows:
 
 - Objective (one-sentence problem)
 - Stack tags (scannable without hover)
@@ -163,22 +157,22 @@ Also on each card (recruiter actions preserved):
 
 Outcome stays on case study pages only — not homepage cards.
 
-Content-driven layout (`media-left` | `media-right` | `text-only`); no mandatory flagship grid.
+Content-driven card layout.
 
 **4. Presence (“Where to find me”)**
 
 - Secondary links: GitHub, Substack, future profiles
 - No post list, no RSS sync, no on-site writing section
 
-**5. Handshake footer**
+**5. Handshake (close)**
 
 - One specific sentence about conversations you're open to (role types, domains)
 - Repeats primary links: Email, LinkedIn, Resume
-- Replaces the old standalone “For Recruiters” section — same facts, integrated into story arc
+- Integrates recruiter-relevant facts into the story arc — no standalone “For Recruiters” block
 
 **6. Case study pages**
 
-Each featured project: `/projects/[slug]`
+Each featured project gets a dedicated case study page, if there is enough information to give the project one.
 
 _Skim layer (top):_
 
@@ -195,7 +189,7 @@ _Deep-dive layer:_
 
 **8. Resume download**
 
-- PDF linked from hero and footer
+- PDF linked from and Handshake close
 
 **9. Mobile-first**
 
@@ -204,12 +198,12 @@ _Deep-dive layer:_
 **10. Structured data and technical SEO**
 
 - JSON-LD only (no microdata)
-- Homepage: `@graph` with separated Person, professional experience list, interests list, projects list
+- Site homepage: `@graph` with separated Person, professional experience list, interests list, projects list
 - Case studies: `Article` or `CreativeWork` + author → Person
 - Sitemap, `robots.txt`, canonicals, OG/Twitter meta, alt text on project images
 - Optional `llms.txt`
 
-SEO research notes ([Agentic AI](../ai/notes/2026-05-29_SEO-in-the-Agentic-AI-era.md), [AI SEO brainstorming](../ai/notes/2026-06-22_AI_SEO_brainstorming.md)) informed crawlability choices — not prescriptive content shape. Audit if visibility issues appear.
+Crawlability choices favor structured HTML and JSON-LD over gimmicks — not prescriptive content shape. Audit if visibility issues appear.
 
 ---
 
@@ -247,7 +241,7 @@ _As a hiring manager, I want working demos, so I can assess deployment ability._
 **US-04 — Contact action**  
 _As a recruiter ready to reach out, I want role preferences and contact in under 5 seconds._
 
-- Handshake footer states what you're open to
+- Handshake close states what you're open to
 - Email, LinkedIn, Resume reachable in one click
 - Location/timezone visible on page (timeline or person facts)
 
@@ -289,29 +283,27 @@ _As the site owner, I want peers to describe my role and name a project after 60
 
 ## Risks and mitigations
 
-| Risk | Mitigation |
-| ---- | ---------- |
-| Live demos go down | UptimeRobot; monthly link audit |
-| Looks like every other portfolio | Voice-first copy + trade-offs; not visual gimmicks |
-| Tutorial projects featured | Hard gate — zero clones |
+| Risk                                    | Mitigation                                             |
+| --------------------------------------- | ------------------------------------------------------ |
+| Live demos go down                      | UptimeRobot; monthly link audit                        |
+| Looks like every other portfolio        | Voice-first copy + trade-offs; not visual gimmicks     |
+| Tutorial projects featured              | Hard gate — zero clones                                |
 | Differentiation buries recruiter signal | Professional sentence + stack on cards; cold-read test |
-| Content drift across files | Single `profile.json` source of truth |
-| Over-engineered portfolio site | No featured self-link; plain Astro |
-| AI-sounding copy | Read-aloud test; specific first-person voice |
-| Broken GitHub links | Full link audit before sharing |
-| JSON-LD misleading agents | Separated `@graph` lists; match visible HTML |
+| Content drift across files              | Single `profile.json` source of truth                  |
+| Over-engineered portfolio site          | No featured self-link; plain Astro                     |
+| AI-sounding copy                        | Read-aloud test; specific first-person voice           |
+| Broken GitHub links                     | Full link audit before sharing                         |
+| JSON-LD misleading agents               | Separated `@graph` lists; match visible HTML           |
 
 ---
 
 ## Related documents
 
-| Doc | Role |
-| --- | ---- |
-| [mvp.md](./mvp.md) | Minimum feature set for success |
-| [differentiation plan](../ai/roadmaps/2026-06-22_differentiation-revision_plan.md) | Homepage revision specifications |
-| [differentiation roadmap](../ai/roadmaps/2026-06-22_differentiation-revision_roadmap.md) | Implementation checklist (D0–D4) |
-| [coding-style.md](./coding-style.md) | Code conventions |
+| Doc                                  | Role                            |
+| ------------------------------------ | ------------------------------- |
+| [mvp.md](./mvp.md)                   | Minimum feature set for success |
+| [coding-style.md](./coding-style.md) | Code conventions                |
 
 ---
 
-_This PRD is a living document. Update when product strategy changes; implementation order lives in roadmaps only._
+_This PRD is a living document. Update when product strategy changes; implementation order lives in created roadmaps, only._
