@@ -26,9 +26,21 @@
   },
   "hero": {
     "contrastLead": "Data · AI · Product Management",
-    "professionalSentence": "I enjoy uncovering the unknowns of a technical problem. My approach to technology is informed by my diverse work and education, ranging from live improvised music to family studies. I bring this creativity, perspective, empathy, and collaborative approach to everything I build."
+    "professionalSentence": ""
+  },
+  "home": {
+    "tldr": "My problem-solving approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to everything I build. I enjoy asking questions and uncovering unknowns in a project. I build data pipelines, AI-integrated products, and full-stack tools — from local Python ETL to deployed React apps on AWS.",
+    "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
   },
   "handshakeLine": "Working on something meaningful? I'd love to connect.",
+  "connect": {
+    "heading": "Let's connect",
+    "paragraphs": [
+      "I'm open to full-time roles, internships, and interesting side projects where I can ship something real.",
+      "Data pipelines, AI tooling, and product-minded engineering are where I'm most energized right now.",
+      "Send me a message via email or LinkedIn."
+    ]
+  },
   "presence": {
     "github": "https://github.com/davidschraedel",
     "linkedin": "https://www.linkedin.com/in/david-schraedel",
@@ -164,7 +176,7 @@
       "tradeOff": "I designed a KPI framework for the YouTube platform, with the aim of metrics that strategically measure real value provided, rather than measuring shallow value or the lack thereof with vanity metrics.",
       "stack": ["Canva", "Product Management", "Data Strategy"],
       "layout": "text-only",
-      "featured": true,
+      "featured": false,
       "demoUrl": "https://www.canva.com/design/DAG69PGZ5Uo/blz7EcwbksNU1IQpN-pL_Q/view?utm_content=DAG69PGZ5Uo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       "githubUrl": null,
       "previewImageKey": "youtube-kpi-framework",
@@ -179,7 +191,7 @@
       "tradeOff": "We built a minimalist iOS habit initiation tool with user-authored micro-action cards and 2-minute timers. It avoids streaks, history, and intoxicating gamification, and is focused entirely on initiating new habits.",
       "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
       "layout": "media-right",
-      "featured": true,
+      "featured": false,
       "demoUrl": "",
       "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
       "previewImageKey": "microdeck",
@@ -194,7 +206,7 @@
       "tradeOff": "I built a browser-based MIDI randomization tool for lazy experimentation. This was my first and only one-shot vibe-coded project, built with Google's AI Studio, and refined afterward with Cursor.",
       "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
       "layout": "media-left",
-      "featured": true,
+      "featured": false,
       "demoUrl": "https://davidschraedel.github.io/midi-morph-gui/",
       "githubUrl": "https://github.com/davidschraedel/midi-morph-gui",
       "previewImageKey": "midi-morph",
@@ -209,7 +221,7 @@
       "tradeOff": "I wrote a Google Apps Script to sync events into Sheets, compute durations and weekly percentages, and feed a Looker Studio dashboard. It is automatically triggered regularly and let's me see how I planned to allocate my time, or if I planned at all.",
       "stack": ["Google Apps Script", "Google Sheets", "Looker Studio"],
       "layout": "text-only",
-      "featured": true,
+      "featured": false,
       "demoUrl": "https://datastudio.google.com/reporting/8ff7c15f-e20f-4436-8bce-302d6903a504",
       "githubUrl": "https://github.com/davidschraedel/google-apps-script",
       "previewImageKey": "calendar-dashboard",

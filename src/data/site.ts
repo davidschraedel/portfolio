@@ -11,7 +11,15 @@ export interface SiteConfig {
     contrastLead: string;
     professionalSentence: string;
   };
+  home: {
+    tldr: string;
+    skills: string[];
+  };
   handshakeLine: string;
+  connect: {
+    heading: string;
+    paragraphs: string[];
+  };
 }
 
 export const site: SiteConfig = {
@@ -25,5 +33,13 @@ export const site: SiteConfig = {
     contrastLead: profile.hero.contrastLead,
     professionalSentence: profile.hero.professionalSentence,
   },
+  home: {
+    tldr: profile.home.tldr,
+    skills: profile.home.skills,
+  },
   handshakeLine: profile.handshakeLine,
+  connect: {
+    heading: profile.connect.heading,
+    paragraphs: profile.connect.paragraphs,
+  },
 };

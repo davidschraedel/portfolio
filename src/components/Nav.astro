@@ -3,6 +3,7 @@ const base = import.meta.env.BASE_URL;
 const { pathname } = Astro.url;
 
 const isHome = pathname === base || pathname === base.replace(/\/$/, "");
+const isProjects = pathname.startsWith(`${base}projects`);
 const isAbout = pathname.startsWith(`${base}about`);
 ---
 
@@ -14,7 +15,16 @@ const isAbout = pathname.startsWith(`${base}about`);
         class="nav-link"
         aria-current={isHome ? "page" : undefined}
       >
-        Featured Projects
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href={`${base}projects`}
+        class="nav-link"
+        aria-current={isProjects ? "page" : undefined}
+      >
+        Projects
       </a>
     </li>
     <li>
