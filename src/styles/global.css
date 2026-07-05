@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Suppress hover styles on touch devices — apply only when pointer hover is available */
+@custom-variant hover (@media (hover: hover) { &:hover });
+
 @theme {
   /* --color-off-white: #fcfcfc; */
   --color-off-white: #fafafa;
@@ -84,10 +87,6 @@ body {
     @apply transition-[color,background-color,box-shadow] duration-200 ease-in-out;
   }
 
-  .btn-soft-default:hover {
-    @apply bg-brand-indigo text-white ring-transparent;
-  }
-
   .btn-chat {
     @apply px-10 text-dark-moss ring-1 ring-sepia/35 transition-[color] duration-200 ease-in-out focus-visible:outline-sepia;
     background: linear-gradient(
@@ -112,39 +111,51 @@ body {
     }
   }
 
-  .btn-chat:hover {
-    @apply text-white ring-transparent;
-    background: linear-gradient(
-      165deg,
-      color-mix(in srgb, var(--color-brand-indigo) 45%, var(--color-off-white)),
-      var(--color-brand-indigo)
-    );
-  }
+  @media (hover: hover) {
+    .btn-soft-default:hover {
+      @apply bg-brand-indigo text-white ring-transparent;
+    }
 
-  @media (prefers-color-scheme: dark) {
     .btn-chat:hover {
+      @apply text-white ring-transparent;
       background: linear-gradient(
         165deg,
-        color-mix(in srgb, var(--color-sepia) 50%, var(--color-skin)),
-        var(--color-sepia)
+        color-mix(in srgb, var(--color-brand-indigo) 45%, var(--color-off-white)),
+        var(--color-brand-indigo)
       );
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .btn-chat:hover {
+        background: linear-gradient(
+          165deg,
+          color-mix(in srgb, var(--color-sepia) 50%, var(--color-skin)),
+          var(--color-sepia)
+        );
+      }
     }
   }
 
   .btn-footer {
-    @apply text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] focus-visible:outline-off-white hover:mix-blend-normal;
+    @apply text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] focus-visible:outline-off-white;
   }
 
-  .btn-linkedin {
-    @apply hover:bg-[#0077B5] hover:text-white hover:ring-transparent;
-  }
+  @media (hover: hover) {
+    .btn-footer:hover {
+      mix-blend-mode: normal;
+    }
 
-  .btn-github {
-    @apply hover:bg-[#2b3137] hover:text-[#fafbfc] hover:ring-transparent;
-  }
+    .btn-linkedin:hover {
+      @apply bg-[#0077B5] text-white ring-transparent;
+    }
 
-  .btn-substack {
-    @apply hover:bg-[#ff6719] hover:text-white hover:ring-transparent;
+    .btn-github:hover {
+      @apply bg-[#2b3137] text-[#fafbfc] ring-transparent;
+    }
+
+    .btn-substack:hover {
+      @apply bg-[#ff6719] text-white ring-transparent;
+    }
   }
 
   /* .btn-gmail {
@@ -152,7 +163,19 @@ body {
   } */
 
   .nav-link {
-    @apply text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss;
+    @apply text-base text-sepia underline-offset-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight;
+  }
+
+  @media (hover: hover) {
+    .nav-link:hover {
+      @apply text-dark-moss underline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .nav-link:hover {
+        @apply text-dark-moss;
+      }
+    }
   }
 
   .nav-link[aria-current="page"] {
@@ -178,5 +201,14 @@ nav[aria-label="Main"]::after {
       #a8b5a0 50%,
       transparent
     );
+  }
+}
+
+/* Touch active feedback — provides tap press state since hover is suppressed on touch */
+@media (hover: none) {
+  a:active,
+  button:active {
+    opacity: 0.75;
+    transition: opacity 100ms ease-in-out;
   }
 }

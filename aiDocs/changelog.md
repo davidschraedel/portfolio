@@ -2,6 +2,12 @@
 
 A concise history of changes.
 
+## 2026-07-05 (mobile — suppress hover on touch device)
+
+- `global.css`: Added `@custom-variant hover` override so all `hover:` Tailwind utilities only fire on pointer devices (`@media (hover: hover)`)
+- `global.css`: Migrated all `@apply hover:` and plain `:hover` rules inside `@layer components` into explicit `@media (hover: hover)` blocks — covers `.btn-soft-default`, `.btn-chat` (incl. dark-mode nested variant), `.btn-footer`, `.btn-linkedin`, `.btn-github`, `.btn-substack`, `.nav-link` (incl. `dark:hover:` nested variant)
+- `global.css`: Added `@media (hover: none) { a:active, button:active { opacity: 0.75 } }` for tap press feedback on touch devices
+
 ## 2026-07-04 (copy — connect, projects, about)
 
 - Rewrote `home.tldr` and `connect.paragraphs` in `profile.json`
