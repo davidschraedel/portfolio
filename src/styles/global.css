@@ -70,6 +70,14 @@ body {
     @apply bg-brand-indigo text-white ring-transparent;
   }
 
+  .btn-chat {
+    @apply bg-skin text-dark-moss ring-1 ring-sepia/40 transition-[color,background-color,box-shadow] focus-visible:outline-sepia dark:bg-dim-highlight dark:text-dark-moss dark:ring-sepia/30 dark:focus-visible:outline-sepia;
+  }
+
+  .btn-chat:hover {
+    @apply bg-brand-indigo text-white ring-transparent;
+  }
+
   .btn-footer {
     @apply text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] focus-visible:outline-off-white hover:mix-blend-normal;
   }
