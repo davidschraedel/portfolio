@@ -13,9 +13,9 @@ const base = import.meta.env.BASE_URL;
   <!-- Chapter 1: Intro -->
   <section
     aria-labelledby="home-intro"
-    class="mx-auto max-w-5xl pb-12 sm:py-16 lg:text-left"
+    class="mx-auto max-w-5xl pb-12 sm:py-4 lg:text-left"
   >
-    <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12">
       <p
         id="home-intro"
         class="max-w-prose text-base leading-relaxed text-interior-designer dark:text-dim-text-muted lg:text-lg"
@@ -23,24 +23,21 @@ const base = import.meta.env.BASE_URL;
         {site.home.tldr}
       </p>
 
-      <ul
-        class="flex shrink-0 flex-wrap gap-2 lg:max-w-xs lg:justify-end"
-        aria-label="Core skills"
-      >
-        {
-          site.home.skills.map((skill) => (
-            <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-dim-muted/20 dark:text-dark-moss">
-              {skill}
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+      <div class="flex flex-col gap-4 lg:max-w-xs lg:shrink-0 lg:items-end lg:justify-between">
+        <ul class="flex flex-wrap gap-2 lg:justify-end" aria-label="Core skills">
+          {
+            site.home.skills.map((skill) => (
+              <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-dim-muted/20 dark:text-dark-moss">
+                {skill}
+              </li>
+            ))
+          }
+        </ul>
 
-    <div class="mt-8 lg:mt-10">
-      <a href="#connect" class="btn btn-soft btn-soft-default">
-        Let's chat
-      </a>
+        <a href="#connect" class="btn btn-soft btn-soft-default mx-1 my-3">
+          Let's chat
+        </a>
+      </div>
     </div>
   </section>
 
@@ -54,16 +51,17 @@ const base = import.meta.env.BASE_URL;
       {featuredProjects.map((project) => (
         <ProjectShowcase project={project} />
       ))}
-    </div>
 
-    <p class="mt-10 text-center lg:text-left">
-      <a
-        href={`${base}projects`}
-        class="text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss"
-      >
-        All projects →
-      </a>
-    </p>
+      {/* Odd featured count: fills bottom-right cell; even count: new row, right column */}
+      <p class="mt-2 text-center lg:col-start-2 lg:mt-0 lg:flex lg:items-end lg:justify-start">
+        <a
+          href={`${base}projects`}
+          class="text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss lg:inline-flex lg:min-h-11 lg:items-center lg:px-4 lg:py-2"
+        >
+          All projects →
+        </a>
+      </p>
+    </div>
   </section>
 
   <!-- Chapter 3: Connect -->
