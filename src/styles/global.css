@@ -46,12 +46,20 @@
   }
 
   ::-webkit-scrollbar-thumb:active {
-    background: color-mix(in srgb, var(--color-sepia) 80%, var(--color-dark-moss));
+    background: color-mix(
+      in srgb,
+      var(--color-sepia) 80%,
+      var(--color-dark-moss)
+    );
   }
 
   @media (prefers-color-scheme: dark) {
     ::-webkit-scrollbar-thumb {
-      background: color-mix(in srgb, var(--color-dim-highlight) 55%, var(--color-dim-page));
+      background: color-mix(
+        in srgb,
+        var(--color-dim-highlight) 55%,
+        var(--color-dim-page)
+      );
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -59,7 +67,11 @@
     }
 
     ::-webkit-scrollbar-thumb:active {
-      background: color-mix(in srgb, var(--color-sepia) 80%, var(--color-dark-moss));
+      background: color-mix(
+        in srgb,
+        var(--color-sepia) 80%,
+        var(--color-dark-moss)
+      );
     }
   }
 }
@@ -120,7 +132,11 @@ body {
       @apply text-white ring-transparent;
       background: linear-gradient(
         165deg,
-        color-mix(in srgb, var(--color-brand-indigo) 45%, var(--color-off-white)),
+        color-mix(
+          in srgb,
+          var(--color-brand-indigo) 45%,
+          var(--color-off-white)
+        ),
         var(--color-brand-indigo)
       );
     }
@@ -206,9 +222,10 @@ nav[aria-label="Main"]::after {
 
 /* Touch active feedback — provides tap press state since hover is suppressed on touch */
 @media (hover: none) {
-  a:active,
+  a:not(.nav-link):active,
   button:active {
     opacity: 0.75;
+    box-shadow: inset 0 2px 8px rgb(0 0 0 / 0.15);
     transition: opacity 100ms ease-in-out;
   }
 }
