@@ -59,15 +59,15 @@ body {
   }
 
   .btn-soft {
-    @apply text-interior-designer transition-colors focus-visible:outline-sepia dark:focus-visible:outline-sepia;
+    @apply bg-skin/40 text-interior-designer ring-1 ring-sepia/25 transition-[color,background-color,box-shadow] focus-visible:outline-sepia dark:bg-dim-muted/60 dark:text-dim-text-muted dark:ring-sepia/20 dark:focus-visible:outline-sepia;
   }
 
   .btn-soft-default {
-    @apply transition-[color,background-color] duration-200 ease-in-out;
+    @apply transition-[color,background-color,box-shadow] duration-200 ease-in-out;
   }
 
   .btn-soft-default:hover {
-    @apply bg-brand-indigo text-white;
+    @apply bg-brand-indigo text-white ring-transparent;
   }
 
   .btn-footer {
@@ -75,19 +75,19 @@ body {
   }
 
   .btn-linkedin {
-    @apply hover:bg-[#0077B5] hover:text-white;
+    @apply hover:bg-[#0077B5] hover:text-white hover:ring-transparent;
   }
 
   .btn-github {
-    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc] hover:ring-transparent;
   }
 
   .btn-substack {
-    @apply hover:bg-[#ff6719] hover:text-white;
+    @apply hover:bg-[#ff6719] hover:text-white hover:ring-transparent;
   }
 
   .btn-gmail {
-    @apply hover:bg-[#4285F4] hover:text-white;
+    @apply hover:bg-[#4285F4] hover:text-white hover:ring-transparent;
   }
 
   .nav-link {

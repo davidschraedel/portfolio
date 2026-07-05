@@ -12,7 +12,7 @@ const { project } = Astro.props;
 const mediaLink = project.videoUrl ?? project.demoUrl;
 ---
 
-<article class="overflow-hidden rounded-xl bg-off-white/80 ring-1 ring-sepia/25 dark:bg-dim-surface dark:ring-dim-muted">
+<article class="overflow-hidden rounded-xl bg-off-white/50 ring-1 ring-sepia/25 dark:bg-white/30 dark:ring-dim-muted">
   <div class="flex flex-col gap-4">
     <div class="order-first">
       {
@@ -50,14 +50,14 @@ const mediaLink = project.videoUrl ?? project.demoUrl;
       <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-dim-text-muted">
         <div>
           <dt class="sr-only">Problem</dt>
-          <dd>
+          <dd class="text-[0.9rem] sm:text-base">
             <span class="font-medium text-dark-moss">Problem ·</span>{" "}
             {project.objective}
           </dd>
         </div>
         <div>
           <dt class="sr-only">Solution</dt>
-          <dd>
+          <dd class="text-[0.9rem] sm:text-base">
             <span class="font-medium text-dark-moss">Solution ·</span>{" "}
             {project.tradeOff}
           </dd>
@@ -67,7 +67,7 @@ const mediaLink = project.videoUrl ?? project.demoUrl;
       <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
         {
           project.stack.map((tag) => (
-            <li class="rounded-full bg-skin/50 px-3 py-1 text-xs text-dark-moss dark:bg-dim-muted dark:text-dark-moss">
+            <li class="rounded-full bg-skin/20 px-3 py-1 text-[0.7rem] sm:text-xs text-dark-moss dark:bg-dim-muted/20 dark:text-dark-moss">
               {tag}
             </li>
           ))
@@ -83,7 +83,7 @@ const mediaLink = project.videoUrl ?? project.demoUrl;
               rel="noopener noreferrer"
               class="btn btn-soft btn-soft-default"
             >
-              Live demo
+              Take a look ↗
             </a>
           )
         }
@@ -93,9 +93,9 @@ const mediaLink = project.videoUrl ?? project.demoUrl;
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-soft btn-github"
+              class="btn btn-soft btn-github text-[0.7rem] sm:text-[0.9rem]"
             >
-              GitHub
+              GitHub ↗
             </a>
           )
         }
