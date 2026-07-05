@@ -191,7 +191,7 @@
       "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
       "layout": "media-right",
       "featured": false,
-      "demoUrl": "",
+      "demoUrl": null,
       "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
       "previewImageKey": "microdeck",
       "previewAlt": "MicroDeck iOS habit initiation app concept",
