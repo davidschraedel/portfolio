@@ -197,6 +197,16 @@ body {
   .nav-link[aria-current="page"] {
     @apply text-dark-moss underline dark:text-dark-moss;
   }
+
+  .project-preview-image {
+    @apply opacity-80 transition-opacity;
+  }
+
+  @media (hover: hover) {
+    .project-preview-image:hover {
+      opacity: 0.95;
+    }
+  }
 }
 
 nav[aria-label="Main"]::after {

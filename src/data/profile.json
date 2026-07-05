@@ -226,6 +226,21 @@
       "previewImageKey": "calendar-dashboard",
       "previewAlt": "Looker Studio calendar time allocation dashboard",
       "videoUrl": null
+    },
+    {
+      "id": "voice-first-portfolio",
+      "slug": "voice-first-portfolio",
+      "name": "Voice-First Portfolio Site",
+      "objective": "Recruiters spend about a minute per candidate; most portfolios lead with flashy UI or undifferentiated GitHub links—not a clear read on how someone thinks, ships, and communicates.",
+      "tradeOff": "Refactored React portfolio into Astro with a json-based source of truth for copy.",
+      "stack": ["Astro", "Tailwind CSS", "TypeScript", "GitHub Pages"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/portfolio/",
+      "githubUrl": "https://github.com/davidschraedel/portfolio",
+      "previewImageKey": "voice-first-portfolio",
+      "previewAlt": "Voice-first portfolio site homepage with featured projects grid",
+      "videoUrl": null
     }
   ]
 }
