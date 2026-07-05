@@ -48,22 +48,14 @@ const previewImageClass = "h-full w-full object-cover opacity-80";
     <div class="px-4 pb-5">
       <h3 class="text-xl font-semibold text-dark-moss">{project.name}</h3>
 
-      <dl class="mt-4 space-y-3 text-base text-interior-designer dark:text-dim-text-muted">
-        <div>
-          <dt class="sr-only">Problem</dt>
-          <dd class="text-[0.9rem] sm:text-base">
-            <span class="font-medium text-dark-moss">Problem ·</span>{" "}
-            {project.objective}
-          </dd>
-        </div>
-        <div>
-          <dt class="sr-only">Solution</dt>
-          <dd class="text-[0.9rem] sm:text-base">
-            <span class="font-medium text-dark-moss">Solution ·</span>{" "}
-            {project.tradeOff}
-          </dd>
-        </div>
-      </dl>
+      <p class="mt-4 text-[0.9rem] sm:text-base text-interior-designer dark:text-dim-text-muted">
+        {project.objective}
+      </p>
+      <ul class="mt-2 text-[0.9rem] sm:text-base text-interior-designer dark:text-dim-text-muted">
+        <li class="ml-4 list-disc marker:text-sepia/40 dark:marker:text-dim-highlight">
+          {project.tradeOff}
+        </li>
+      </ul>
 
       <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
         {
