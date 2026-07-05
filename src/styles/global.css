@@ -18,6 +18,8 @@
   --color-dim-highlight: #c9ae98;
   --color-dim-gradient-from: #6b5e4a;
   --color-dim-gradient-to: #a8b5a0;
+
+  --color-sage: #a6b39e;
 }
 
 @supports selector(::-webkit-scrollbar) {
@@ -71,11 +73,46 @@ body {
   }
 
   .btn-chat {
-    @apply bg-skin text-dark-moss ring-1 ring-sepia/40 transition-[color,background-color,box-shadow] focus-visible:outline-sepia dark:bg-dim-highlight dark:text-dark-moss dark:ring-sepia/30 dark:focus-visible:outline-sepia;
+    @apply px-10 text-dark-moss ring-1 ring-sepia/35 transition-[color] duration-200 ease-in-out focus-visible:outline-sepia;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--color-skin) 18%, var(--color-off-white)),
+      color-mix(in srgb, var(--color-skin) 32%, var(--color-off-white))
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-chat {
+      @apply ring-sepia/25;
+      background: linear-gradient(
+        165deg,
+        var(--color-dim-elevated),
+        color-mix(
+          in srgb,
+          var(--color-dim-highlight) 30%,
+          var(--color-dim-elevated)
+        )
+      );
+    }
   }
 
   .btn-chat:hover {
-    @apply bg-brand-indigo text-white ring-transparent;
+    @apply text-white ring-transparent;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--color-brand-indigo) 45%, var(--color-off-white)),
+      var(--color-brand-indigo)
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-chat:hover {
+      background: linear-gradient(
+        165deg,
+        color-mix(in srgb, var(--color-sepia) 50%, var(--color-skin)),
+        var(--color-sepia)
+      );
+    }
   }
 
   .btn-footer {

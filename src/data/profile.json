@@ -28,7 +28,7 @@
     "contrastLead": ["Data", "AI", "Product"]
   },
   "home": {
-    "tldr": "My problem-solving approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to everything I build. I enjoy asking questions and uncovering unknowns in a project. I build data pipelines, AI-integrated products, and full-stack tools — from local Python ETL to deployed React apps on AWS.",
+    "tldr": "My problem-solving approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to everything I build. I enjoy asking questions and uncovering unknowns in a project. I build data pipelines, AI tools, and web systems that make information and decisions easier to engage with.",
     "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
   },
   "handshakeLine": "Working on something meaningful? I'd love to connect.",
