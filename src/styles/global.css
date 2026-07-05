@@ -18,6 +18,10 @@
   --color-dim-highlight: #c9ae98;
   --color-dim-gradient-from: #6b5e4a;
   --color-dim-gradient-to: #a8b5a0;
+
+  --color-sage: #a6b39e;
+
+  --shadow-inner-faint: inset 0 2px 10px 0px rgb(0 0 0 / 0.02);
 }
 
 @supports selector(::-webkit-scrollbar) {
@@ -59,15 +63,58 @@ body {
   }
 
   .btn-soft {
-    @apply text-interior-designer transition-colors focus-visible:outline-sepia dark:focus-visible:outline-sepia;
+    @apply bg-skin/40 text-interior-designer ring-1 ring-sepia/25 transition-[color,background-color,box-shadow] focus-visible:outline-sepia dark:bg-dim-muted/60 dark:text-dim-text-muted dark:ring-sepia/20 dark:focus-visible:outline-sepia;
   }
 
   .btn-soft-default {
-    @apply transition-[color,background-color] duration-200 ease-in-out;
+    @apply transition-[color,background-color,box-shadow] duration-200 ease-in-out;
   }
 
   .btn-soft-default:hover {
-    @apply bg-brand-indigo text-white;
+    @apply bg-brand-indigo text-white ring-transparent;
+  }
+
+  .btn-chat {
+    @apply px-10 text-dark-moss ring-1 ring-sepia/35 transition-[color] duration-200 ease-in-out focus-visible:outline-sepia;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--color-skin) 18%, var(--color-off-white)),
+      color-mix(in srgb, var(--color-skin) 32%, var(--color-off-white))
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-chat {
+      @apply ring-sepia/25;
+      background: linear-gradient(
+        165deg,
+        var(--color-dim-elevated),
+        color-mix(
+          in srgb,
+          var(--color-dim-highlight) 30%,
+          var(--color-dim-elevated)
+        )
+      );
+    }
+  }
+
+  .btn-chat:hover {
+    @apply text-white ring-transparent;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--color-brand-indigo) 45%, var(--color-off-white)),
+      var(--color-brand-indigo)
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-chat:hover {
+      background: linear-gradient(
+        165deg,
+        color-mix(in srgb, var(--color-sepia) 50%, var(--color-skin)),
+        var(--color-sepia)
+      );
+    }
   }
 
   .btn-footer {
@@ -75,42 +122,27 @@ body {
   }
 
   .btn-linkedin {
-    @apply hover:bg-[#0077B5] hover:text-white;
+    @apply hover:bg-[#0077B5] hover:text-white hover:ring-transparent;
   }
 
   .btn-github {
-    @apply hover:bg-[#2b3137] hover:text-[#fafbfc];
+    @apply hover:bg-[#2b3137] hover:text-[#fafbfc] hover:ring-transparent;
   }
 
   .btn-substack {
-    @apply hover:bg-[#ff6719] hover:text-white;
+    @apply hover:bg-[#ff6719] hover:text-white hover:ring-transparent;
   }
 
   .btn-gmail {
-    @apply hover:bg-[#4285F4] hover:text-white;
+    @apply hover:bg-[#4285F4] hover:text-white hover:ring-transparent;
   }
 
   .nav-link {
-    @apply text-base text-interior-designer underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-text-muted dark:focus-visible:outline-sepia;
-    opacity: 0.5;
-    transition:
-      opacity 200ms ease-in-out,
-      color 200ms ease-in-out,
-      text-shadow 200ms ease-in-out,
-      text-decoration-color 200ms ease-in-out;
-  }
-
-  .nav-link:hover {
-    text-decoration-line: underline;
-    opacity: 1;
-    text-shadow:
-      0 0 8px rgba(137, 108, 85, 0.3),
-      0 0 20px rgba(137, 108, 85, 0.1);
+    @apply text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss;
   }
 
   .nav-link[aria-current="page"] {
-    text-decoration-line: underline;
-    opacity: 1;
+    @apply text-dark-moss underline dark:text-dark-moss;
   }
 }
 

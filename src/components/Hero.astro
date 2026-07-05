@@ -16,16 +16,20 @@ import { site } from "../data/site";
   />
 </div>
 
-<div class="px-4 pb-4 pt-8 text-center sm:px-8">
+<div class="px-4 pb-1.5 pt-6 text-center sm:px-8 sm:pt-8">
   <p class="text-5xl font-medium text-sepia dark:text-dim-highlight">{site.name}</p>
   <h1
-    class="mx-auto mt-3 max-w-4xl text-lg font-semibold leading-snug text-dark-moss sm:text-[1.3rem]"
+    class="mx-auto mt-4 max-w-4xl text-[1rem] font-medium leading-snug text-dark-moss sm:text-[1.2rem]"
   >
-    {site.hero.contrastLead}
+    {
+      site.hero.contrastLead.map((item, index) => (
+        <>
+          {index > 0 && (
+            <span class="opacity-30 text-sepia dark:text-dim-highlight">, </span>
+          )}
+          {item}
+        </>
+      ))
+    }
   </h1>
-  <p
-    class="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-interior-designer dark:text-dim-text-muted"
-  >
-    {site.hero.professionalSentence}
-  </p>
 </div>
