@@ -2,6 +2,47 @@
 
 A concise history of changes.
 
+## 2026-07-04 (copy — connect, projects, about)
+
+- Rewrote `home.tldr` and `connect.paragraphs` in `profile.json`
+- Tightened all project `objective`/`tradeOff` fields across `profile.json`
+- About paragraph copy fix (MISM sentence)
+- `ProjectShowcase` labels removed: objective as plain paragraph, tradeOff as bulleted list (no more "Problem ·" / "Solution ·")
+
+## 2026-07-04 (homepage polish — CTA, connect card, project previews)
+
+- Added `btn-chat` variant (gradient fill, dim-mode hover); "Let's chat" CTA moved into intro column beside skills pills
+- Connect card: ring border → `shadow-inner` → `shadow-inner-faint` token
+- "All projects →" link placed in grid bottom-right cell; intro/work/connect spacing tuned
+- Project preview images: fixed `aspect-[5/2]` ratio, expanded srcset (up to 800px)
+- Case study "Read more..." link commented out in `ProjectShowcase`
+
+## 2026-07-04 (homepage — Intro · Work · Connect arc)
+
+- `index.astro` restructured into three chapters: Intro (TLDR + skills), Work (featured grid), Connect (handshake + contact)
+- Added `home` (`tldr`, `skills`) and `connect` (`heading`, `paragraphs`) keys to `profile.json`; wired through `site.ts`
+- `handshakeLine` now rendered in Connect section (was in data only)
+- Hero `professionalSentence` removed; content moved to `home.tldr`
+- Hero `contrastLead` changed from string to array — renders as comma-separated items
+- Featured set narrowed to 3 (Soundwatch, I AM, Transcript Pipeline); four newer projects set `featured: false`
+- Added `getFeaturedProjects()` export to `projects.ts`
+- New `/projects` index page; homepage links via "All projects →"
+- Nav: "Featured Projects" → "Home"; added dedicated "Projects" link
+- `scroll-smooth` on `<html>`; BaseLayout meta description uses `site.home.tldr`
+
+## 2026-07-04 (project cards — styling pass)
+
+- Card background softened (`bg-off-white/50`); stack tags lighter (`bg-skin/20`)
+- Demo CTA renamed "Live demo" → "Take a look ↗"; GitHub button gets ↗ suffix and responsive text size
+- I AM preview asset: `iam-demo-video.png` → `iam.png`
+- Hero copy and margin tweaks
+
+## 2026-07-01 (docs — context extraction)
+
+- PRD bumped to v3.2 and MVP to v2.2 — trimmed for AI context extraction
+- `architecture.md`, `coding-style.md`, `context.md` updated to match current implementation
+- README minor update
+
 ## 2026-06-30 (projects — four new entries)
 
 - Added YouTube KPI Framework, MicroDeck, Midi Morph, and Calendar Dashboard to `profile.json`
