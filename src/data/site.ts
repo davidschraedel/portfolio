@@ -8,8 +8,7 @@ export interface SiteConfig {
   substackUrl: string | null;
   resumePath: string;
   hero: {
-    contrastLead: string;
-    professionalSentence: string;
+    contrastLead: string[];
   };
   home: {
     tldr: string;
@@ -31,7 +30,6 @@ export const site: SiteConfig = {
   resumePath: `${import.meta.env.BASE_URL}${profile.person.resume}`,
   hero: {
     contrastLead: profile.hero.contrastLead,
-    professionalSentence: profile.hero.professionalSentence,
   },
   home: {
     tldr: profile.home.tldr,
