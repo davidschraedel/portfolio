@@ -1,31 +1,112 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
 
-import { projects } from "../data/projects";
+import { getFeaturedProjects } from "../data/projects";
 import { site } from "../data/site";
 
-const featuredProjects = projects.filter((project) => project.featured);
+const featuredProjects = getFeaturedProjects();
+const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout
-  title={site.name}
-  description={site.hero.professionalSentence}
->
-  <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
-    <SectionHeading
-      id="projects-heading"
-      title="Featured Projects"
-      subtitle="Here are some projects I've enjoyed..."
-    />
+<BaseLayout title={site.name} description={site.home.tldr}>
+  <!-- Chapter 1: Intro -->
+  <section
+    aria-labelledby="home-intro"
+    class="mx-auto max-w-5xl pb-12 sm:py-4 lg:text-left"
+  >
+    <div class="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12">
+      <p
+        id="home-intro"
+        class="max-w-prose text-base leading-relaxed text-interior-designer dark:text-dim-text-muted lg:text-lg"
+      >
+        {site.home.tldr}
+      </p>
 
-    <div class="grid gap-8  lg:grid-cols-2">
-      {
-        featuredProjects.map((project) => (
-          <ProjectShowcase project={project} />
-        ))
-      }
+      <div class="flex flex-col gap-9 lg:max-w-xs lg:shrink-0 lg:items-end lg:justify-between">
+        <ul class="flex flex-wrap gap-2 lg:justify-end" aria-label="Core skills">
+          {
+            site.home.skills.map((skill) => (
+              <li class="rounded-full bg-skin/50 px-3 py-1 text-sm text-dark-moss dark:bg-dim-muted/20 dark:text-dark-moss">
+                {skill}
+              </li>
+            ))
+          }
+        </ul>
+
+        <a href="#connect" class="btn btn-chat w-fit mx-1 mb-2 self-center lg:self-end">
+          Let's chat
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 2: Work -->
+  <section
+    id="work"
+    aria-label="Selected projects"
+    class="mt-16 scroll-mt-8 sm:mt-26"
+  >
+    <div class="grid gap-8 lg:grid-cols-2">
+      {featuredProjects.map((project) => (
+        <ProjectShowcase project={project} />
+      ))}
+
+      {/* Odd featured count: fills bottom-right cell; even count: new row, right column */}
+      <p class="mt-2 text-center lg:col-start-2 lg:mt-0 lg:flex lg:items-end lg:justify-start">
+        <a
+          href={`${base}projects`}
+          class="text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss lg:inline-flex lg:min-h-11 lg:items-center lg:px-6 lg:py-7"
+        >
+          All projects →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Connect -->
+  <section
+    id="connect"
+    aria-labelledby="connect-heading"
+    class="mx-auto mt-28 mb-5 max-w-2xl scroll-mt-24 sm:mt-32"
+  >
+    <div
+      class="rounded-2xl bg-skin/20 px-6 py-16 text-center shadow-inner-faint dark:bg-dim-muted/40 sm:px-10 sm:py-20"
+    >
+      <h2
+        id="connect-heading"
+        class="text-2xl font-semibold text-dark-moss sm:text-3xl"
+      >
+        {site.connect.heading}
+      </h2>
+
+      <p class="mt-6 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
+        {site.handshakeLine}
+      </p>
+
+      <div class="mt-6 space-y-4">
+        {
+          site.connect.paragraphs.map((paragraph) => (
+            <p class="text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
+              {paragraph}
+            </p>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <a href={`mailto:${site.email}`} class="btn btn-soft btn-soft-default">
+          Email
+        </a>
+        <a
+          href={site.linkedInUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-soft btn-linkedin"
+        >
+          LinkedIn
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

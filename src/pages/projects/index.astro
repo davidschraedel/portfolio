@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ProjectShowcase from "../../components/ProjectShowcase.astro";
+
+import { projects } from "../../data/projects";
+import { site } from "../../data/site";
+---
+
+<BaseLayout
+  title={`Projects — ${site.name}`}
+  description="Featured projects and case studies."
+>
+  <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
+    <SectionHeading
+      id="projects-heading"
+      title="Projects"
+      subtitle="Here are some projects I've enjoyed..."
+    />
+
+    <div class="grid gap-8 lg:grid-cols-2">
+      {projects.map((project) => (
+        <ProjectShowcase project={project} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
