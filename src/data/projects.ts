@@ -26,6 +26,10 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }
 
+export function getFeaturedProjects(): Project[] {
+  return projects.filter((project) => project.featured);
+}
+
 export const projects: Project[] = profileData.projects.map((p) => {
   const imgModule = images[`../assets/portfolio/${p.previewImageKey}.png`];
   if (!imgModule) {
