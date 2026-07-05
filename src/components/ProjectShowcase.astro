@@ -10,35 +10,36 @@ interface Props {
 const { project } = Astro.props;
 
 const mediaLink = project.videoUrl ?? project.demoUrl;
+const previewImageClass = "h-full w-full object-cover opacity-80";
 ---
 
 <article class="overflow-hidden rounded-xl bg-off-white/50 ring-1 ring-sepia/25 dark:bg-white/30 dark:ring-dim-muted">
   <div class="flex flex-col gap-4">
-    <div class="order-first">
+    <div class="order-first aspect-[5/2] w-full overflow-hidden">
       {
         mediaLink ? (
           <a
             href={mediaLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="block overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia"
+            class="block h-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia"
             aria-label={`${project.name} demo preview`}
           >
             <Image
               src={project.previewImage}
               alt={project.previewAlt}
-              widths={[300, 400, 500]}
-              sizes="(max-width: 768px) 100vw, 400px"
-              class="h-auto max-h-48 w-full object-cover opacity-80 transition-opacity hover:opacity-95"
+              widths={[300, 400, 500, 640, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+              class={`${previewImageClass} transition-opacity hover:opacity-95`}
             />
           </a>
         ) : (
           <Image
             src={project.previewImage}
             alt={project.previewAlt}
-            widths={[300, 400, 500]}
-            sizes="(max-width: 768px) 100vw, 400px"
-            class="h-auto max-h-48 w-full object-cover opacity-80"
+            widths={[300, 400, 500, 640, 800]}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+            class={previewImageClass}
           />
         )
       }

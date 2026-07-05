@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
     aria-labelledby="home-intro"
     class="mx-auto max-w-5xl pb-12 sm:py-4 lg:text-left"
   >
-    <div class="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12">
+    <div class="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12">
       <p
         id="home-intro"
         class="max-w-prose text-base leading-relaxed text-interior-designer dark:text-dim-text-muted lg:text-lg"
@@ -23,7 +23,7 @@ const base = import.meta.env.BASE_URL;
         {site.home.tldr}
       </p>
 
-      <div class="flex flex-col gap-4 lg:max-w-xs lg:shrink-0 lg:items-end lg:justify-between">
+      <div class="flex flex-col gap-6 lg:max-w-xs lg:shrink-0 lg:items-end lg:justify-between">
         <ul class="flex flex-wrap gap-2 lg:justify-end" aria-label="Core skills">
           {
             site.home.skills.map((skill) => (
@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL;
           }
         </ul>
 
-        <a href="#connect" class="btn btn-soft btn-soft-default mx-1 my-3">
+        <a href="#connect" class="btn btn-soft btn-soft-default w-fit self-center lg:self-end mx-1 my-3">
           Let's chat
         </a>
       </div>
