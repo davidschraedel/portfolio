@@ -133,9 +133,9 @@ body {
     @apply hover:bg-[#ff6719] hover:text-white hover:ring-transparent;
   }
 
-  .btn-gmail {
+  /* .btn-gmail {
     @apply hover:bg-[#4285F4] hover:text-white hover:ring-transparent;
-  }
+  } */
 
   .nav-link {
     @apply text-base text-sepia underline-offset-4 transition-colors hover:text-dark-moss hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia dark:text-dim-highlight dark:hover:text-dark-moss;
