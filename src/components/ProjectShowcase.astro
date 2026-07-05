@@ -9,7 +9,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const mediaLink = project.videoUrl ?? project.demoUrl;
+const mediaLink = project.videoUrl ?? project.demoUrl ?? project.githubUrl;
 const previewImageClass = "project-preview-image h-full w-full object-cover";
 ---
 
