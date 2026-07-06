@@ -48,12 +48,12 @@
   "timeline": [
     {
       "start": "2015-04",
-      "label": "Earned Eagle Scout. The project required planning, leadership, follow-through, and sewing skills."
+      "label": "Earned Eagle Scout. The project required planning, leadership, follow-through, and sewing skills, supporting patients at the Intermountain Health Utah Valley Hospital."
     },
     {
       "start": "2016-01",
       "end": "2018-01",
-      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language."
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language. I was also thorough and responsible with my use and adoption of our new technology tools."
     },
     {
       "start": "2019-04",
@@ -119,6 +119,14 @@
     {
       "start": "2026-05",
       "label": "Engineered a Python extraction pipeline processing 6.7M+ words of YouTube transcript data into AI-ready structured context."
+    },
+    {
+      "start": "2026-03",
+      "label": "Capstone project at BYU Marriott: built out core functionality of I AM, a React app with AI powered by Amazon Bedrock's models and knowledge base capabilities to allow content creators to scale connection with their audience while matching voice and brand in an authentic way."
+    },
+    {
+      "start": "2026-02",
+      "label": "Applied AI group project: designed and built MicroDeck, a Flutter-based habit-initiation app with user-authored micro-action cards and short timers. We developed rapidly with iterative design and testing, market research,user feedback, and agentic, spec-driven development workflows."
     }
   ],
   "projects": [
