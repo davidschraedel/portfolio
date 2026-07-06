@@ -2,6 +2,10 @@
 
 A concise history of changes.
 
+## 2026-07-05 (Story — reverse chronological timeline)
+
+- `about.astro`: Timeline entries sorted by `start` date descending at render time (most recent first)
+
 ## 2026-07-05 (mobile — suppress hover on touch device)
 
 - `global.css`: Added `@custom-variant hover` override so all `hover:` Tailwind utilities only fire on pointer devices (`@media (hover: hover)`)
