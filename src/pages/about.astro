@@ -13,6 +13,11 @@ const timeline = [...profile.timeline].sort((a, b) =>
   <section id="about" aria-labelledby="about-heading" class="scroll-mt-8">
     <SectionHeading id="about-heading" title={profile.about.heading} />
 
+    <p class="mx-auto mb-10 max-w-2xl text-center text-base leading-relaxed">
+      <span class="font-semibold uppercase tracking-wide text-sepia dark:text-dim-highlight">TLDR:</span>
+      <span class="text-dark-moss italic"> {profile.about.tldr}</span>
+    </p>
+
     <div class="mx-auto max-w-2xl space-y-5 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
       {profile.about.paragraphs.map((paragraph) => (
         <p>{paragraph}</p>
