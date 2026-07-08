@@ -9,13 +9,13 @@
   },
   "about": {
     "heading": "About Me",
+    "tldr": "I play nice, strive for quality, ask questions, and practice humility.",
     "paragraphs": [
       "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
       "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
       "In my Master of Information Systems Management, I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
-      "My general background is all over the place in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, family studies, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings.",
+      "My general background is multidisciplinary in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, education, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings. This busy travel schedule taught me as much about the world and technology as it did about adaptability, low ego, and curiosity in relationship with my peers.",
       "I took a pretty broad approach to undergrad, minoring in Family Life and taking courses in anthropology, yoga, philosophy, religious text analysis, and interior design. One of my favorite subjects was negotiation, which changed how I approach conflicts between ideas or individuals. I also sang for two years in BYU's selective choral program, first in the BYU Men's Chorus and then Concert Choir. Outside of coursework, I was involved in the Mindfulness and Meditation Club, Introverts in Business, UX Design Association, AI in Business Society, Association for Information Systems, and Product Management Association. I also enjoyed international film showings, where I was exposed to perspectives from and about other cultures.",
-      "Before university, I earned the Eagle Scout award. My project involved organizing and leading the production of 37 pairs of pajama pants donated to patients at the Utah Valley Regional Medical Center. In high school, I served as head editor for our 2015 graduation video.",
       "The through-line in how people describe me has been that I listen well and stay genuinely curious. I think before I speak, I care about getting details right, and I am genuinely interested in the people I work with. If there is anything I’m most proud of, it’s that I have an open mind with high standards."
     ],
     "images": {
@@ -35,7 +35,7 @@
   "connect": {
     "heading": "Let's connect",
     "paragraphs": [
-      "Reach out if you want a second pair of eyes and ears, need someone to test a product, or are hiring for a role where you think I could make a difference",
+      "Reach out if you want a second pair of eyes and ears, need someone to test a product, or are hiring for a role where you think I could make a difference.",
       "I'm always open unconventional ideas. Or maybe you're doing the same-old exceptionally? Would love to help with that too.",
       "Send me a message via email or LinkedIn."
     ]
@@ -48,12 +48,12 @@
   "timeline": [
     {
       "start": "2015-04",
-      "label": "Earned Eagle Scout. The project required planning, leadership, follow-through, and sewing skills."
+      "label": "Earned Eagle Scout. The project required planning, leadership, follow-through, and sewing skills, supporting patients at the Intermountain Health Utah Valley Hospital."
     },
     {
       "start": "2016-01",
       "end": "2018-01",
-      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language."
+      "label": "Full-time Volunteer Representative for The Church of Jesus Christ of Latter-day Saints in Albuquerque, NM for two years. A peer later said he never heard me speak a scripted word. I was serious about being authentic, thinking for myself, and speaking the people's language. I was also thorough and responsible with my use and adoption of our new technology tools."
     },
     {
       "start": "2019-04",
@@ -101,8 +101,8 @@
       "label": "UX and Web Developer at The LTN Foundation, where I led development of a responsive React site, designed and normalized a relational database, and clarified the organization's branding and information architecture."
     },
     {
-      "start": "2025-01",
-      "label": "Partnered with a local business to design and test agentic AI systems using LangChain — first time taking a real client's workflow friction and resolving it end-to-end with AI tooling."
+      "start": "2025-12",
+      "label": "Partnered with a local business to design and test agentic AI systems built with LangChain and strategic reasoning."
     },
     {
       "start": "2025-09",
@@ -117,8 +117,16 @@
       "label": "Master of Information Systems Management, BYU Marriott School of Business. Emphasis in Data Engineering and Business Intelligence. Coursework: Agentic AI Systems, Data Engineering (Python, dbt, Snowflake), Data Science (R, scikit-learn), Cloud Engineering (AWS, Terraform)."
     },
     {
-      "start": "2026-04",
+      "start": "2026-05",
       "label": "Engineered a Python extraction pipeline processing 6.7M+ words of YouTube transcript data into AI-ready structured context."
+    },
+    {
+      "start": "2026-03",
+      "label": "Capstone project at BYU Marriott: built out core functionality of I AM, a React app with AI powered by Amazon Bedrock's models and knowledge base capabilities to allow content creators to scale connection with their audience while matching voice and brand in an authentic way."
+    },
+    {
+      "start": "2026-02",
+      "label": "Applied AI group project: designed and built MicroDeck, a Flutter-based habit-initiation app with user-authored micro-action cards and short timers. We developed rapidly with iterative design and testing, market research,user feedback, and agentic, spec-driven development workflows."
     }
   ],
   "projects": [
@@ -191,7 +199,7 @@
       "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
       "layout": "media-right",
       "featured": false,
-      "demoUrl": "",
+      "demoUrl": null,
       "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
       "previewImageKey": "microdeck",
       "previewAlt": "MicroDeck iOS habit initiation app concept",
@@ -225,6 +233,21 @@
       "githubUrl": "https://github.com/davidschraedel/google-apps-script",
       "previewImageKey": "calendar-dashboard",
       "previewAlt": "Looker Studio calendar time allocation dashboard",
+      "videoUrl": null
+    },
+    {
+      "id": "voice-first-portfolio",
+      "slug": "voice-first-portfolio",
+      "name": "Voice-First Portfolio Site",
+      "objective": "Recruiters spend about a minute per candidate; most portfolios lead with flashy UI or undifferentiated GitHub links—not a clear read on how someone thinks, ships, and communicates.",
+      "tradeOff": "Refactored React portfolio into Astro with a json-based source of truth for copy.",
+      "stack": ["Astro", "Tailwind CSS", "TypeScript", "GitHub Pages"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/portfolio/",
+      "githubUrl": "https://github.com/davidschraedel/portfolio",
+      "previewImageKey": "voice-first-portfolio",
+      "previewAlt": "Voice-first portfolio site homepage with featured projects grid",
       "videoUrl": null
     }
   ]

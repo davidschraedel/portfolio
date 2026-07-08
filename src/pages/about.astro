@@ -3,11 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 
 import profile from "../data/profile.json";
+
+const timeline = [...profile.timeline].sort((a, b) =>
+  (b.start ?? "").localeCompare(a.start ?? ""),
+);
 ---
 
 <BaseLayout title="About — David Schraedel" description="About David Schraedel.">
   <section id="about" aria-labelledby="about-heading" class="scroll-mt-8">
     <SectionHeading id="about-heading" title={profile.about.heading} />
+
+    <p class="mx-auto mb-10 max-w-2xl text-center text-base leading-relaxed">
+      <span class="font-semibold uppercase tracking-wide text-sepia dark:text-dim-highlight">TLDR:</span>
+      <span class="text-dark-moss italic"> {profile.about.tldr}</span>
+    </p>
 
     <div class="mx-auto max-w-2xl space-y-5 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
       {profile.about.paragraphs.map((paragraph) => (
@@ -20,7 +29,7 @@ import profile from "../data/profile.json";
     <SectionHeading id="timeline-heading" title="Timeline" />
 
     <ol class="mx-auto max-w-2xl space-y-6">
-      {profile.timeline.map((entry) => (
+      {timeline.map((entry) => (
         <li class="flex gap-4">
           <span class="mt-1 w-16 shrink-0 text-sm text-sepia dark:text-dim-highlight">
             {(entry.start ?? "").slice(0, 4)}

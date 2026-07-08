@@ -9,8 +9,8 @@ interface Props {
 
 const { project } = Astro.props;
 
-const mediaLink = project.videoUrl ?? project.demoUrl;
-const previewImageClass = "h-full w-full object-cover opacity-80";
+const mediaLink = project.videoUrl ?? project.demoUrl ?? project.githubUrl;
+const previewImageClass = "project-preview-image h-full w-full object-cover";
 ---
 
 <article class="overflow-hidden rounded-xl bg-off-white/50 ring-1 ring-sepia/25 dark:bg-white/30 dark:ring-dim-muted">
@@ -30,7 +30,7 @@ const previewImageClass = "h-full w-full object-cover opacity-80";
               alt={project.previewAlt}
               widths={[300, 400, 500, 640, 800]}
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-              class={`${previewImageClass} transition-opacity hover:opacity-95`}
+              class={previewImageClass}
             />
           </a>
         ) : (
@@ -60,7 +60,7 @@ const previewImageClass = "h-full w-full object-cover opacity-80";
       <ul class="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
         {
           project.stack.map((tag) => (
-            <li class="rounded-full bg-skin/20 px-3 py-1 text-[0.7rem] sm:text-xs text-dark-moss dark:bg-dim-muted/20 dark:text-dark-moss">
+            <li class="rounded-full px-3 py-1 text-[0.7rem] sm:text-xs text-dark-moss dark:text-dark-moss opacity-70">
               {tag}
             </li>
           ))
