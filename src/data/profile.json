@@ -131,6 +131,21 @@
   ],
   "projects": [
     {
+      "id": "photo-book-generator",
+      "slug": "photo-book-generator",
+      "name": "Photo Book Generator",
+      "objective": "Creating a 70-page family photo book manually in PowerPoint or a similar tool is extremely time-consuming, and industry-standard photo book services are an only marginally-better experience with higher costs.",
+      "tradeOff": "Python script that generates templated PowerPoint pages from a predefined layout, populates them automatically, and saves as a file for print ordering.",
+      "stack": ["Python", "Microsoft PowerPoint"],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
+      "previewImageKey": "photo-book-generator",
+      "previewAlt": "Photo Book Generator automated PowerPoint page layout workflow",
+      "videoUrl": null
+    },
+    {
       "id": "youtube-transcript-pipeline",
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
