@@ -199,9 +199,17 @@ body {
   }
 
   @media (hover: hover) {
+    .project-preview-link .project-preview-image {
+      @apply transition-transform duration-300 ease-out;
+    }
+
+    .project-preview-link:hover .project-preview-image {
+      transform: scale(1.04);
+    }
+
     .project-preview-link::after {
       content: "";
-      @apply pointer-events-none absolute inset-0 transition-opacity;
+      @apply pointer-events-none absolute inset-0 transition-opacity duration-300 ease-out;
       background: rgba(0, 0, 0, 0.08);
     }
 

@@ -10,7 +10,7 @@ interface Props {
 const { project } = Astro.props;
 
 const mediaLink = project.videoUrl ?? project.demoUrl ?? project.githubUrl;
-const previewImageClass = "h-full w-full object-cover";
+const previewImageClass = "project-preview-image h-full w-full object-cover";
 ---
 
 <article class="overflow-hidden rounded-xl bg-off-white/50 ring-1 ring-sepia/25 dark:bg-white/30 dark:ring-dim-muted">
