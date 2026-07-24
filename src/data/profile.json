@@ -138,7 +138,7 @@
       "tradeOff": "Python script that generates templated PowerPoint pages from a predefined layout, populates them automatically, and saves as a file for print ordering.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "layout": "media-right",
-      "featured": true,
+      "featured": false,
       "demoUrl": null,
       "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
       "previewImageKey": "photo-book-generator",

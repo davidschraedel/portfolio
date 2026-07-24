@@ -198,13 +198,23 @@ body {
     @apply text-dark-moss underline dark:text-dark-moss;
   }
 
-  .project-preview-image {
-    @apply opacity-80 transition-opacity;
-  }
-
   @media (hover: hover) {
-    .project-preview-image:hover {
-      opacity: 0.95;
+    .project-preview-link .project-preview-image {
+      @apply transition-transform duration-300 ease-out;
+    }
+
+    .project-preview-link:hover .project-preview-image {
+      transform: scale(1.04);
+    }
+
+    .project-preview-link::after {
+      content: "";
+      @apply pointer-events-none absolute inset-0 transition-opacity duration-300 ease-out;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    .project-preview-link:hover::after {
+      opacity: 0;
     }
   }
 }
