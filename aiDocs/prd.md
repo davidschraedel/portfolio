@@ -2,9 +2,9 @@
 
 **Product:** Personal Developer Portfolio Site  
 **Author:** David Schraedel  
-**Version:** 3.2  
+**Version:** 3.3  
 **Status:** Active  
-**Last Updated:** June 30, 2026
+**Last Updated:** July 27, 2026
 
 ---
 
@@ -20,11 +20,11 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 
 **Dual audience, one visit:**
 
-| Audience                        | Needs                                    | How the site delivers                                                                     |
-| ------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero copy with domain/stack signal, contact and resume reachable |
-| **Hiring managers (secondary)** | Depth, judgment, repos                   | Problem/Solution on cards; optional case study pages when relevant context is available   |
-| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                        |
+| Audience                        | Needs                                    | How the site delivers                                                                                  |
+| ------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero tags + home intro with domain/stack signal, contact and resume reachable |
+| **Hiring managers (secondary)** | Depth, judgment, repos                   | Problem/Solution on cards; optional case study pages when relevant context is available                |
+| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                                     |
 
 **Link tiers** (content priority — not layout prescription):
 
@@ -114,7 +114,7 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 
 | Beat     | Content from `profile.json`                                                                  |
 | -------- | -------------------------------------------------------------------------------------------- |
-| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
+| Hook     | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name`                               |
 | Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
 | Projects | All entries where `featured: true` — Problem, Solution, stack, outbound links                |
 | Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
@@ -129,8 +129,8 @@ Navigation labels and page structure may vary by design.
 
 **1. Hero (Hook)**
 
-- `hero.contrastLead` and `hero.professionalSentence` rendered on the site
-- Professional sentence signals **role, domain, and stack** — not generic
+- `hero.contrastLead` rendered in the layout hero (domain tags, e.g. Data, AI, Product)
+- `home.tldr` and `home.skills` on the home page intro — carry **role, domain, stack, and voice**; no separate hero sentence (removed after testing; pitch lives in the home intro)
 
 **2. Story**
 
@@ -175,7 +175,7 @@ Navigation labels and page structure may vary by design.
 **US-01 — First-pass recruiter scan**  
 _As a recruiter with 60 seconds, I want role, stack, and real projects immediately, so I can decide whether to advance this profile._
 
-- Professional sentence signals role/domain/stack without reading paragraphs
+- Hero tags and home intro signal role/domain/stack without reading full Story
 - Featured projects visible with stack tags and demo/GitHub links where available
 - No tutorial clones in featured set
 
@@ -237,7 +237,7 @@ _As the site owner, I want peers to describe my role and name a project after 60
 | Live demos go down               | UptimeRobot; monthly link audit                                        |
 | Looks like every other portfolio | Voice-first copy + Problem/Solution framing; distinctive visual design |
 | Tutorial projects featured       | Hard gate — zero clones                                                |
-| Copy buries recruiter signal     | Professional sentence + stack on cards; cold-read test                 |
+| Copy buries recruiter signal     | Home intro + contrastLead + stack on cards; cold-read test             |
 | Content drift across files       | Single `profile.json` source of truth                                  |
 | Over-engineered portfolio site   | No featured self-link; plain Astro                                     |
 | AI-sounding copy                 | Read-aloud test; specific first-person voice                           |

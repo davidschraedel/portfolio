@@ -2,6 +2,12 @@
 
 A concise history of changes.
 
+## 2026-07-27 (docs — hero model)
+
+- PRD v3.3, MVP v2.3: Hook is `hero.contrastLead` + `home.tldr`/`home.skills`; removed `professionalSentence` requirement (dropped from site July 2026 — pitch lives in home intro)
+- `architecture.md`: updated Hook beat and `profile.json` keys (`hero`, `home`, `connect`)
+- `context.md`: version refs aligned
+
 ## 2026-07-05 (Story — reverse chronological timeline)
 
 - `about.astro`: Timeline entries sorted by `start` date descending at render time (most recent first)

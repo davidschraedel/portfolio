@@ -2,7 +2,7 @@
 
 How this site is structured — data flow, file responsibilities, and notable design decisions.
 
-**Last updated:** July 1, 2026
+**Last updated:** July 27, 2026
 
 ---
 
@@ -12,7 +12,7 @@ Information architecture follows the PRD story beats (layout is split across rou
 
 | Beat     | Route / location              | Source                                      |
 | -------- | ----------------------------- | ------------------------------------------- |
-| Hook     | Hero in layout (every page)   | `site.ts` → `profile.json` `hero`, `person` |
+| Hook     | Hero in layout (every page) + home intro on `/` | `site.ts` → `profile.json` `hero`, `person`, `home` |
 | Story    | `/about`                      | `profile.json` `about`, `timeline`          |
 | Projects | `/` (home)                    | `projects.ts` → featured entries            |
 | Contact  | Footer in layout (every page) | `site.ts` → `person`, `presence`            |
@@ -41,7 +41,9 @@ The only hand-edited content file. Agents must not edit it. Contains:
 | Key | What it holds |
 | --- | --- |
 | `person` | Name, email, location, timezone, `openToWork`, resume filename |
-| `hero` | `contrastLead` and `professionalSentence` strings |
+| `hero` | `contrastLead` (string array — domain tags) |
+| `home` | `tldr` (intro paragraph), `skills` (stack tags) |
+| `connect` | `heading`, `paragraphs[]` (connect card on home) |
 | `handshakeLine` | Optional CTA copy (loaded in `site.ts`; not yet rendered on the site) |
 | `presence` | GitHub, LinkedIn, Substack URLs |
 | `about` | `heading`, `paragraphs[]`, `images` placeholder |
