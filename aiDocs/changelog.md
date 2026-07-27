@@ -2,6 +2,15 @@
 
 A concise history of changes.
 
+## 2026-07-27 (docs — MVP aligned to PRD v3.4)
+
+- MVP v2.4: project cards (`objective` + bulleted `tradeOff`); Contact split footer vs home `#connect` with `handshakeLine`; `/projects` noted as shipped beyond minimum; fail-signal copy updated
+
+## 2026-07-27 (docs — PRD aligned to shipped UI)
+
+- PRD v3.4: project cards document `objective` + bulleted `tradeOff` (no labels); Contact split footer vs home `#connect`; `/projects` lists all entries; `handshakeLine` moved from nice-to-have to must-have
+- `architecture.md`, `context.md`: same corrections (handshakeLine rendered, display mapping, routes)
+
 ## 2026-07-27 (docs — hero model)
 
 - PRD v3.3, MVP v2.3: Hook is `hero.contrastLead` + `home.tldr`/`home.skills`; removed `professionalSentence` requirement (dropped from site July 2026 — pitch lives in home intro)
