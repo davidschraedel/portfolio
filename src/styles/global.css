@@ -108,26 +108,18 @@ body {
   }
 
   .btn-chat {
-    @apply px-10 text-dark-moss ring-1 ring-sepia/35 transition-[color] duration-200 ease-in-out focus-visible:outline-sepia;
-    background: linear-gradient(
-      165deg,
-      color-mix(in srgb, var(--color-skin) 18%, var(--color-off-white)),
-      color-mix(in srgb, var(--color-skin) 32%, var(--color-off-white))
+    @apply px-10 text-dark-moss ring-1 ring-sepia/35 transition-[color,background-color] duration-200 ease-in-out focus-visible:outline-sepia;
+    background-color: color-mix(
+      in srgb,
+      var(--color-skin) 18%,
+      var(--color-off-white)
     );
   }
 
   @media (prefers-color-scheme: dark) {
     .btn-chat {
       @apply ring-sepia/25;
-      background: linear-gradient(
-        165deg,
-        var(--color-dim-elevated),
-        color-mix(
-          in srgb,
-          var(--color-dim-highlight) 30%,
-          var(--color-dim-elevated)
-        )
-      );
+      background-color: var(--color-dim-elevated);
     }
   }
 
@@ -138,24 +130,12 @@ body {
 
     .btn-chat:hover {
       @apply text-white ring-transparent;
-      background: linear-gradient(
-        165deg,
-        color-mix(
-          in srgb,
-          var(--color-brand-indigo) 45%,
-          var(--color-off-white)
-        ),
-        var(--color-brand-indigo)
-      );
+      background-color: var(--color-brand-indigo);
     }
 
     @media (prefers-color-scheme: dark) {
       .btn-chat:hover {
-        background: linear-gradient(
-          165deg,
-          color-mix(in srgb, var(--color-sepia) 50%, var(--color-skin)),
-          var(--color-sepia)
-        );
+        background-color: var(--color-sepia);
       }
     }
   }
