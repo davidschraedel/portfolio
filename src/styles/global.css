@@ -37,12 +37,20 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, var(--color-sepia) 45%, var(--color-skin));
+    background: color-mix(
+      in srgb,
+      var(--color-sepia) 22%,
+      var(--color-dim-muted)
+    );
     border-radius: 20px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-sepia);
+    background: color-mix(
+      in srgb,
+      var(--color-sepia) 80%,
+      var(--color-dim-muted)
+    );
   }
 
   ::-webkit-scrollbar-thumb:active {

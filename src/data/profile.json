@@ -127,6 +127,10 @@
     {
       "start": "2026-02",
       "label": "Applied AI group project: designed and built MicroDeck, a Flutter-based habit-initiation app with user-authored micro-action cards and short timers. We developed rapidly with iterative design and testing, market research,user feedback, and agentic, spec-driven development workflows."
+    },
+    {
+      "start": "2026-07",
+      "label": "Built a Python script that auto-populates PowerPoint templates into print-ready photo books, replacing 30+ hours of manual work (~1,050 pages, 15 books) with 5–8 hours. Cut production cycle time by 15+ days."
     }
   ],
   "projects": [
