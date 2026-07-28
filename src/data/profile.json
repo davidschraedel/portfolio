@@ -28,7 +28,7 @@
     "contrastLead": ["Data", "AI", "Product"]
   },
   "home": {
-    "tldr": "My approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to my work. I enjoy asking questions and uncovering unknowns to build solutions that make information easier to engage with.",
+    "tldr": "My approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to my work. I enjoy asking questions and uncovering unknowns to build solutions that make information and tasks easier to engage with.",
     "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
   },
   "handshakeLine": "Working on something meaningful? I'd love to connect.",
