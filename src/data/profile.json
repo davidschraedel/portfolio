@@ -118,11 +118,11 @@
     },
     {
       "start": "2026-03",
-      "label": "For my BYU Marriott capstone, I built core functionality for I AM, a React app that helps content creators connect with their audience at scale while matching their voice and brand through social media integrations and Amazon Bedrock's available LLM models and knowledge base capabilities."
+      "label": "For my BYU Marriott capstone, I built core functionality for I AM, a React app that helps content creators respond to their audience at scale while matching their own voice and brand."
     },
     {
       "start": "2026-02",
-      "label": "In an applied AI group project, my team and I built MicroDeck, a habit-initiation Flutter app with user-authored micro-action cards and two-minute timers. We developed rapidly with iterative design and testing, market research, user feedback, and agentic, spec-driven development workflows."
+      "label": "In an applied AI group project, my team and I built MicroDeck, a Flutter habit-initiation app with user-authored micro-action cards and two-minute timers to help users start samll without streaks or gamification. We developed rapidly with iterative design and testing, market research, user feedback, and agentic, spec-driven development workflows."
     },
     {
       "start": "2026-07",
@@ -150,7 +150,7 @@
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
-      "impact": "I built an idempotent Python pipeline using a medallion (bronze/silver/gold) architecture to ingest YouTube playlists and transform ~6M+ words of transcripts into a clean, queryable dataset exportable for AI ingestion.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset that I can export for analysis.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,
@@ -165,7 +165,7 @@
       "slug": "iam",
       "name": "Capstone Project - I AM",
       "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
-      "impact": "I built and refined core application features so creators can respond at scale to an audience while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
+      "impact": "I built and refined core features so creators can respond to an audience at scale while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
@@ -194,8 +194,8 @@
       "id": "youtube-kpi-framework",
       "slug": "youtube-kpi-framework",
       "name": "YouTube KPI Framework",
-      "objective": "As part of my product management coursework, I was tasked with building a KPI framework to measure a digital product's performance, focusing on valuable outcomes rather than outputs.",
-      "impact": "I developed a KPI framework based on YouTube with metrics aimed at real value instead of vanity metrics.",
+      "objective": "In product management coursework, I was tasked with building a KPI framework to measure a digital product's performance, focusing on valuable outcomes rather than outputs.",
+      "impact": "I built a KPI framework based on YouTube, prioritizing outcomes like engagement quality and creator value over vanity metrics like view count.",
       "stack": ["Canva", "Product Management"],
       "layout": "text-only",
       "featured": false,
@@ -224,7 +224,7 @@
       "id": "midi-morph",
       "slug": "midi-morph",
       "name": "Midi Randomizer",
-      "objective": "Humans and machines excel in randomness in different ways. My music production tools lacked an easy way to get fresh, random MIDI patterns for unhinged creativity.",
+      "objective": "My music production tools lacked an easy way to get fresh, random MIDI patterns when I wanted unhinged creativity.",
       "impact": "I built a browser-based MIDI randomizer that offers various parameters for intentional generation of unpredictable MIDI patterns, offering fast randomization external to usual human strengths.",
       "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
       "layout": "media-left",
