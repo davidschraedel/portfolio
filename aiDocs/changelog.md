@@ -2,6 +2,22 @@
 
 A concise history of changes.
 
+## 2026-07-28 (SEO — OG polish)
+
+- Default OG image dimensions set to 1292×838 (matches `public/og-image.png`).
+- Per-page `ogImageWidth` / `ogImageHeight` (project slugs: 1200×630).
+- Added `<link rel="canonical">`, `og:site_name`, `og:locale`, `og:image:alt`.
+- Removed Twitter Card meta tags (OG only).
+- 404 page: `noindex, follow`.
+- `absoluteSiteUrl` guards missing `Astro.site`.
+
+## 2026-07-28 (SEO — Open Graph / Twitter)
+
+- `BaseLayout.astro`: OG + Twitter Card meta tags with absolute URLs (`Astro.site` + `/portfolio/` base).
+- Default share image: `public/og-image.png` (1200×630).
+- Per-page `ogImage` prop; project slug pages use optimized preview images.
+- Punchier `shareDescription` copy in `profile.json` for home, about, and projects index (page body copy unchanged).
+
 ## 2026-07-28 (SEO — sitemap)
 
 - Added `@astrojs/sitemap`; generates `sitemap-index.xml` at build with `/portfolio/` base URLs.

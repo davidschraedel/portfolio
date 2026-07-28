@@ -3,7 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 ---
 
-<BaseLayout title={`Page not found — ${site.name}`} description="This page does not exist.">
+<BaseLayout
+  title={`Page not found — ${site.name}`}
+  description="This page does not exist."
+  noindex
+>
   <section class="not-found relative overflow-hidden py-16 text-center rounded-full">
     <div class="not-found-ambient" aria-hidden="true"></div>
     <div class="relative z-10">
