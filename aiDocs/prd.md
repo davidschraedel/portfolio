@@ -2,9 +2,9 @@
 
 **Product:** Personal Developer Portfolio Site  
 **Author:** David Schraedel  
-**Version:** 3.2  
+**Version:** 3.4  
 **Status:** Active  
-**Last Updated:** June 30, 2026
+**Last Updated:** July 27, 2026
 
 ---
 
@@ -20,11 +20,11 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 
 **Dual audience, one visit:**
 
-| Audience                        | Needs                                    | How the site delivers                                                                     |
-| ------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero copy with domain/stack signal, contact and resume reachable |
-| **Hiring managers (secondary)** | Depth, judgment, repos                   | Problem/Solution on cards; optional case study pages when relevant context is available   |
-| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                        |
+| Audience                        | Needs                                    | How the site delivers                                                                                  |
+| ------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero tags + home intro with domain/stack signal, contact and resume reachable |
+| **Hiring managers (secondary)** | Depth, judgment, repos                   | `objective` + bulleted `tradeOff` on cards (no labels); optional case study pages when relevant context is available |
+| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                                     |
 
 **Link tiers** (content priority — not layout prescription):
 
@@ -112,12 +112,12 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 
 **Hook → Story → Projects → Contact**
 
-| Beat     | Content from `profile.json`                                                                  |
-| -------- | -------------------------------------------------------------------------------------------- |
-| Hook     | `hero.contrastLead`, `hero.professionalSentence`, `person.name`                              |
-| Story    | `about.paragraphs`, `about.heading`, `timeline`                                              |
-| Projects | All entries where `featured: true` — Problem, Solution, stack, outbound links                |
-| Contact  | `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack` |
+| Beat     | Route / surface | Content from `profile.json` |
+| -------- | --------------- | --------------------------- |
+| Hook     | Layout hero + home intro (`/`) | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name` |
+| Story    | `/about` | `about.paragraphs`, `about.heading`, `timeline` |
+| Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `tradeOff`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`. |
+| Contact  | Footer (every page) + home `#connect` | **Footer:** `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack`. **Home Connect:** `handshakeLine`, `connect.heading`, `connect.paragraphs`, Email + LinkedIn CTAs. |
 
 Navigation labels and page structure may vary by design.
 
@@ -129,8 +129,8 @@ Navigation labels and page structure may vary by design.
 
 **1. Hero (Hook)**
 
-- `hero.contrastLead` and `hero.professionalSentence` rendered on the site
-- Professional sentence signals **role, domain, and stack** — not generic
+- `hero.contrastLead` rendered in the layout hero (domain tags, e.g. Data, AI, Product)
+- `home.tldr` and `home.skills` on the home page intro — carry **role, domain, stack, and voice**; no separate hero sentence (removed after testing; pitch lives in the home intro)
 
 **2. Story**
 
@@ -139,15 +139,16 @@ Navigation labels and page structure may vary by design.
 
 **3. Featured projects**
 
-- All projects with `featured: true` in `profile.json` (count is dynamic)
-- Each card shows **Problem** and **Solution** (sourced from `objective` and `tradeOff` in JSON)
+- All projects with `featured: true` in `profile.json` (count is dynamic) on the home page
+- Each card shows `objective` as a plain paragraph and `tradeOff` as a single bulleted item — **no "Problem" / "Solution" labels**
 - Stack tags per project
 - Live demo and GitHub links when URLs are set in `profile.json`
+- `/projects` lists all projects (featured and non-featured); home links via "All projects →"
 
 **4. Contact and links**
 
-- Resume PDF reachable from the site
-- Email, LinkedIn, GitHub, and Substack links reachable without hunting (`person.email`, `person.resume`, `presence.*`)
+- **Footer (every page):** Resume PDF, email, LinkedIn, GitHub, and Substack — reachable without hunting (`person.email`, `person.resume`, `presence.*`)
+- **Home Connect section (`#connect`):** `handshakeLine`, `connect.heading`, `connect.paragraphs`, plus Email and LinkedIn CTAs
 - No contact forms
 
 **5. Stack and deploy**
@@ -162,7 +163,6 @@ Navigation labels and page structure may vary by design.
 ### Nice to have
 
 - Case study pages with real depth — only when sufficient content exists; never hallucinate
-- `handshakeLine` surfaced on the site
 - JSON-LD, sitemap, `robots.txt`, canonicals, OG/Twitter meta, `llms.txt`
 - Privacy-friendly analytics (Plausible/Fathom)
 - One technical blog post on Substack (not mirrored on-site)
@@ -175,14 +175,14 @@ Navigation labels and page structure may vary by design.
 **US-01 — First-pass recruiter scan**  
 _As a recruiter with 60 seconds, I want role, stack, and real projects immediately, so I can decide whether to advance this profile._
 
-- Professional sentence signals role/domain/stack without reading paragraphs
+- Hero tags and home intro signal role/domain/stack without reading full Story
 - Featured projects visible with stack tags and demo/GitHub links where available
 - No tutorial clones in featured set
 
 **US-02 — Hiring manager depth**  
 _As a hiring manager, I want enough project detail to assess judgment._
 
-- Problem and Solution on each card
+- `objective` paragraph and bulleted `tradeOff` on each card (no labels)
 - GitHub link on card or case study where applicable
 
 **US-03 — Live demo verification**  
@@ -193,7 +193,7 @@ _As a hiring manager, I want working demos, so I can assess deployment ability._
 **US-04 — Contact action**  
 _As a recruiter ready to reach out, I want contact and resume without hunting._
 
-- Email, LinkedIn, Resume reachable in one click from the site
+- Email, LinkedIn, and Resume reachable in one click from the footer; home Connect section offers a second path via `handshakeLine` + Email/LinkedIn CTAs
 
 **US-05 — Mobile screening**  
 _As a recruiter on my phone, I want a readable layout._
@@ -235,9 +235,9 @@ _As the site owner, I want peers to describe my role and name a project after 60
 | Risk                             | Mitigation                                                             |
 | -------------------------------- | ---------------------------------------------------------------------- |
 | Live demos go down               | UptimeRobot; monthly link audit                                        |
-| Looks like every other portfolio | Voice-first copy + Problem/Solution framing; distinctive visual design |
+| Looks like every other portfolio | Voice-first copy + objective/tradeOff framing on cards; distinctive visual design |
 | Tutorial projects featured       | Hard gate — zero clones                                                |
-| Copy buries recruiter signal     | Professional sentence + stack on cards; cold-read test                 |
+| Copy buries recruiter signal     | Home intro + contrastLead + stack on cards; cold-read test             |
 | Content drift across files       | Single `profile.json` source of truth                                  |
 | Over-engineered portfolio site   | No featured self-link; plain Astro                                     |
 | AI-sounding copy                 | Read-aloud test; specific first-person voice                           |

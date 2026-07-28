@@ -2,7 +2,7 @@
 
 How this site is structured — data flow, file responsibilities, and notable design decisions.
 
-**Last updated:** July 1, 2026
+**Last updated:** July 27, 2026
 
 ---
 
@@ -12,10 +12,10 @@ Information architecture follows the PRD story beats (layout is split across rou
 
 | Beat     | Route / location              | Source                                      |
 | -------- | ----------------------------- | ------------------------------------------- |
-| Hook     | Hero in layout (every page)   | `site.ts` → `profile.json` `hero`, `person` |
+| Hook     | Hero in layout (every page) + home intro on `/` | `site.ts` → `profile.json` `hero`, `person`, `home` |
 | Story    | `/about`                      | `profile.json` `about`, `timeline`          |
-| Projects | `/` (home)                    | `projects.ts` → featured entries            |
-| Contact  | Footer in layout (every page) | `site.ts` → `person`, `presence`            |
+| Projects | `/` (featured grid) + `/projects` (all) | `projects.ts` → featured on home; full list on `/projects` |
+| Contact  | Footer (every page) + home `#connect` | Footer: `site.ts` → `person`, `presence`. Connect: `handshakeLine`, `connect.*` |
 
 Nav links: **Featured Projects** (home) · **Story** (`/about`).
 
@@ -41,8 +41,10 @@ The only hand-edited content file. Agents must not edit it. Contains:
 | Key | What it holds |
 | --- | --- |
 | `person` | Name, email, location, timezone, `openToWork`, resume filename |
-| `hero` | `contrastLead` and `professionalSentence` strings |
-| `handshakeLine` | Optional CTA copy (loaded in `site.ts`; not yet rendered on the site) |
+| `hero` | `contrastLead` (string array — domain tags) |
+| `home` | `tldr` (intro paragraph), `skills` (stack tags) |
+| `connect` | `heading`, `paragraphs[]` (connect card on home) |
+| `handshakeLine` | CTA copy in home Connect section (`#connect` on `/`) |
 | `presence` | GitHub, LinkedIn, Substack URLs |
 | `about` | `heading`, `paragraphs[]`, `images` placeholder |
 | `timeline` | Array of `{ start, end?, label }` entries with ISO-date `start` |
@@ -63,7 +65,7 @@ Maps `profile.json` projects to typed `Project[]` at build time. Appends what JS
 
 **Adding a project:** one `profile.json` entry + a matching `.png` in `src/assets/portfolio/`.
 
-**Display mapping:** `objective` → “Problem ·”, `tradeOff` → “Solution ·” in `ProjectShowcase`.
+**Display mapping:** `objective` → plain paragraph; `tradeOff` → single bulleted list item (no "Problem" / "Solution" labels) in `ProjectShowcase`.
 
 ### Import convention exception
 
@@ -94,7 +96,8 @@ Pages are thin: frontmatter prepares data, template composes components.
 
 | Page | What it renders |
 | --- | --- |
-| `index.astro` | Featured projects grid (`featured: true`) via `ProjectShowcase` |
+| `index.astro` | Intro + featured projects grid + Connect section (`handshakeLine`, contact CTAs) |
+| `projects/index.astro` | All projects grid via `ProjectShowcase` |
 | `about.astro` | About paragraphs + timeline from `profile.json` |
 | `projects/[slug].astro` | Per-project stub (“coming soon”) with preview image and outbound links |
 | `404.astro` | Fallback using `BaseLayout` |
