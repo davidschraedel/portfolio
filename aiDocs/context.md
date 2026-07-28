@@ -4,7 +4,7 @@ Personal developer portfolio — recruiter-scannable and voice-first. One-line p
 
 **Status:** MVP shipped on Astro. Hero (layout shell), Story page (`/about`), featured projects grid, and contact links are implemented; `profile.json` is the single content source with `site.ts` and `projects.ts` adapters. Deploys to GitHub Pages from the `staging` branch. Legacy React/Vite app remains in `legacy/` (`npm run dev:legacy`).
 
-**Post-MVP (not blocking launch):** Case study routes exist as “coming soon” stubs; PRD nice-to-haves (JSON-LD, sitemap, analytics, etc.) not built. Copy revision shipped (2026-07-28) — simulated cold-read passed; live 3-person cold-read still recommended before recruiter outreach — see [mvp.md](./mvp.md) §5.
+**Post-MVP (not blocking launch):** Case study routes exist as “coming soon” stubs; sitemap shipped (2026-07-28); remaining PRD nice-to-haves (JSON-LD, `robots.txt`, analytics, etc.) not built. Copy revision shipped (2026-07-28) — simulated cold-read passed; live 3-person cold-read still recommended before recruiter outreach — see [mvp.md](./mvp.md) §5.
 
 **Product docs:** [prd.md](./prd.md) v3.4 · [mvp.md](./mvp.md) v2.4 · Content model: `src/data/profile.json` (single source of truth — reusable template for other projects)
 

@@ -2,6 +2,11 @@
 
 A concise history of changes.
 
+## 2026-07-28 (SEO — sitemap)
+
+- Added `@astrojs/sitemap`; generates `sitemap-index.xml` at build with `/portfolio/` base URLs.
+- `hiddenSitemapPaths` filter excludes `/creative` (and future hidden routes) from the sitemap.
+
 ## 2026-07-28 (copy — revision pass)
 
 - Copy revision roadmap complete. Edit target: `profile.json` (+ projects page subtitle).
