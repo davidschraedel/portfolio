@@ -3,13 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 
 import profile from "../data/profile.json";
+import { site } from "../data/site";
 
 const timeline = [...profile.timeline].sort((a, b) =>
   (b.start ?? "").localeCompare(a.start ?? ""),
 );
 ---
 
-<BaseLayout title="About — David Schraedel" description="About David Schraedel.">
+<BaseLayout
+  title={`About — ${site.name}`}
+  description={site.about.shareDescription}
+>
   <section id="about" aria-labelledby="about-heading" class="scroll-mt-8">
     <SectionHeading id="about-heading" title={profile.about.heading} />
 
