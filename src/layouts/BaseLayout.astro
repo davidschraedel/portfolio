@@ -5,18 +5,32 @@ import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
-import { site } from "../data/site";
+import { absoluteSiteUrl, site } from "../data/site";
 import headshotUrl from "../assets/headshot.svg?url";
 
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageAlt?: string;
+  noindex?: boolean;
 }
 
 const {
   title = site.name,
-  description = site.home.tldr,
+  description = site.home.shareDescription,
+  ogImage,
+  ogImageWidth = site.defaultOgImage.width,
+  ogImageHeight = site.defaultOgImage.height,
+  ogImageAlt = site.defaultOgImage.alt,
+  noindex = false,
 } = Astro.props;
+
+const canonicalURL = absoluteSiteUrl(Astro.url.pathname, Astro.site);
+const ogImageURL =
+  ogImage ?? absoluteSiteUrl(site.defaultOgImage.path, Astro.site);
 ---
 
 <!doctype html>
@@ -25,8 +39,20 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={headshotUrl} />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content={String(ogImageWidth)} />
+    <meta property="og:image:height" content={String(ogImageHeight)} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <ViewTransitions />
   </head>
   <body class=" bg-off-white text-dark-moss antialiased dark:bg-dim-page text-pretty">

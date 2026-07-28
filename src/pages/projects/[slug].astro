@@ -1,7 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { absoluteSiteUrl, site } from "../../data/site";
 import { projects } from "../../data/projects";
 
 export function getStaticPaths() {
@@ -12,11 +13,23 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+const ogImageAsset = await getImage({
+  src: project.previewImage,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+});
+const ogImage = absoluteSiteUrl(ogImageAsset.src, Astro.site);
 ---
 
 <BaseLayout
-  title={`${project.name} — More`}
+  title={`${project.name} — ${site.name}`}
   description={project.objective}
+  ogImage={ogImage}
+  ogImageWidth={1200}
+  ogImageHeight={630}
+  ogImageAlt={project.previewAlt}
 >
   <article class="mx-auto max-w-3xl">
     <nav aria-label="Breadcrumb" class="mb-8 text-sm">
