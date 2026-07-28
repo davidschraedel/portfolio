@@ -2,9 +2,19 @@
 
 A concise history of changes.
 
+## 2026-07-28 (copy — revision pass)
+
+- Copy revision roadmap complete. Edit target: `profile.json` (+ projects page subtitle).
+- **Timeline:** Rewrote 14 work/catalog outliers to active first-person David voice with defensible after-states; merged duplicate BYU Arts web rows; fixed `archaeological` typo; human narrative entries (mission, Eagle Scout, dance, study abroad) preserved.
+- **Projects:** Renamed `tradeOff` → `impact` across all cards; revised six resume/spec-sheet cards (Photo Book, YouTube Pipeline, I AM, YouTube KPI, Midi Randomizer, Calendar Dashboard) with clearer objectives and mandatory “so what” impact lines; simplified `previewAlt` on touched cards; Soundwatch, MicroDeck, and Voice-First Portfolio left substantively unchanged. Added Photo Book Generator and Refactored Portfolio Website entries.
+- **Connect + Hook:** Fixed connect ¶2 grammar (“open to unconventional ideas”); Hook (`hero.contrastLead`, `home.tldr`) unchanged; no `professionalSentence` restored.
+- **Cross-surface:** Fixed `allocationgoals` (Calendar Dashboard); connect ¶1 trailing period; minor Story polish (multidisciplinary phrasing, study-abroad adaptability beat; Eagle Scout detail moved to timeline only).
+- **Validation:** Voice, impact, Orwell, and simulated cold-read gates passed — see `ai/notes/2026-07-28_validation-gates.md`. Live 3-person cold-read still recommended before recruiter outreach.
+- **Page chrome:** `projects/index.astro` subtitle — “Some projects I'm proud of.”
+
 ## 2026-07-27 (docs — MVP aligned to PRD v3.4)
 
-- MVP v2.4: project cards (`objective` + bulleted `tradeOff`); Contact split footer vs home `#connect` with `handshakeLine`; `/projects` noted as shipped beyond minimum; fail-signal copy updated
+- MVP v2.4: project cards (`objective` + bulleted `impact` -- no longer `tradeOff`); Contact split footer vs home `#connect` with `handshakeLine`; `/projects` noted as shipped beyond minimum; fail-signal copy updated
 
 ## 2026-07-27 (docs — PRD aligned to shipped UI)
 

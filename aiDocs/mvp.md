@@ -17,13 +17,13 @@ The site also needs to sound like a real person, not a LinkedIn summary. Those g
 
 The minimum set required for a successful portfolio launch:
 
-| #     | What                                                                                                                                       | Why it's minimum                                              |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| **A** | **Hook** — `hero.contrastLead` in layout hero + `home.tldr` and `home.skills` on home                                                      | First impression; domain tags + intro carry role/stack signal |
-| **B** | **Story** — `about` paragraphs + `timeline`                                                                                                | Voice and background beyond a headline                        |
-| **C** | **Featured projects** — all `featured: true` on home; `objective` paragraph + bulleted `tradeOff` (no labels), stack, demo/GitHub when set | What recruiters evaluate in 60s                               |
-| **D** | **Contact** — footer (resume, email, LinkedIn, GitHub, Substack) + home `#connect` (`handshakeLine`, `connect.*`, Email/LinkedIn CTAs)     | Reachable without hunting                                     |
-| **E** | **`profile.json`** — single content source; agents do not edit it                                                                          | One place for all copy and facts                              |
+| #     | What                                                                                                                                     | Why it's minimum                                              |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **A** | **Hook** — `hero.contrastLead` in layout hero + `home.tldr` and `home.skills` on home                                                    | First impression; domain tags + intro carry role/stack signal |
+| **B** | **Story** — `about` paragraphs + `timeline`                                                                                              | Voice and background beyond a headline                        |
+| **C** | **Featured projects** — all `featured: true` on home; `objective` paragraph + bulleted `impact` (no labels), stack, demo/GitHub when set | What recruiters evaluate in 60s                               |
+| **D** | **Contact** — footer (resume, email, LinkedIn, GitHub, Substack) + home `#connect` (`handshakeLine`, `connect.*`, Email/LinkedIn CTAs)   | Reachable without hunting                                     |
+| **E** | **`profile.json`** — single content source; agents do not edit it                                                                        | One place for all copy and facts                              |
 
 **Also shipped (beyond minimum):** `/projects` lists all entries; home links via "All projects →".
 
@@ -76,7 +76,7 @@ Share the URL with 3 people (technical peer, hiring-adjacent contact, someone wh
 | What they say                 | Fix                                                                          |
 | ----------------------------- | ---------------------------------------------------------------------------- |
 | "Some kind of developer?"     | Strengthen `home.tldr` and/or `contrastLead`; check project `objective` copy |
-| Can't name a project          | Strengthen `objective` / `tradeOff` on cards; check scannability             |
+| Can't name a project          | Strengthen `objective` / `impact` on cards; check scannability               |
 | Can't find demo/GitHub        | Make links more prominent on cards                                           |
 | Don't know how to contact you | Make resume, email, and LinkedIn easier to find                              |
 
@@ -86,4 +86,4 @@ Don't send to real recruiters until all 3 pass the hard criteria.
 
 ## MVP in one sentence
 
-**A deployed Astro site driven by `profile.json` — hero tags + home intro, about + timeline, featured projects with `objective` + bulleted `tradeOff` and stack, contact via footer + home Connect, and a professional unique design.**
+**A deployed Astro site driven by `profile.json` — hero tags + home intro, about + timeline, featured projects with `objective` + bulleted `impact` and stack, contact via footer + home Connect, and a professional unique design.**

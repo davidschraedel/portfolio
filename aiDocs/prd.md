@@ -23,7 +23,7 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 | Audience                        | Needs                                    | How the site delivers                                                                                  |
 | ------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero tags + home intro with domain/stack signal, contact and resume reachable |
-| **Hiring managers (secondary)** | Depth, judgment, repos                   | `objective` + bulleted `tradeOff` on cards (no labels); optional case study pages when relevant context is available |
+| **Hiring managers (secondary)** | Depth, judgment, repos                   | `objective` + bulleted `impact` on cards (no labels); optional case study pages when relevant context is available |
 | **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                                     |
 
 **Link tiers** (content priority — not layout prescription):
@@ -116,7 +116,7 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 | -------- | --------------- | --------------------------- |
 | Hook     | Layout hero + home intro (`/`) | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name` |
 | Story    | `/about` | `about.paragraphs`, `about.heading`, `timeline` |
-| Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `tradeOff`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`. |
+| Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `impact`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`. |
 | Contact  | Footer (every page) + home `#connect` | **Footer:** `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack`. **Home Connect:** `handshakeLine`, `connect.heading`, `connect.paragraphs`, Email + LinkedIn CTAs. |
 
 Navigation labels and page structure may vary by design.
@@ -140,7 +140,7 @@ Navigation labels and page structure may vary by design.
 **3. Featured projects**
 
 - All projects with `featured: true` in `profile.json` (count is dynamic) on the home page
-- Each card shows `objective` as a plain paragraph and `tradeOff` as a single bulleted item — **no "Problem" / "Solution" labels**
+- Each card shows `objective` as a plain paragraph and `impact` as a single bulleted item — **no "Problem" / "Solution" labels**
 - Stack tags per project
 - Live demo and GitHub links when URLs are set in `profile.json`
 - `/projects` lists all projects (featured and non-featured); home links via "All projects →"
@@ -182,7 +182,7 @@ _As a recruiter with 60 seconds, I want role, stack, and real projects immediate
 **US-02 — Hiring manager depth**  
 _As a hiring manager, I want enough project detail to assess judgment._
 
-- `objective` paragraph and bulleted `tradeOff` on each card (no labels)
+- `objective` paragraph and bulleted `impact` on each card (no labels)
 - GitHub link on card or case study where applicable
 
 **US-03 — Live demo verification**  
@@ -235,7 +235,7 @@ _As the site owner, I want peers to describe my role and name a project after 60
 | Risk                             | Mitigation                                                             |
 | -------------------------------- | ---------------------------------------------------------------------- |
 | Live demos go down               | UptimeRobot; monthly link audit                                        |
-| Looks like every other portfolio | Voice-first copy + objective/tradeOff framing on cards; distinctive visual design |
+| Looks like every other portfolio | Voice-first copy + objective/impact framing on cards; distinctive visual design |
 | Tutorial projects featured       | Hard gate — zero clones                                                |
 | Copy buries recruiter signal     | Home intro + contrastLead + stack on cards; cold-read test             |
 | Content drift across files       | Single `profile.json` source of truth                                  |

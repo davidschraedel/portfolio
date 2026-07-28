@@ -48,7 +48,7 @@ The only hand-edited content file. Agents must not edit it. Contains:
 | `presence` | GitHub, LinkedIn, Substack URLs |
 | `about` | `heading`, `paragraphs[]`, `images` placeholder |
 | `timeline` | Array of `{ start, end?, label }` entries with ISO-date `start` |
-| `projects` | Array with `objective`, `tradeOff`, stack, URLs, `featured`, `previewImageKey`, etc. |
+| `projects` | Array with `objective`, `impact`, stack, URLs, `featured`, `previewImageKey`, etc. |
 
 `profile.json` is reusable across projects as a starting template — copy and refine per site.
 
@@ -65,7 +65,7 @@ Maps `profile.json` projects to typed `Project[]` at build time. Appends what JS
 
 **Adding a project:** one `profile.json` entry + a matching `.png` in `src/assets/portfolio/`.
 
-**Display mapping:** `objective` → plain paragraph; `tradeOff` → single bulleted list item (no "Problem" / "Solution" labels) in `ProjectShowcase`.
+**Display mapping:** `objective` → plain paragraph; `impact` → single bulleted list item (no "Problem" / "Solution" labels) in `ProjectShowcase`.
 
 ### Import convention exception
 
