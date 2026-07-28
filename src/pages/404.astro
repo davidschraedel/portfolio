@@ -4,13 +4,74 @@ import { site } from "../data/site";
 ---
 
 <BaseLayout title={`Page not found — ${site.name}`} description="This page does not exist.">
-  <section class="py-16 text-center">
-    <h1 class="text-2xl font-semibold text-dark-moss sm:text-3xl">Page not found</h1>
-    <p class="mx-auto mt-4 max-w-md text-base text-interior-designer dark:text-dim-text-muted ">
-      This URL doesn't exist. Head back to the portfolio to see featured projects and case studies.
-    </p>
-    <a href={import.meta.env.BASE_URL} class="btn btn-soft btn-soft-default mt-8">
-      Back to home
-    </a>
+  <section class="not-found relative overflow-hidden py-16 text-center rounded-full">
+    <div class="not-found-ambient" aria-hidden="true"></div>
+    <div class="relative z-10">
+      <h1 class="text-2xl font-semibold text-dark-moss sm:text-3xl">Page not found</h1>
+      <p class="mx-auto mt-4 max-w-md text-base text-interior-designer dark:text-dim-text-muted">
+        This URL doesn't exist. Head back to see more.
+      </p>
+      <a href={import.meta.env.BASE_URL} class="btn btn-soft btn-soft-default mt-8">
+        Back to home
+      </a>
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  .not-found-ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background: linear-gradient(
+      270deg,
+      color-mix(in srgb, var(--color-sage) 18%, var(--color-off-white)),
+      color-mix(in srgb, var(--color-brand-indigo) 14%, var(--color-off-white)),
+      color-mix(in srgb, var(--color-sepia) 12%, var(--color-skin)),
+      color-mix(in srgb, var(--color-sage) 18%, var(--color-off-white))
+    );
+    background-size: 400% 400%;
+    animation: not-found-gradient 23s ease infinite;
+    -webkit-mask-image:
+      linear-gradient(to right, black, transparent 24%, transparent 76%, black),
+      linear-gradient(to bottom, black, transparent 30%, transparent 70%, black);
+    -webkit-mask-composite: source-over;
+    mask-image:
+      linear-gradient(to right, black, transparent 24%, transparent 76%, black),
+      linear-gradient(to bottom, black, transparent 30%, transparent 70%, black);
+    mask-composite: add;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .not-found-ambient {
+      opacity: 0.24;
+      background: linear-gradient(
+        270deg,
+        color-mix(in srgb, var(--color-dim-gradient-to) 20%, var(--color-dim-page)),
+        color-mix(in srgb, var(--color-dim-gradient-from) 16%, var(--color-dim-page)),
+        color-mix(in srgb, var(--color-dim-highlight) 14%, var(--color-dim-surface)),
+        color-mix(in srgb, var(--color-dim-gradient-to) 20%, var(--color-dim-page))
+      );
+    }
+  }
+
+  @keyframes not-found-gradient {
+    0%,
+    100% {
+      background-position: 0% 40%;
+    }
+
+    50% {
+      background-position: 100% 61%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .not-found-ambient {
+      animation: none;
+      background-position: 0% 40%;
+    }
+  }
+</style>
