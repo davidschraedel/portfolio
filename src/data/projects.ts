@@ -4,7 +4,7 @@ import profileData from "./profile.json";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/portfolio/*.png",
-  { eager: true }
+  { eager: true },
 );
 
 export interface Project {
@@ -12,7 +12,7 @@ export interface Project {
   slug: string;
   name: string;
   objective: string;
-  tradeOff: string;
+  impact: string;
   stack: string[];
   featured: boolean;
   demoUrl: string | null;
@@ -34,7 +34,7 @@ export const projects: Project[] = profileData.projects.map((p) => {
   const imgModule = images[`../assets/portfolio/${p.previewImageKey}.png`];
   if (!imgModule) {
     throw new Error(
-      `No image found for previewImageKey: "${p.previewImageKey}". Add the .png to src/assets/portfolio/.`
+      `No image found for previewImageKey: "${p.previewImageKey}". Add the .png to src/assets/portfolio/.`,
     );
   }
   return {
@@ -42,7 +42,7 @@ export const projects: Project[] = profileData.projects.map((p) => {
     slug: p.slug,
     name: p.name,
     objective: p.objective,
-    tradeOff: p.tradeOff,
+    impact: p.impact,
     stack: p.stack,
     featured: p.featured,
     demoUrl: p.demoUrl,

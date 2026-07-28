@@ -66,43 +66,39 @@
     },
     {
       "start": "2021-04",
-      "label": "As a Web Developer at Brigham Young University, built and maintained pages for the Arts' websites, PR, and inclusivity initiatives. I also helped them diagnose and plan to improve their website storage issues."
+      "label": "At BYU College of Fine Arts and Communications, I built and maintained Arts websites for PR and inclusivity initiatives. I audited 50+ undocumented workflow files, diagnosed and planned for cleaning up 19% of their dead storage across 8 department sites, and trained my replacement."
     },
     {
       "start": "2021-08",
-      "label": "First Teaching Assistant role at BYU Marriott School of Business. I facilitated answering questions and presenting reviews for 60 students covering Python, PostgreSQL, Django, HTML/CSS, and OOP."
+      "label": "As a Teaching Assistant at BYU Marriott, I helped 60 students with Python, PostgreSQL, Django, HTML/CSS, and OOP in labs and review sessions."
     },
     {
       "start": "2022-01",
-      "label": "INTEX 5-day project at BYU: consolidated and normalized 7 data sources, built a working web app in C#, ASP.NET, and AWS, and presented a fully functional archeological fieldwork data entry system."
-    },
-    {
-      "start": "2021-05",
-      "label": "As a WordPress Developer at BYU College of Fine Arts and Communications, I audited 50+ undocumented workflow files, cut storage 19% across 8 department sites, and trained my replacement. I also maintained and built webpages for the Arts' websites, PR, and inclusivity initiatives"
+      "label": "For a five-day INTEX project at BYU, I helped merge seven data sources, create user-facing logic and CRUD operations, debug and catch QA issues, and ship a working archaeological fieldwork app in C#, ASP.NET, and AWS."
     },
     {
       "start": "2022-05",
-      "label": "Studied abroad across the United Kingdom, Switzerland, and Italy, where 30 students and I saw everyday uses of technology and the progression of tech into the Fourth Industrial Revolution."
+      "label": "I studied abroad across the United Kingdom, Switzerland, and Italy, where 30 students and I observed the strategy in everyday uses of technology and the progression of tech into the Fourth Industrial Revolution."
     },
     {
       "start": "2022-09",
-      "label": "Consultant Intern for The Church of Jesus Christ of Latter-day Saints. For this project, I researched data sources for a world crisis information management tool, brainstormed strategic options, and prototyped a simple solution to show the pros and cons of the initial approach pursued by the team."
+      "label": "As a Consultant Intern on a social impact project for The Church of Jesus Christ of Latter-day Saints, I researched data sources for a world crisis information tool, brainstormed solution options with the team, and built a simple prototype to show the pros and cons of their intended and alternative approaches."
     },
     {
       "start": "2023-04",
-      "label": "Graduated with a Bachelor of Science in Information Systems from Brigham Young University. Received the IS Alumni Choice Award for integrity."
+      "label": "I graduated from BYU with a Bachelor of Science in Information Systems and received the IS Alumni Choice Award for living the Marriott School value of Integrity in Action."
     },
     {
       "start": "2024-04",
-      "label": "Full Stack Development Intern at OCSC, where I shipped 20+ full-stack changes to a production SaaS web application in six months."
+      "label": "As a Full Stack Development Intern at OCSC, I shipped 20+ full-stack changes to a production SaaS web app over six months working fewer hours than part-time."
     },
     {
       "start": "2024-08",
-      "label": "UX and Web Developer at The LTN Foundation, where I led development of a responsive React site, designed and normalized a relational database, and clarified the organization's branding and information architecture."
+      "label": "At The LTN Foundation, I led development of a responsive React site, designed and normalized a relational database, and clarified the project's branding and goals for a clearer user experience."
     },
     {
       "start": "2025-12",
-      "label": "Partnered with a local business to design and test agentic AI systems built with LangChain and strategic reasoning."
+      "label": "I collaborated in a team that partnered with a local business to build and test LangChain AI agents that helped them work through strategic decisions and gain visibility into their point-of-sales data."
     },
     {
       "start": "2025-09",
@@ -110,27 +106,27 @@
     },
     {
       "start": "2025-11",
-      "label": "Delivered AI B2B growth recommendations at the BYU Marriott Case Competition, and earned Best of Room."
+      "label": "At the BYU Marriott Case Competition, our team's presentation of growth recommendations for an AI B2B client earned us Best of Room."
     },
     {
       "start": "2026-04",
-      "label": "Master of Information Systems Management, BYU Marriott School of Business. Emphasis in Data Engineering and Business Intelligence. Coursework: Agentic AI Systems, Data Engineering (Python, dbt, Snowflake), Data Science (R, scikit-learn), Cloud Engineering (AWS, Terraform)."
+      "label": "I earned my Master of Information Systems Management at BYU Marriott. Coursework included product management, agentic AI, data engineering (Python, dbt, Snowflake), data science (R, scikit-learn), and cloud engineering (AWS, Terraform)."
     },
     {
       "start": "2026-05",
-      "label": "Engineered a Python extraction pipeline processing 6.7M+ words of YouTube transcript data into AI-ready structured context."
+      "label": "I built a Python pipeline that made 6.7M+ words of YouTube transcripts queryable and extractable for AI analysis."
     },
     {
       "start": "2026-03",
-      "label": "Capstone project at BYU Marriott: built out core functionality of I AM, a React app with AI powered by Amazon Bedrock's models and knowledge base capabilities to allow content creators to scale connection with their audience while matching voice and brand in an authentic way."
+      "label": "For my BYU Marriott capstone, I built core functionality for I AM, a React app that helps content creators connect with their audience at scale while matching their voice and brand through social media integrations and Amazon Bedrock's available LLM models and knowledge base capabilities."
     },
     {
       "start": "2026-02",
-      "label": "Applied AI group project: designed and built MicroDeck, a Flutter-based habit-initiation app with user-authored micro-action cards and short timers. We developed rapidly with iterative design and testing, market research,user feedback, and agentic, spec-driven development workflows."
+      "label": "In an applied AI group project, my team and I built MicroDeck, a habit-initiation Flutter app with user-authored micro-action cards and two-minute timers. We developed rapidly with iterative design and testing, market research, user feedback, and agentic, spec-driven development workflows."
     },
     {
       "start": "2026-07",
-      "label": "Built a Python script that auto-populates PowerPoint templates into print-ready photo books, replacing 30+ hours of manual work (~1,050 pages, 15 books) with 5–8 hours. Cut production cycle time by 15+ days."
+      "label": "I built a Python script that auto-populates PowerPoint templates into print-ready photo books, replacing 30+ hours of manual work (~1,050 pages, 15 books) with 5–8 hours and cutting production cycle time by 15+ days."
     }
   ],
   "projects": [
@@ -138,30 +134,30 @@
       "id": "photo-book-generator",
       "slug": "photo-book-generator",
       "name": "Photo Book Generator",
-      "objective": "Creating a 70-page family photo book manually in PowerPoint or a similar tool is extremely time-consuming, and industry-standard photo book services are an only marginally-better experience with higher costs.",
-      "tradeOff": "Python script that generates templated PowerPoint pages from a predefined layout, populates them automatically, and saves as a file for print ordering.",
+      "objective": "Building a 70-page family photo book in PowerPoint by hand takes a long time, and online photo book services are marginally easier with an increased price.",
+      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "layout": "media-right",
       "featured": false,
       "demoUrl": null,
       "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
       "previewImageKey": "photo-book-generator",
-      "previewAlt": "Photo Book Generator automated PowerPoint page layout workflow",
+      "previewAlt": "Auto-generated photo book pages in PowerPoint, via Python",
       "videoUrl": null
     },
     {
       "id": "youtube-transcript-pipeline",
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
-      "objective": "Hours of spoken content in YouTube playlists are locked in the UI; not queryable or exportable.",
-      "tradeOff": "Local pipeline for fine-grained control over transcript data, allowing playlist ingestion, SQL querying, bronze/silver data layers, and idempotent transformations.",
+      "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
+      "impact": "I built an idempotent Python pipeline using a medallion (bronze/silver/gold) architecture to ingest YouTube playlists and transform ~6M+ words of transcripts into a clean, queryable dataset exportable for AI ingestion.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,
       "demoUrl": null,
       "githubUrl": "https://github.com/davidschraedel/youtube-transcript-pipeline",
       "previewImageKey": "youtube-transcript-pipeline",
-      "previewAlt": "YouTube Transcript Pipeline CLI and DuckDB workflow",
+      "previewAlt": "Data pipeline for YouTube transcript data",
       "videoUrl": null
     },
     {
@@ -169,14 +165,14 @@
       "slug": "iam",
       "name": "Capstone Project - I AM",
       "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
-      "tradeOff": "Matched a creator's voice and brand with Amazon Bedrock models & knowledge base, and refined core user experience.",
+      "impact": "I built and refined core application features so creators can respond at scale to an audience while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
       "demoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk",
       "githubUrl": null,
       "previewImageKey": "iam",
-      "previewAlt": "I AM product demo video thumbnail on YouTube",
+      "previewAlt": "I AM capstone demo video on YouTube",
       "videoUrl": "https://www.youtube.com/watch?v=__7cEyDlhgk"
     },
     {
@@ -184,7 +180,7 @@
       "slug": "soundwatch",
       "name": "Soundwatch",
       "objective": "Morning routines with multiple timed activities require repeatedly starting timers or watching a clock.",
-      "tradeOff": "Stopwatch tracks elapsed time with interval audio cues to allow presence and focus.",
+      "impact": "I built a stopwatch that tracks elapsed time with interval audio cues to allow unhindered presence and focus.",
       "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
       "layout": "media-left",
       "featured": true,
@@ -198,15 +194,15 @@
       "id": "youtube-kpi-framework",
       "slug": "youtube-kpi-framework",
       "name": "YouTube KPI Framework",
-      "objective": "I was tasked with measuring a digital product's performance, by creating a KPI framework that would strategically measure the product and its valuable outcomes (not just outputs).",
-      "tradeOff": "KPI framework based on YouTube platform, with metrics aimed at measuring real value, rather than vanity metrics.",
-      "stack": ["Canva", "Product Management", "Data Strategy"],
+      "objective": "As part of my product management coursework, I was tasked with building a KPI framework to measure a digital product's performance, focusing on valuable outcomes rather than outputs.",
+      "impact": "I developed a KPI framework based on YouTube with metrics aimed at real value instead of vanity metrics.",
+      "stack": ["Canva", "Product Management"],
       "layout": "text-only",
       "featured": false,
       "demoUrl": "https://www.canva.com/design/DAG69PGZ5Uo/blz7EcwbksNU1IQpN-pL_Q/view?utm_content=DAG69PGZ5Uo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       "githubUrl": null,
       "previewImageKey": "youtube-kpi-framework",
-      "previewAlt": "YouTube KPI Framework Canva design overview",
+      "previewAlt": "KPI framework overview in Canva, for YouTube",
       "videoUrl": null
     },
     {
@@ -214,7 +210,7 @@
       "slug": "microdeck",
       "name": "MicroDeck",
       "objective": "Individuals with ADHD, executive dysfunction, or digital burnout struggle to bridge the intention-behavior gap; trackers and blockers often add friction instead of helping them start.",
-      "tradeOff": "Minimalist mobile habit-initiation app with user-authored micro-action cards and 2-minute timers, avoiding streaks, history, and intoxicating gamification.",
+      "impact": "I built and refined core functionality for a minimalist mobile habit-initiation app with user-authored micro-action cards and 2-minute timers, avoiding streaks, history, and intoxicating gamification.",
       "stack": ["Flutter", "Dart", "Agentic Development", "Cursor"],
       "layout": "media-right",
       "featured": false,
@@ -228,38 +224,38 @@
       "id": "midi-morph",
       "slug": "midi-morph",
       "name": "Midi Randomizer",
-      "objective": "Fresh ideas can be limited by prior behavior and inputs, as well as current imagination. Machines imitate randomness in a way that can surprise and provide value to humans. My music production tools were lacking in easy randomization.",
-      "tradeOff": "Browser-based MIDI randomization tool for unpredictable patterns, built with Google's AI Studio and refined with Cursor.",
+      "objective": "Humans and machines excel in randomness in different ways. My music production tools lacked an easy way to get fresh, random MIDI patterns for unhinged creativity.",
+      "impact": "I built a browser-based MIDI randomizer that offers various parameters for intentional generation of unpredictable MIDI patterns, offering fast randomization external to usual human strengths.",
       "stack": ["TypeScript", "HTML", "AI Studio", "Cursor", "Github"],
       "layout": "media-left",
       "featured": false,
       "demoUrl": "https://davidschraedel.github.io/midi-morph-gui/",
       "githubUrl": "https://github.com/davidschraedel/midi-morph-gui",
       "previewImageKey": "midi-morph",
-      "previewAlt": "Midi Morph browser MIDI GUI on GitHub Pages",
+      "previewAlt": "MIDI randomizer website",
       "videoUrl": null
     },
     {
       "id": "calendar-dashboard",
       "slug": "calendar-dashboard",
       "name": "Calendar Dashboard",
-      "objective": "Google Calendar doesn't show total time spent across different calendars, making it impossible to compare calendar plans against my time allocationgoals for each calendar.",
-      "tradeOff": "Google Apps Script syncs event data/durations in Sheets, computes calendar time ratios, and feeds a Looker Studio dashboard.",
+      "objective": "I use separate calendars in Google Calendar to categorize events with time goals for each, but there's no built-in way to compare scheduled time against those goals, against unscheduled time, or across calendars.",
+      "impact": "I built a Google Apps Script automation that populates event durations in Sheets and feeds a Looker Studio dashboard where I can see time ratios by calendar and compare them to my scheduling goals.",
       "stack": ["Google Apps Script", "Google Sheets", "Looker Studio"],
       "layout": "text-only",
       "featured": false,
       "demoUrl": "https://datastudio.google.com/reporting/8ff7c15f-e20f-4436-8bce-302d6903a504",
       "githubUrl": "https://github.com/davidschraedel/google-apps-script",
       "previewImageKey": "calendar-dashboard",
-      "previewAlt": "Looker Studio calendar time allocation dashboard",
+      "previewAlt": "Calendar time breakdown in Looker Studio",
       "videoUrl": null
     },
     {
       "id": "voice-first-portfolio",
       "slug": "voice-first-portfolio",
-      "name": "Voice-First Portfolio Site",
-      "objective": "Recruiters spend about a minute per candidate; most portfolios lead with flashy UI or undifferentiated GitHub links—not a clear read on how someone thinks, ships, and communicates.",
-      "tradeOff": "Refactored React portfolio into Astro with a json-based source of truth for copy.",
+      "name": "Refactored Portfolio Website",
+      "objective": "I needed a simple portfolio that is easy to update and doesn't rely on complexity for interest or engagement.",
+      "impact": "I refactored an old React portfolio draft into Astro with a single json-based source of truth for content.",
       "stack": ["Astro", "Tailwind CSS", "TypeScript", "GitHub Pages"],
       "layout": "media-right",
       "featured": false,
