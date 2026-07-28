@@ -4,7 +4,7 @@ A concise history of changes.
 
 ## 2026-07-27 (docs — MVP aligned to PRD v3.4)
 
-- MVP v2.4: project cards (`objective` + bulleted `tradeOff`); Contact split footer vs home `#connect` with `handshakeLine`; `/projects` noted as shipped beyond minimum; fail-signal copy updated
+- MVP v2.4: project cards (`objective` + bulleted `impact` -- no longer `tradeOff`); Contact split footer vs home `#connect` with `handshakeLine`; `/projects` noted as shipped beyond minimum; fail-signal copy updated
 
 ## 2026-07-27 (docs — PRD aligned to shipped UI)
 
