@@ -29,15 +29,15 @@
     "contrastLead": ["Data", "AI", "Product"]
   },
   "home": {
-    "tldr": "My approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to my work. I enjoy asking questions and uncovering unknowns to build solutions that make information and tasks easier to engage with.",
-    "shareDescription": "David Schraedel — Data, AI & Product in Utah.",
+    "tldr": "I notice what's not working, whether that's my kitchen utensils, music improvisation, or business. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have it.",
+    "shareDescription": "David Schraedel — Data, AI & Product.",
     "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
   },
   "handshakeLine": "Working on something meaningful? I'd love to connect.",
   "connect": {
     "heading": "Let's connect",
     "paragraphs": [
-      "Please reach out if you want a second pair of eyes and ears, need someone to test a product, or are hiring for a role where you think I could make a difference.",
+      "Reach out if you want a second pair of eyes and ears, need someone to test a product, or are hiring for a role where you think I could make a difference.",
       "I'm always open to unconventional ideas. Or maybe you're doing the same-old exceptionally? Would love to help with that too.",
       "Send me a message via email or LinkedIn."
     ]
@@ -155,7 +155,7 @@
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
-      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset that I can export for analysis.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset for analysis.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,
@@ -168,9 +168,9 @@
     {
       "id": "iam",
       "slug": "iam",
-      "name": "Capstone Project - I AM",
+      "name": "Capstone Project - I AM Scale",
       "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
-      "impact": "I built and refined core features so creators can respond to an audience at scale while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
+      "impact": "In a team of 5, working with a local startup, I built and refined core features so creators can respond to an audience at scale without losing their voice and brand, using social media integrations and Amazon Bedrock AI services to roughly double response rate and let creators triage comments ~3x faster.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
