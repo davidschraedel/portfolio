@@ -29,7 +29,7 @@
     "contrastLead": ["Data", "AI", "Product"]
   },
   "home": {
-    "tldr": "I notice what's not working, whether that's my kitchen utensils, music improvisation, or business. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have it.",
+    "tldr": "I notice what's not working, whether it involves my kitchen utensils, music improvisation, or business processes. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have it.",
     "shareDescription": "David Schraedel — Data, AI & Product.",
     "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
   },
