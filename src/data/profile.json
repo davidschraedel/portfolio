@@ -9,7 +9,7 @@
   },
   "about": {
     "heading": "About Me",
-    "tldr": "I play nice, strive for quality, ask questions, and practice humility.",
+    "tldr": "Curious, multidisciplinary, low-ego, & serious about quality & intentional products.",
     "shareDescription": "David Schraedel — Technology professional with a multidisciplinary path from music to information systems. Data, AI, and product.",
     "paragraphs": [
       "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
@@ -29,9 +29,20 @@
     "contrastLead": ["Data", "AI", "Product"]
   },
   "home": {
-    "tldr": "My approach is informed by my diverse experience, ranging from live improvised music to family studies. I bring this creative, empathic, and collaborative perspective to my work. I enjoy asking questions and uncovering unknowns to build solutions that make information and tasks easier to engage with.",
-    "shareDescription": "David Schraedel — Data, AI & Product in Utah.",
-    "skills": ["Python", "AWS", "SQL", "Docker", "Linux", "Terraform"]
+    "tldr": "I notice what's not working, whether it involves my kitchen utensils, music improvisation, or business processes. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have one.",
+    "shareDescription": "David Schraedel — Data, AI & Product.",
+    "skills": [
+      "Python",
+      "AWS",
+      "SQL",
+      "Docker",
+      "Linux",
+      "Terraform",
+      "Systems Thinking",
+      "Falsifiable Product Strategy",
+      "Applied AI",
+      "Product Discovery and Validation"
+    ]
   },
   "handshakeLine": "Working on something meaningful? I'd love to connect.",
   "connect": {
@@ -115,7 +126,7 @@
     },
     {
       "start": "2026-04",
-      "label": "I earned my Master of Information Systems Management at BYU Marriott. Coursework included product management, agentic AI, data engineering (Python, dbt, Snowflake), data science (R, scikit-learn), and cloud engineering (AWS, Terraform)."
+      "label": "I completed my Master of Information Systems Management at BYU Marriott School of Business. Coursework included product management, agentic AI, data engineering (Python, dbt, Snowflake), data science (R, scikit-learn), and cloud engineering (AWS, Terraform)."
     },
     {
       "start": "2026-05",
@@ -155,7 +166,7 @@
       "slug": "youtube-transcript-pipeline",
       "name": "YouTube Transcript Pipeline",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
-      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset that I can export for analysis.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset for analysis.",
       "stack": ["Python", "DuckDB", "SQL"],
       "layout": "text-only",
       "featured": true,
@@ -168,9 +179,9 @@
     {
       "id": "iam",
       "slug": "iam",
-      "name": "Capstone Project - I AM",
+      "name": "Capstone Project - I AM Scale",
       "objective": "Content creators with a large audience struggle to connect with the whole of their audience on an individual level, and current solutions to this are robotic and impersonal.",
-      "impact": "I built and refined core features so creators can respond to an audience at scale while matching their own voice and brand, using social media integrations and Amazon Bedrock.",
+      "impact": "In a team of 5, working with a local startup, I built and refined core features so creators can respond to an audience at scale without losing their voice and brand, using social media integrations and Amazon Bedrock AI services to roughly double response rate and let creators triage comments ~3x faster.",
       "stack": ["React", "TypeScript", "Node.js", "Amazon Bedrock", "AWS"],
       "layout": "media-right",
       "featured": true,
