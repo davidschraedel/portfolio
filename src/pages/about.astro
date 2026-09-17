@@ -35,7 +35,7 @@ const timeline = [...profile.timeline].sort((a, b) =>
     <ol class="mx-auto max-w-2xl space-y-6">
       {timeline.map((entry) => (
         <li class="flex gap-4">
-          <span class="mt-1 w-16 shrink-0 text-sm text-sepia dark:text-dim-highlight">
+          <span class="mt-1 w-16 shrink-0 text-sm font-semibold text-sepia dark:text-dim-highlight">
             {(entry.start ?? "").slice(0, 4)}
           </span>
           <p class="text-base leading-relaxed text-interior-designer dark:text-dim-text-muted">
