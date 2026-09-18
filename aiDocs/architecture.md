@@ -10,12 +10,12 @@ How this site is structured — data flow, file responsibilities, and notable de
 
 Information architecture follows the PRD story beats (layout is split across routes):
 
-| Beat     | Route / location              | Source                                      |
-| -------- | ----------------------------- | ------------------------------------------- |
-| Hook     | Hero in layout (every page) + home intro on `/` | `site.ts` → `profile.json` `hero`, `person`, `home` |
-| Story    | `/about`                      | `profile.json` `about`, `timeline`          |
-| Projects | `/` (featured grid) + `/projects` (all) | `projects.ts` → featured on home; full list on `/projects` |
-| Contact  | Footer (every page) + home `#connect` | Footer: `site.ts` → `person`, `presence`. Connect: `handshakeLine`, `connect.*` |
+| Beat     | Route / location                                | Source                                                                          |
+| -------- | ----------------------------------------------- | ------------------------------------------------------------------------------- |
+| Hook     | Hero in layout (every page) + home intro on `/` | `site.ts` → `profile.json` `hero`, `person`, `home`                             |
+| Story    | `/about`                                        | `profile.json` `about`, `timeline`                                              |
+| Projects | `/` (featured grid) + `/projects` (all)         | `projects.ts` → featured on home; full list on `/projects`                      |
+| Contact  | Footer (every page) + home `#connect`           | Footer: `site.ts` → `person`, `presence`. Connect: `handshakeLine`, `connect.*` |
 
 Nav links: **Featured Projects** (home) · **Story** (`/about`).
 
@@ -38,17 +38,17 @@ components / pages    ← import from site.ts and projects.ts (see exception bel
 
 The only hand-edited content file. Agents must not edit it. Contains:
 
-| Key | What it holds |
-| --- | --- |
-| `person` | Name, email, location, timezone, `openToWork`, resume filename |
-| `hero` | `contrastLead` (string array — domain tags) |
-| `home` | `tldr` (intro paragraph), `skills` (stack tags) |
-| `connect` | `heading`, `paragraphs[]` (connect card on home) |
-| `handshakeLine` | CTA copy in home Connect section (`#connect` on `/`) |
-| `presence` | GitHub, LinkedIn, Substack URLs |
-| `about` | `heading`, `paragraphs[]`, `images` placeholder |
-| `timeline` | Array of `{ start, end?, label }` entries with ISO-date `start` |
-| `projects` | Array with `objective`, `impact`, stack, URLs, `featured`, `previewImageKey`, etc. |
+| Key             | What it holds                                                                      |
+| --------------- | ---------------------------------------------------------------------------------- |
+| `person`        | Name, email, location, timezone, `openToWork`, resume filename                     |
+| `hero`          | `contrastLead` (string array — domain tags)                                        |
+| `home`          | `tldr` (intro paragraph), `skills` (stack tags)                                    |
+| `connect`       | `heading`, `paragraphs[]` (connect card on home)                                   |
+| `handshakeLine` | CTA copy in home Connect section (`#connect` on `/`)                               |
+| `presence`      | GitHub, LinkedIn, Substack URLs                                                    |
+| `about`         | `heading`, `paragraphs[]`, `images` placeholder                                    |
+| `timeline`      | Array of `{ start, end?, label }` entries with ISO-date `start`                    |
+| `projects`      | Array with `objective`, `impact`, stack, URLs, `featured`, `previewImageKey`, etc. |
 
 `profile.json` is reusable across projects as a starting template — copy and refine per site.
 
@@ -94,13 +94,13 @@ BaseLayout
 
 Pages are thin: frontmatter prepares data, template composes components.
 
-| Page | What it renders |
-| --- | --- |
-| `index.astro` | Intro + featured projects grid + Connect section (`handshakeLine`, contact CTAs) |
-| `projects/index.astro` | All projects grid via `ProjectShowcase` |
-| `about.astro` | About paragraphs + timeline from `profile.json` |
-| `projects/[slug].astro` | Per-project stub (“coming soon”) with preview image and outbound links |
-| `404.astro` | Fallback using `BaseLayout` |
+| Page                    | What it renders                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| `index.astro`           | Intro + featured projects grid + Connect section (`handshakeLine`, contact CTAs) |
+| `projects/index.astro`  | All projects grid via `ProjectShowcase`                                          |
+| `about.astro`           | About paragraphs + timeline from `profile.json`                                  |
+| `projects/[slug].astro` | Per-project stub (“coming soon”) with preview image and outbound links           |
+| `404.astro`             | Fallback using `BaseLayout`                                                      |
 
 **Active components:** `Hero`, `Nav`, `Footer`, `SectionHeading`, `ProjectShowcase`.
 
@@ -116,7 +116,7 @@ Pages are thin: frontmatter prepares data, template composes components.
 
 ## Styling — dim mode
 
-This site does not use a true dark mode. The `dark:` Tailwind variant activates a **dim mode**: a warm parchment palette where backgrounds step down slightly in brightness but remain light-on-light. The `--color-dim-page` token is `#e9e6df` (warm off-white), not a dark background. Do not “fix” this into a true dark theme — the choice is intentional.
+This site does not use a true dark mode. The `dark:` Tailwind variant activates a **dim mode**: a warm parchment palette where backgrounds step down slightly in brightness. The body's background becomes dark, but the rest remains a dimmed palette. Do not “fix” this into a true dark theme — the choice is intentional.
 
 Token prefixes:
 
@@ -129,13 +129,13 @@ Token prefixes:
 
 Buttons use a composable class system defined in `@layer components` in `global.css`. Combine classes rather than writing one-off Tailwind strings for interactive elements.
 
-| Class | Role |
-| --- | --- |
-| `btn` | Base: sizing, flex centering, border-radius, focus ring |
-| `btn-soft` | Text color + focus color for light-surface buttons |
-| `btn-soft-default` | Hover: sepia fill + white text |
-| `btn-footer` | White text with `mix-blend-soft-light`; hover drops blend |
-| `btn-linkedin` / `btn-github` / `btn-substack` / `btn-gmail` | Brand hover colors |
+| Class                                                        | Role                                                      |
+| ------------------------------------------------------------ | --------------------------------------------------------- |
+| `btn`                                                        | Base: sizing, flex centering, border-radius, focus ring   |
+| `btn-soft`                                                   | Text color + focus color for light-surface buttons        |
+| `btn-soft-default`                                           | Hover: sepia fill + white text                            |
+| `btn-footer`                                                 | White text with `mix-blend-soft-light`; hover drops blend |
+| `btn-linkedin` / `btn-github` / `btn-substack` / `btn-gmail` | Brand hover colors                                        |
 
 ---
 

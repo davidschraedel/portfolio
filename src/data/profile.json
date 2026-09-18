@@ -12,7 +12,7 @@
     "tldr": "Curious, multidisciplinary, low-ego, & serious about quality & intentional products.",
     "shareDescription": "David Schraedel — Technology professional with a multidisciplinary path from music to information systems. Data, AI, and product.",
     "paragraphs": [
-      "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
+      "I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
       "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
       "In my Master of Information Systems Management, I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
       "My general background is multidisciplinary in a way I have come to appreciate. Manufacturing, web development, TA roles, study abroad, education, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings. This busy travel schedule taught me as much about the world and technology as it did about adaptability, low ego, and curiosity in relationship with my peers.",
@@ -29,7 +29,10 @@
     "contrastLead": ["Data Engineering & Applied AI"]
   },
   "home": {
-    "tldr": "I notice what's not working, whether it involves my kitchen utensils, music improvisation, or business processes. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have one.",
+    "tldr": [
+      "I reduced a 30+ hour manual workflow to 5–8 hours, built a Python pipeline that made 6.7M+ words of YouTube transcripts queryable, and helped develop an AI tool designed to reduce the time and effort creators spend managing audience engagement.",
+      "I tend to notice what is not working, whether that involves a data pipeline, a product workflow, or my kitchen utensils. I would rather ask questions and work toward a useful answer than assume I already have one."
+    ],
     "shareDescription": "David Schraedel — Data, AI & Product.",
     "skills": [
       "Python",

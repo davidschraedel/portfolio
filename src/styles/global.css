@@ -6,11 +6,14 @@
 @theme {
   /* --color-off-white: #fcfcfc; */
   --color-off-white: #fafafa;
+  --color-studio: #f4f5f9;
   --color-dark-moss: #1d2019;
   --color-interior-designer: #3f3b31;
   --color-sepia: #896c55;
   --color-skin: #d1b49e;
-  --color-brand-indigo: #616152;
+  --color-brand-indigo: #c7d2fe;
+
+  --color-button-main: #616152;
 
   /* Dim mode — slightly darker than light, still dark-on-light */
   --color-dim-page: #e9e6df;
@@ -125,12 +128,12 @@ body {
 
   @media (hover: hover) {
     .btn-soft-default:hover {
-      @apply bg-brand-indigo text-white ring-transparent;
+      @apply bg-button-main text-white ring-transparent;
     }
 
     .btn-chat:hover {
       @apply text-white ring-transparent;
-      background-color: var(--color-brand-indigo);
+      background-color: var(--color-button-main);
     }
 
     @media (prefers-color-scheme: dark) {
