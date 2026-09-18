@@ -12,10 +12,10 @@
     "tldr": "Curious, multidisciplinary, low-ego, & serious about quality & intentional products.",
     "shareDescription": "David Schraedel — Technology professional with a multidisciplinary path from music to information systems. Data, AI, and product.",
     "paragraphs": [
-      "Having recently completed a Master of Information Systems Management, I’m passionate about solving problems strategically and intentionally. I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
+      "I enjoy seeing the big picture, learning from others’ perspectives, and collaborating across domains and disciplines. With training and experience spanning family studies, music, business, technology, and negotiation, I’ve developed strong listening skills, a creative mindset, and a genuine curiosity that I bring to every project and initiative I undertake. My goal is to improve processes and experiences, encourage and facilitate informed decisions, and build intentional products.",
       "I entered tech from an arts background, which still shapes how I think about much of what I do. I studied Information Systems at BYU, but before that I was deep in music, spending years in trombone, choral groups, music production, and live accompaniment for dance courses, where I improvised across 13 instruments and tools to create something fresh, on-the-fly, every class.",
       "In my Master of Information Systems Management, I focused on data, product management, cloud infrastructure, and AI. Before that, I had taught myself React and spent time exploring web development as a career path. Though I loved the user experience and visual side of this work, I felt drawn toward automation and other means of removing technological friction.",
-      "My general background is multidisciplinary in a way I have come to appreciate. Manufacturing, dental tech, web development, TA roles, study abroad, education, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings. This busy travel schedule taught me as much about the world and technology as it did about adaptability, low ego, and curiosity in relationship with my peers.",
+      "My general background is multidisciplinary in a way I have come to appreciate. Manufacturing, web development, TA roles, study abroad, education, and music have all quietly shaped how I think. At BYU, I also studied abroad with about 30 other students from my Information Systems program, traveling the United Kingdom, Italy, and Switzerland to examine everyday applications of technology and the Fourth Industrial Revolution in real settings. This busy travel schedule taught me as much about the world and technology as it did about adaptability, low ego, and curiosity in relationship with my peers.",
       "I took a pretty broad approach to undergrad, minoring in Family Life and taking courses in anthropology, yoga, philosophy, religious text analysis, and interior design. One of my favorite subjects was negotiation, which changed how I approach conflicts between ideas or individuals. I also sang for two years in BYU's selective choral program, first in the BYU Men's Chorus and then Concert Choir. Outside of coursework, I was involved in the Mindfulness and Meditation Club, Introverts in Business, UX Design Association, AI in Business Society, Association for Information Systems, and Product Management Association. I also enjoyed international film showings, where I was exposed to perspectives from and about other cultures.",
       "The through-line in how people describe me has been that I listen well and stay genuinely curious. I think before I speak, I care about getting details right, and I am genuinely interested in the people I work with. If there is anything I’m most proud of, it’s that I have an open mind with high standards."
     ],
@@ -26,10 +26,13 @@
     }
   },
   "hero": {
-    "contrastLead": ["Data", "AI", "Product"]
+    "contrastLead": ["Data Engineering & Applied AI"]
   },
   "home": {
-    "tldr": "I notice what's not working, whether it involves my kitchen utensils, music improvisation, or business processes. I've cut a 30-hour manual process to under 8 hours, made 6.7M+ words of transcript data searchable, and helped build a tool for creators to respond to their audience twice as fast. I'd rather ask questions and negotiate toward an effective answer than assume I already have one.",
+    "tldr": [
+      "I reduced a 30+ hour manual workflow to 5–8 hours, built a Python pipeline that made 6.7M+ words of YouTube transcripts queryable, and helped develop an AI tool designed to reduce the time and effort creators spend managing audience engagement.",
+      "I tend to notice what is not working, whether that involves a data pipeline, a product workflow, or my kitchen utensils. I would rather ask questions and work toward a useful answer than assume I already have one."
+    ],
     "shareDescription": "David Schraedel — Data, AI & Product.",
     "skills": [
       "Python",
@@ -154,7 +157,7 @@
       "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "layout": "media-right",
-      "featured": false,
+      "featured": true,
       "demoUrl": null,
       "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
       "previewImageKey": "photo-book-generator",
@@ -199,7 +202,7 @@
       "impact": "I built a stopwatch that tracks elapsed time with interval audio cues to allow unhindered presence and focus.",
       "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"],
       "layout": "media-left",
-      "featured": true,
+      "featured": false,
       "demoUrl": "https://soundwatch.netlify.app/",
       "githubUrl": "https://github.com/davidschraedel/stopwatch",
       "previewImageKey": "soundwatch",

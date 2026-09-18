@@ -11,7 +11,7 @@ export interface SiteConfig {
     contrastLead: string[];
   };
   home: {
-    tldr: string;
+    tldr: string[];
     shareDescription: string;
     skills: string[];
   };
