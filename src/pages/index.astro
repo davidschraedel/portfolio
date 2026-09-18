@@ -16,12 +16,16 @@ const base = import.meta.env.BASE_URL;
     class="mx-auto max-w-5xl pb-12 sm:py-4 lg:text-left"
   >
     <div class="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12">
-      <p
+      <div
         id="home-intro"
-        class="max-w-prose text-base leading-relaxed text-interior-designer dark:text-dim-text-muted lg:text-lg"
+        class="max-w-prose space-y-4 text-base leading-relaxed text-interior-designer dark:text-dim-text-muted lg:text-lg"
       >
-        {site.home.tldr}
-      </p>
+        {
+          site.home.tldr.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))
+        }
+      </div>
 
       <div class="flex flex-col gap-9 lg:max-w-xs lg:shrink-0 lg:items-end lg:justify-between">
         <ul class="flex flex-wrap gap-2 lg:justify-end" aria-label="Core skills">
