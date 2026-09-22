@@ -214,23 +214,35 @@
   line-height: 1.35;
 }
 
+.sane-welcome-hint {
+  width: fit-content;
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  padding-block: 0.75rem;
+  background-color: rgba(233, 233, 233, 0.05);
+  color: rgba(0, 0, 0, 0.5);
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+}
+
 .sane-stage-panel {
   width: 100%;
   max-width: 36rem;
   padding: 1.25rem;
-  opacity: 1;
-  background: rgba(255, 255, 255, calc(0.62 * var(--panel-fade, 1)));
+  background: rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, calc(0.45 * var(--panel-fade, 1)));
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, calc(0.18 * var(--panel-fade, 1)));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   transform-origin: center center;
   will-change: transform;
-}
-
-.sane-stage-panel > * {
-  opacity: var(--panel-fade, 1);
 }
 
 .sane-embed {

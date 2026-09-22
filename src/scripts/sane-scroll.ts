@@ -1,13 +1,14 @@
-const STAGE_SPACING = 1800;
+const STAGE_SPACING = 1300;
 const FOCUS_RANGE = 900;
 const FULL_OPACITY_RATIO = 0.3;
 const LERP = 0.08;
 const OPACITY_LERP_IN = 0.07;
 const OPACITY_LERP_OUT = 0.34;
-const SCALE_MIN = 0.48;
-const SCALE_RANGE = 0.32;
+const PANEL_SCALE = 0.85;
 const WHEEL_SENSITIVITY = 0.00022;
 const TOUCH_SENSITIVITY = 0.0009;
+const SNAP_DELAY_MS = 100;
+const SNAP_THRESHOLD = 0.16;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -36,6 +37,7 @@ function initSaneScroll() {
   let targetProgress = 0;
   let currentProgress = 0;
   let touchStartY = 0;
+  let snapTimeout: ReturnType<typeof setTimeout> | null = null;
 
   const stageCount = stages.length;
 
@@ -62,9 +64,37 @@ function initSaneScroll() {
     }
   };
 
-  const stageOpacities = stages.map(() => 0);
+  const attemptSnap = () => {
+    let closestIndex = 0;
+    let minDiff = Number.POSITIVE_INFINITY;
 
-  const targetOpacityForDistance = (distance: number) => {
+    for (let i = 0; i < stageCount; i++) {
+      const stageProg = progressForStage(i);
+      const diff = Math.abs(targetProgress - stageProg);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIndex = i;
+      }
+    }
+
+    if (minDiff > 0 && minDiff < SNAP_THRESHOLD) {
+      jumpToStage(closestIndex, true);
+    }
+  };
+
+  const scheduleSnap = () => {
+    if (snapTimeout) clearTimeout(snapTimeout);
+    snapTimeout = setTimeout(attemptSnap, SNAP_DELAY_MS);
+  };
+
+  const targetOpacityForEffectiveZ = (effectiveZ: number) => {
+    // Fade out quickly over the next 250px as it flies past the camera
+    if (effectiveZ > 0) {
+      return clamp(1 - effectiveZ / 250, 0, 1);
+    }
+
+    // Normal slow fade-in as it approaches from the background
+    const distance = Math.abs(effectiveZ);
     const fullZone = FOCUS_RANGE * FULL_OPACITY_RATIO;
     if (distance <= fullZone) return 1;
     const fade = (distance - fullZone) / (FOCUS_RANGE - fullZone);
@@ -77,6 +107,9 @@ function initSaneScroll() {
 
   const applyFrame = () => {
     currentProgress += (targetProgress - currentProgress) * LERP;
+    if (Math.abs(targetProgress - currentProgress) < 0.0001) {
+      currentProgress = targetProgress;
+    }
     const cameraZ = currentProgress * maxTravel;
 
     let activeIndex = 0;
@@ -86,11 +119,9 @@ function initSaneScroll() {
       const z = stageZ[index] ?? 0;
       const effectiveZ = z + cameraZ;
       const distance = Math.abs(effectiveZ);
-      const focus = clamp(1 - distance / FOCUS_RANGE, 0, 1);
-      const scale = SCALE_MIN + focus * SCALE_RANGE;
       const panel = stage.querySelector<HTMLElement>(".sane-stage-panel");
 
-      const targetOpacity = targetOpacityForDistance(distance);
+      const targetOpacity = targetOpacityForEffectiveZ(effectiveZ);
       const currentOpacity = stageOpacities[index] ?? 0;
       const opacityLerp =
         targetOpacity > currentOpacity ? OPACITY_LERP_IN : OPACITY_LERP_OUT;
@@ -105,13 +136,19 @@ function initSaneScroll() {
 
       stage.style.transform = "";
 
+      // CRITICAL: Stop the invisible fullscreen stage wrappers from blocking clicks
+      stage.style.pointerEvents = "none";
+
       if (panel) {
-        panel.style.transform = `translate3d(0, 0, ${effectiveZ}px) scale(${scale})`;
-        panel.style.opacity = "1";
-        panel.style.setProperty("--panel-fade", String(fade));
+        panel.style.transform = `translate3d(0, 0, ${effectiveZ}px) scale(${PANEL_SCALE})`;
+        panel.style.opacity = String(fade);
+        panel.style.visibility = fade < 0.01 ? "hidden" : "visible";
+
+        // Re-enable clicks strictly on the physical panel, and only when it is at high opacity
+        panel.style.pointerEvents = fade > 0.7 ? "auto" : "none";
       }
 
-      stage.classList.toggle("is-active", focus > 0.35);
+      stage.classList.toggle("is-active", fade > 0.5);
     });
 
     navLinks.forEach((link) => {
@@ -131,6 +168,7 @@ function initSaneScroll() {
 
   const nudgeProgress = (delta: number) => {
     targetProgress = clamp(targetProgress + delta, 0, 1);
+    scheduleSnap();
   };
 
   window.addEventListener(
@@ -145,7 +183,16 @@ function initSaneScroll() {
   window.addEventListener(
     "touchstart",
     (event) => {
+      if (snapTimeout) clearTimeout(snapTimeout);
       touchStartY = event.touches[0]?.clientY ?? 0;
+    },
+    { passive: true },
+  );
+
+  window.addEventListener(
+    "touchend",
+    () => {
+      scheduleSnap();
     },
     { passive: true },
   );
@@ -210,6 +257,12 @@ function initSaneScroll() {
     targetProgress = progressForStage(initialIndex);
     currentProgress = targetProgress;
   }
+
+  const initialCameraZ = currentProgress * maxTravel;
+  const stageOpacities = stages.map((_, index) => {
+    const z = stageZ[index] ?? 0;
+    return targetOpacityForEffectiveZ(z + initialCameraZ);
+  });
 
   applyFrame();
 }
