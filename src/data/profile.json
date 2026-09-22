@@ -150,6 +150,30 @@
   ],
   "projects": [
     {
+      "id": "distribution-center-forecast",
+      "slug": "distribution-center-forecast",
+      "name": "Distribution Center Forecast",
+      "objective": "Weekly shipping volume at a distribution center follows annual seasonality and occasional holiday peaks that can triple normal volume.",
+      "impact": "I compared three modeltime approaches to see which handled that pattern best on a 24-week holdout, using external regressors for peak flags and environmental factors. Prophet captured seasonal structure most reliably (lowest RMSE), but peak weeks remained difficult — none of the models beat a naive baseline when spikes were rare in training. I refit the best model and deployed it as a Docker API.",
+      "stack": [
+        "R",
+        "tidyverse",
+        "tidymodels",
+        "modeltime",
+        "timetk",
+        "vetiver",
+        "Docker",
+        "AWS S3"
+      ],
+      "layout": "media-right",
+      "featured": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/time-series-modeltime-prototype",
+      "previewImageKey": "distribution-center-forecast",
+      "previewAlt": "24-week forward forecast of weekly units shipped at a regional distribution center",
+      "videoUrl": null
+    },
+    {
       "id": "photo-book-generator",
       "slug": "photo-book-generator",
       "name": "Photo Book Generator",
@@ -157,7 +181,7 @@
       "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "layout": "media-right",
-      "featured": true,
+      "featured": false,
       "demoUrl": null,
       "githubUrl": "https://github.com/davidschraedel/photo-book-pptx-generator",
       "previewImageKey": "photo-book-generator",
