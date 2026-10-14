@@ -279,6 +279,36 @@
       "videoUrl": null
     },
     {
+      "id": "browser-creative-tools",
+      "slug": "browser-creative-tools",
+      "name": "Browser Creative Tools",
+      "objective": "My go-to Figma plugin for turning photos into layered vector art disappeared, and I still wanted that workflow without creating a  or complex application.",
+      "impact": "I built a small suite of static creative tools inspired by this problem: a layer vectorizer with presets, histogram layer cut-offs, and a before/after compare view; two image pixel-shuffle experiments. Everything runs client-side in the browser.",
+      "stack": ["JavaScript", "HTML", "SVG", "Canvas", "GitHub Pages"],
+      "layout": "media-left",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/browser-creative-tools/",
+      "githubUrl": "https://github.com/davidschraedel/browser-creative-tools",
+      "previewImageKey": "browser-creative-tools",
+      "previewAlt": "Layer vectorizer tool with photo compare slider and adjustment controls",
+      "videoUrl": null
+    },
+    {
+      "id": "cue",
+      "slug": "cue",
+      "name": "Cue",
+      "objective": "Improvising accompaniment for contemporary dance rehearsals means responding to fast, specific instructions — tempo, meter, phrasing, texture — and I wanted a practice tool that mimics that call-and-response without an instructor in the room.",
+      "impact": "I built an offline prompt generator that randomizes musical parameters and weaves them into spoken-style cues via client-side template grammar (no API). Users can lock or reroll individual fields, toggle a UI tempo light pulse, and randomize a new generated new prompts from the keyboard.",
+      "stack": ["JavaScript", "HTML", "CSS", "GitHub Pages"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/cue/",
+      "githubUrl": "https://github.com/davidschraedel/cue",
+      "previewImageKey": "cue",
+      "previewAlt": "Cue improv music prompter with tempo, meter, and phrasing controls",
+      "videoUrl": null
+    },
+    {
       "id": "calendar-dashboard",
       "slug": "calendar-dashboard",
       "name": "Calendar Dashboard",
