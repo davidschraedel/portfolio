@@ -1,10 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SectionHeading from "../../components/SectionHeading.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 
-import { projects } from "../../data/projects";
+import {
+  getProjectCountByCategory,
+  getTotalProjectCount,
+  PROJECT_CATEGORIES,
+  projects,
+} from "../../data/projects";
 import { site } from "../../data/site";
+
+const categoryCounts = getProjectCountByCategory();
+const totalProjectCount = getTotalProjectCount();
+const categorySlugs = PROJECT_CATEGORIES.map((category) => category.slug);
 ---
 
 <BaseLayout
@@ -12,16 +20,94 @@ import { site } from "../../data/site";
   description={site.projectsPage.shareDescription}
 >
   <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-8">
-    <SectionHeading
-      id="projects-heading"
-      title="Projects"
-      subtitle="Some projects I'm proud of."
-    />
+    <h1 id="projects-heading" class="sr-only">Projects</h1>
+
+    <div class="project-filter-scroll-wrap">
+      <div class="project-filter-scroll">
+        <div
+          class="project-filter-pill"
+          data-project-filters
+          role="radiogroup"
+          aria-label="Filter projects by category"
+        >
+          <button
+            type="button"
+            class="project-filter-segment"
+            data-project-filter="all"
+            role="radio"
+            aria-checked="true"
+            aria-label={`All, ${totalProjectCount} projects`}
+          >
+            All
+            <span class="project-filter-count" aria-hidden="true"
+              >({totalProjectCount})</span
+            >
+          </button>
+          {
+            PROJECT_CATEGORIES.map((category) => (
+              <button
+                type="button"
+                class="project-filter-segment"
+                data-project-filter={category.slug}
+                role="radio"
+                aria-checked="false"
+                aria-label={`${category.label}, ${categoryCounts[category.slug]} projects`}
+              >
+                {category.label}
+                <span class="project-filter-count" aria-hidden="true">
+                  ({categoryCounts[category.slug]})
+                </span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
 
     <div class="grid gap-8 lg:grid-cols-2">
-      {projects.map((project) => (
-        <ProjectShowcase project={project} />
-      ))}
+      {
+        projects.map((project) => (
+          <div
+            data-project-filter-item
+            data-project-categories={project.projectCategories.join(",")}
+          >
+            <ProjectShowcase project={project} />
+          </div>
+        ))
+      }
     </div>
   </section>
+
+  <script
+    is:inline
+    define:vars={{ categorySlugs }}
+  >
+    (function () {
+      const allowed = new Set(categorySlugs);
+      const param = new URLSearchParams(location.search).get("category");
+      if (!param || !allowed.has(param)) {
+        return;
+      }
+      const items = document.querySelectorAll("[data-project-filter-item]");
+      for (const el of items) {
+        const cats = el.getAttribute("data-project-categories") || "";
+        el.hidden = !cats.split(",").includes(param);
+      }
+      const buttons = document.querySelectorAll("[data-project-filter]");
+      const active = document.querySelector(
+        '[data-project-filter="' + param + '"]',
+      );
+      if (!active) {
+        return;
+      }
+      for (const button of buttons) {
+        button.setAttribute(
+          "aria-checked",
+          button === active ? "true" : "false",
+        );
+      }
+    })();
+  </script>
+
+  <script src="../../scripts/project-filters.ts"></script>
 </BaseLayout>

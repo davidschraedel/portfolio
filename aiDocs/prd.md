@@ -116,7 +116,7 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 | -------- | --------------- | --------------------------- |
 | Hook     | Layout hero + home intro (`/`) | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name` |
 | Story    | `/about` | `about.paragraphs`, `about.heading`, `timeline` |
-| Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `impact`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`. |
+| Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `impact`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`, with optional category filters (see §3). Home featured grid has **no** filters. |
 | Contact  | Footer (every page) + home `#connect` | **Footer:** `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack`. **Home Connect:** `handshakeLine`, `connect.heading`, `connect.paragraphs`, Email + LinkedIn CTAs. |
 
 Navigation labels and page structure may vary by design.
@@ -144,6 +144,15 @@ Navigation labels and page structure may vary by design.
 - Stack tags per project
 - Live demo and GitHub links when URLs are set in `profile.json`
 - `/projects` lists all projects (featured and non-featured); home links via "All projects →"
+- **`/projects` category filters:** Filter chips above the grid (same two-column layout; cards show/hide client-side). One active filter at a time; default **All** shows every project. Each chip shows a build-time project count. On narrow viewports the chip row scrolls horizontally (centered, edge fade). Shareable URLs use `?category=<slug>`; browser Back from a filter returns to **All** when the user filtered from **All**, then leaves the page on a second Back. Each project may set `projectCategories: string[]` in `profile.json` (multiple allowed). A project is shown when its categories include the selected slug. Entries with no categories appear only under **All**.
+
+  | Slug | Label | What belongs here |
+  | ---- | ----- | ----------------- |
+  | `data` | Data | Pipelines, modeling, analytics/BI where data is the main deliverable |
+  | `applied-ai` | Applied AI | LLM/agent products, Bedrock-style integrations, datasets built for AI analysis |
+  | `apps` | Apps | User-facing software you open and use (not pipelines, dashboards, or strategy decks) |
+  | `creative` | Creative | Music/art browser tools and rehearsal workflow utilities |
+  | `product-strategy` | Product / strategy | Frameworks, PM coursework, strategy-shaped deliverables |
 
 **4. Contact and links**
 

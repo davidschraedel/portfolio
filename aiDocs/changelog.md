@@ -2,6 +2,18 @@
 
 A concise history of changes.
 
+## 2026-10-14 (projects — filter UX polish)
+
+- `/projects`: sr-only page heading; per-category counts on every filter chip; horizontal scroll + edge fade on small viewports; focus scrolls chips into view.
+- Shareable `?category=<slug>` URLs; `pushState` when leaving All, `replaceState` between categories; Back from a filter returns to All when navigated from All.
+- `projects.ts`: `getProjectCountByCategory`, `getTotalProjectCount`; inline script reduces flash on deep-linked filters.
+
+## 2026-10-13 (projects — category filters)
+
+- `/projects`: centered segmented pill (All, Data, Applied AI, Apps, Creative, Product / strategy); same grid, client-side show/hide.
+- `profile.json`: `projectCategories` per project; PRD documents slug vocabulary.
+- `projects.ts`: `PROJECT_CATEGORIES`, validation; `project-filters.ts` script.
+
 ## 2026-07-28 (SEO — OG polish)
 
 - Default OG image dimensions set to 1292×838 (matches `public/og-image.png`).
