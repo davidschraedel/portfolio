@@ -143,6 +143,65 @@ body {
     }
   }
 
+  .project-filter-scroll-wrap {
+    @apply relative mx-auto mb-8 flex w-full max-w-full justify-center px-2;
+  }
+
+  .project-filter-scroll-wrap::before,
+  .project-filter-scroll-wrap::after {
+    @apply pointer-events-none absolute top-0 bottom-0 z-10 w-6 sm:w-8;
+    content: "";
+  }
+
+  .project-filter-scroll-wrap::before {
+    @apply left-2 bg-gradient-to-r from-off-white to-transparent sm:left-2 dark:from-dim-surface;
+  }
+
+  .project-filter-scroll-wrap::after {
+    @apply right-2 bg-gradient-to-l from-off-white to-transparent sm:right-2 dark:from-dim-surface;
+  }
+
+  .project-filter-scroll {
+    @apply max-w-full overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .project-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-filter-pill {
+    @apply mx-auto inline-flex w-max max-w-none flex-nowrap items-stretch justify-center gap-0 overflow-hidden rounded-full bg-dim-muted/45 p-1 ring-1 ring-sepia/25 dark:bg-dim-muted/55 dark:ring-dim-muted/35;
+    box-shadow: var(--shadow-inner-faint);
+  }
+
+  .project-filter-segment {
+    @apply shrink-0 rounded-none px-2.5 py-1.5 text-[0.65rem] font-medium text-interior-designer transition-[color,background-color,box-shadow,border-radius] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia sm:px-3 sm:text-xs dark:text-dim-text-muted;
+  }
+
+  .project-filter-segment:not([aria-checked="true"]) + .project-filter-segment:not([aria-checked="true"]) {
+    @apply border-l border-sepia/15 dark:border-dim-text-muted/25;
+  }
+
+  .project-filter-count {
+    @apply ml-0.5 font-normal tabular-nums opacity-60;
+  }
+
+  .project-filter-segment[aria-checked="true"] {
+    @apply rounded-full bg-button-main text-white shadow-sm dark:bg-sepia dark:text-off-white;
+  }
+
+  .project-filter-segment[aria-checked="true"] .project-filter-count {
+    @apply opacity-80;
+  }
+
+  @media (hover: hover) {
+    .project-filter-segment[aria-checked="false"]:hover {
+      @apply bg-skin/30 text-dark-moss dark:bg-dim-muted/50 dark:text-dim-text-muted;
+    }
+  }
+
   .btn-footer {
     @apply text-white mix-blend-soft-light transition-[color,background-color,mix-blend-mode] focus-visible:outline-off-white;
   }
