@@ -20,11 +20,11 @@ This portfolio answers three questions in under a minute: _Can this person ship?
 
 **Dual audience, one visit:**
 
-| Audience                        | Needs                                    | How the site delivers                                                                                  |
-| ------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero tags + home intro with domain/stack signal, contact and resume reachable |
+| Audience                        | Needs                                    | How the site delivers                                                                                              |
+| ------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Recruiters (primary)**        | Role, stack, demos, GitHub, fast contact | Scannable project cards, hero tags + home intro with domain/stack signal, contact and resume reachable             |
 | **Hiring managers (secondary)** | Depth, judgment, repos                   | `objective` + bulleted `impact` on cards (no labels); optional case study pages when relevant context is available |
-| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                                     |
+| **Anyone reading for you**      | Genuine voice, memorable background      | Hero copy, about narrative, chronological timeline                                                                 |
 
 **Link tiers** (content priority — not layout prescription):
 
@@ -112,12 +112,12 @@ The site tells one story in four content beats. **Layout is flexible** — singl
 
 **Hook → Story → Projects → Contact**
 
-| Beat     | Route / surface | Content from `profile.json` |
-| -------- | --------------- | --------------------------- |
-| Hook     | Layout hero + home intro (`/`) | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name` |
-| Story    | `/about` | `about.paragraphs`, `about.heading`, `timeline` |
+| Beat     | Route / surface                               | Content from `profile.json`                                                                                                                                                                                                                    |
+| -------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hook     | Layout hero + home intro (`/`)                | `hero.contrastLead`, `home.tldr`, `home.skills`, `person.name`                                                                                                                                                                                 |
+| Story    | `/about`                                      | `about.paragraphs`, `about.heading`, `timeline`                                                                                                                                                                                                |
 | Projects | `/` (featured grid) + `/projects` (full list) | Featured: entries where `featured: true` — `objective`, bulleted `impact`, stack, outbound links. `/projects` lists **all** projects regardless of `featured`, with optional category filters (see §3). Home featured grid has **no** filters. |
-| Contact  | Footer (every page) + home `#connect` | **Footer:** `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack`. **Home Connect:** `handshakeLine`, `connect.heading`, `connect.paragraphs`, Email + LinkedIn CTAs. |
+| Contact  | Footer (every page) + home `#connect`         | **Footer:** `person.resume`, `person.email`, `presence.linkedin`, `presence.github`, `presence.substack`. **Home Connect:** `handshakeLine`, `connect.heading`, `connect.paragraphs`, Email + LinkedIn CTAs.                                   |
 
 Navigation labels and page structure may vary by design.
 
@@ -146,13 +146,14 @@ Navigation labels and page structure may vary by design.
 - `/projects` lists all projects (featured and non-featured); home links via "All projects →"
 - **`/projects` category filters:** Filter chips above the grid (same two-column layout; cards show/hide client-side). One active filter at a time; default **All** shows every project. Each chip shows a build-time project count. On narrow viewports the chip row scrolls horizontally (centered, edge fade). Shareable URLs use `?category=<slug>`; browser Back from a filter returns to **All** when the user filtered from **All**, then leaves the page on a second Back. Each project may set `projectCategories: string[]` in `profile.json` (multiple allowed). A project is shown when its categories include the selected slug. Entries with no categories appear only under **All**.
 
-  | Slug | Label | What belongs here |
-  | ---- | ----- | ----------------- |
-  | `data` | Data | Pipelines, modeling, analytics/BI where data is the main deliverable |
-  | `applied-ai` | Applied AI | LLM/agent products, Bedrock-style integrations, datasets built for AI analysis |
-  | `apps` | Apps | User-facing software you open and use (not pipelines, dashboards, or strategy decks) |
-  | `creative` | Creative | Music/art browser tools and rehearsal workflow utilities |
-  | `product-strategy` | Product / strategy | Frameworks, PM coursework, strategy-shaped deliverables |
+  | Slug               | Label              | What belongs here                                                                                                                                                               |
+  | ------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `data`             | Data               | Pipelines, modeling, analytics/BI where data is the main deliverable                                                                                                            |
+  | `automation`       | Automation         | Scripts and workflows that remove manual repetition (batch generators, Apps Script, tooling)—when automation is the main story, not the dataset or app UI                       |
+  | `applied-ai`       | Applied AI         | LLM/agent products, Bedrock-style integrations, datasets built for AI analysis                                                                                                  |
+  | `apps`             | Apps               | User-facing software you open and use (not pipelines, dashboards, or strategy decks)                                                                                            |
+  | `vibe-code`        | Vibe code          | Personal tools shipped with quickly—enough structure to work and look decent, without heavy architecture; side builds and experiments, not primary product or data deliverables |
+  | `product-strategy` | Product / strategy | Frameworks, PM coursework, strategy-shaped deliverables                                                                                                                         |
 
 **4. Contact and links**
 
@@ -241,16 +242,16 @@ _As the site owner, I want peers to describe my role and name a project after 60
 
 ## Risks and mitigations
 
-| Risk                             | Mitigation                                                             |
-| -------------------------------- | ---------------------------------------------------------------------- |
-| Live demos go down               | UptimeRobot; monthly link audit                                        |
+| Risk                             | Mitigation                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------- |
+| Live demos go down               | UptimeRobot; monthly link audit                                                 |
 | Looks like every other portfolio | Voice-first copy + objective/impact framing on cards; distinctive visual design |
-| Tutorial projects featured       | Hard gate — zero clones                                                |
-| Copy buries recruiter signal     | Home intro + contrastLead + stack on cards; cold-read test             |
-| Content drift across files       | Single `profile.json` source of truth                                  |
-| Over-engineered portfolio site   | No featured self-link; plain Astro                                     |
-| AI-sounding copy                 | Read-aloud test; specific first-person voice                           |
-| Broken GitHub links              | Full link audit before sharing                                         |
+| Tutorial projects featured       | Hard gate — zero clones                                                         |
+| Copy buries recruiter signal     | Home intro + contrastLead + stack on cards; cold-read test                      |
+| Content drift across files       | Single `profile.json` source of truth                                           |
+| Over-engineered portfolio site   | No featured self-link; plain Astro                                              |
+| AI-sounding copy                 | Read-aloud test; specific first-person voice                                    |
+| Broken GitHub links              | Full link audit before sharing                                                  |
 
 ---
 

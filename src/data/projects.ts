@@ -9,9 +9,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 export const PROJECT_CATEGORIES = [
   { slug: "data", label: "Data" },
+  { slug: "automation", label: "Automation" },
   { slug: "applied-ai", label: "Applied AI" },
   { slug: "apps", label: "Apps" },
-  { slug: "creative", label: "Creative" },
+  { slug: "vibe-code", label: "Vibe code" },
   { slug: "product-strategy", label: "Product / strategy" },
 ] as const;
 

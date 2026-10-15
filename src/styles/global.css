@@ -172,11 +172,16 @@ body {
   }
 
   .project-filter-pill {
-    @apply mx-auto inline-flex w-max max-w-none flex-nowrap items-center justify-center gap-0.5 rounded-full bg-off-white/50 p-1 ring-1 ring-sepia/25 dark:bg-white/45 dark:ring-dim-muted/35;
+    @apply mx-auto inline-flex w-max max-w-none flex-nowrap items-stretch justify-center gap-0 overflow-hidden rounded-full bg-dim-muted/45 p-1 ring-1 ring-sepia/25 dark:bg-dim-muted/55 dark:ring-dim-muted/35;
+    box-shadow: var(--shadow-inner-faint);
   }
 
   .project-filter-segment {
-    @apply shrink-0 rounded-full px-2.5 py-1.5 text-[0.65rem] font-medium text-interior-designer transition-[color,background-color,box-shadow] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia sm:px-3 sm:text-xs dark:text-dim-text-muted;
+    @apply shrink-0 rounded-none px-2.5 py-1.5 text-[0.65rem] font-medium text-interior-designer transition-[color,background-color,box-shadow,border-radius] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia sm:px-3 sm:text-xs dark:text-dim-text-muted;
+  }
+
+  .project-filter-segment:not([aria-checked="true"]) + .project-filter-segment:not([aria-checked="true"]) {
+    @apply border-l border-sepia/15 dark:border-dim-text-muted/25;
   }
 
   .project-filter-count {
@@ -184,7 +189,7 @@ body {
   }
 
   .project-filter-segment[aria-checked="true"] {
-    @apply bg-button-main text-white shadow-sm dark:bg-sepia dark:text-off-white;
+    @apply rounded-full bg-button-main text-white shadow-sm dark:bg-sepia dark:text-off-white;
   }
 
   .project-filter-segment[aria-checked="true"] .project-filter-count {
