@@ -2,6 +2,11 @@
 
 A concise history of changes.
 
+## 2026-10-16 (projects — Wingd)
+
+- Updated hero image.
+- Added **Wingd** to `profile.json`: referral-dating prototype (PM, user testing, lean build); demo on GitHub Pages; preview asset `wingd.png`.
+
 ## 2026-10-14 (projects — vibe code category)
 
 - Renamed project filter slug `creative` → `vibe-code` (label **Vibe code**); PRD definition updated; `profile.json` tags.

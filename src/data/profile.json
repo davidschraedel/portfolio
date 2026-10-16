@@ -303,6 +303,29 @@
       "videoUrl": null
     },
     {
+      "id": "wingd",
+      "slug": "wingd",
+      "name": "Wingd",
+      "objective": "Most dating apps center on swipes and algorithmic feeds, but a lot of real-world matching still happens through mutual connections, and that word-of-mouth path has no dedicated product surface online.",
+      "impact": "I defined and prototyped an MVP for reciprocal referral-based dating (trusted circles, peer introductions, accept/decline, messaging). I ran validated learning with 3 testers, using NPS, CSAT, CES, and task metrics to pressure-test navigation, copy, and core flows for product refinement.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Figma",
+        "Product Management"
+      ],
+      "projectCategories": ["vibe-code", "product-strategy"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/wingd/",
+      "githubUrl": "https://github.com/davidschraedel/wingd",
+      "previewImageKey": "wingd",
+      "previewAlt": "Wingd login screen for a referral-based dating prototype",
+      "videoUrl": null
+    },
+    {
       "id": "midi-morph",
       "slug": "midi-morph",
       "name": "Midi Randomizer",
