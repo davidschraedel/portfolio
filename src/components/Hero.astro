@@ -1,19 +1,27 @@
 ---
-import { Image } from "astro:assets";
-
-import headshot from "../assets/headshot.svg";
 import { site } from "../data/site";
+
+const headshotSrc = `${import.meta.env.BASE_URL}David_2026.jpeg`;
 ---
 
 <div class="brand-gradient px-4 pb-8 pt-10">
-  <Image
-    src={headshot}
-    alt="Portrait of David Schraedel"
-    class="mx-auto w-48 max-w-[60%] select-none rounded-full [-webkit-user-drag:none] md:w-56 lg:w-64"
-    width={320}
-    height={320}
-    loading="eager"
-  />
+  <div
+    class="relative mx-auto aspect-square w-48 max-w-[60%] overflow-hidden rounded-full md:w-56 lg:w-64"
+  >
+    <img
+      src={headshotSrc}
+      alt="Portrait of David Schraedel"
+      class="size-full select-none object-cover [-webkit-user-drag:none]"
+      width={926}
+      height={926}
+      loading="eager"
+      decoding="async"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_28px_10px_rgba(38,31,27,0.38)] dark:shadow-[inset_0_0_32px_12px_rgba(0,0,0,0.5)]"
+      aria-hidden="true"
+    ></div>
+  </div>
 </div>
 
 <div class="px-4 pb-1.5 pt-6 text-center sm:px-8 sm:pt-8">
