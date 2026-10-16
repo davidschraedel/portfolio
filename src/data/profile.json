@@ -271,6 +271,22 @@
       "videoUrl": null
     },
     {
+      "id": "reading-list-api",
+      "slug": "reading-list-api",
+      "name": "Reading List API",
+      "objective": "My previous reading list lived in Notion with star ratings, notes, and cover images in a half-readable format, and I wanted to use it to explore working with Flask.",
+      "impact": "I built a simple script to transform a Notion export into SQLite, aFlask REST API with search and filter query params, and a browser gallery with reading stats and JSON export functionality for the visually-filtered books.",
+      "stack": ["Python", "Flask", "SQLite", "REST API"],
+      "projectCategories": ["data", "vibe-code"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/reading-list-api",
+      "previewImageKey": "reading-list-api",
+      "previewAlt": "Reading list gallery with book covers, filters, and JSON export panel",
+      "videoUrl": null
+    },
+    {
       "id": "cue",
       "slug": "cue",
       "name": "Cue",
