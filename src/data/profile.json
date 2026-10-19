@@ -150,6 +150,22 @@
   ],
   "projects": [
     {
+      "id": "cue",
+      "slug": "cue",
+      "name": "Cue",
+      "objective": "Improvising accompaniment for contemporary dance rehearsals means responding to fast, specific instructions — tempo, meter, phrasing, texture — and I wanted a practice tool that mimics that call-and-response without an instructor in the room.",
+      "impact": "I built an offline prompt generator that randomizes musical parameters and weaves them into spoken-style cues via client-side template grammar (no API). Users can lock or reroll individual fields, toggle a UI tempo light pulse, and randomize a new generated new prompts from the keyboard.",
+      "stack": ["JavaScript", "HTML", "CSS", "GitHub Pages"],
+      "projectCategories": ["vibe-code"],
+      "layout": "media-right",
+      "featured": false,
+      "demoUrl": "https://davidschraedel.github.io/cue/",
+      "githubUrl": "https://github.com/davidschraedel/cue",
+      "previewImageKey": "cue",
+      "previewAlt": "Cue improv music prompter with tempo, meter, and phrasing controls",
+      "videoUrl": null
+    },
+    {
       "id": "distribution-center-forecast",
       "slug": "distribution-center-forecast",
       "name": "Distribution Center Forecast",
@@ -284,22 +300,6 @@
       "githubUrl": "https://github.com/davidschraedel/reading-list-api",
       "previewImageKey": "reading-list-api",
       "previewAlt": "Reading list gallery with book covers, filters, and JSON export panel",
-      "videoUrl": null
-    },
-    {
-      "id": "cue",
-      "slug": "cue",
-      "name": "Cue",
-      "objective": "Improvising accompaniment for contemporary dance rehearsals means responding to fast, specific instructions — tempo, meter, phrasing, texture — and I wanted a practice tool that mimics that call-and-response without an instructor in the room.",
-      "impact": "I built an offline prompt generator that randomizes musical parameters and weaves them into spoken-style cues via client-side template grammar (no API). Users can lock or reroll individual fields, toggle a UI tempo light pulse, and randomize a new generated new prompts from the keyboard.",
-      "stack": ["JavaScript", "HTML", "CSS", "GitHub Pages"],
-      "projectCategories": ["vibe-code"],
-      "layout": "media-right",
-      "featured": false,
-      "demoUrl": "https://davidschraedel.github.io/cue/",
-      "githubUrl": "https://github.com/davidschraedel/cue",
-      "previewImageKey": "cue",
-      "previewAlt": "Cue improv music prompter with tempo, meter, and phrasing controls",
       "videoUrl": null
     },
     {
