@@ -42,8 +42,8 @@
   ::-webkit-scrollbar-thumb {
     background: color-mix(
       in srgb,
-      var(--color-sepia) 22%,
-      var(--color-dim-muted)
+      var(--color-sepia) 80%,
+      var(--color-dark-moss)
     );
     border-radius: 20px;
   }
@@ -59,8 +59,8 @@
   ::-webkit-scrollbar-thumb:active {
     background: color-mix(
       in srgb,
-      var(--color-sepia) 80%,
-      var(--color-dark-moss)
+      var(--color-sepia) 22%,
+      var(--color-dim-muted)
     );
   }
 
@@ -68,8 +68,8 @@
     ::-webkit-scrollbar-thumb {
       background: color-mix(
         in srgb,
-        var(--color-dim-highlight) 55%,
-        var(--color-dim-page)
+        var(--color-sepia) 80%,
+        var(--color-dark-moss)
       );
     }
 
@@ -80,8 +80,8 @@
     ::-webkit-scrollbar-thumb:active {
       background: color-mix(
         in srgb,
-        var(--color-sepia) 80%,
-        var(--color-dark-moss)
+        var(--color-dim-highlight) 55%,
+        var(--color-dim-page)
       );
     }
   }
@@ -178,9 +178,11 @@ body {
 
   .project-filter-segment {
     @apply shrink-0 rounded-none px-2.5 py-1.5 text-[0.65rem] font-medium text-interior-designer transition-[color,background-color,box-shadow,border-radius] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sepia sm:px-3 sm:text-xs dark:text-dim-text-muted;
+    cursor: pointer;
   }
 
-  .project-filter-segment:not([aria-checked="true"]) + .project-filter-segment:not([aria-checked="true"]) {
+  .project-filter-segment:not([aria-checked="true"])
+    + .project-filter-segment:not([aria-checked="true"]) {
     @apply border-l border-sepia/15 dark:border-dim-text-muted/25;
   }
 
@@ -190,6 +192,7 @@ body {
 
   .project-filter-segment[aria-checked="true"] {
     @apply rounded-full bg-button-main text-white shadow-sm dark:bg-sepia dark:text-off-white;
+    cursor: default;
   }
 
   .project-filter-segment[aria-checked="true"] .project-filter-count {

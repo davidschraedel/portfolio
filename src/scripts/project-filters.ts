@@ -8,7 +8,9 @@ let popstateBound = false;
 
 function getAllowedSlugs(root: Element): Set<string> {
   const slugs = new Set<string>();
-  for (const button of root.querySelectorAll<HTMLButtonElement>(BUTTON_SELECTOR)) {
+  for (const button of root.querySelectorAll<HTMLButtonElement>(
+    BUTTON_SELECTOR,
+  )) {
     const slug = button.dataset.projectFilter;
     if (slug && slug !== "all") {
       slugs.add(slug);
@@ -75,7 +77,10 @@ function syncUrl(filterSlug: string | null) {
   );
   const nextUrl = buildProjectsUrl(filterSlug);
 
-  if (nextUrl === window.location.pathname + window.location.search + window.location.hash) {
+  if (
+    nextUrl ===
+    window.location.pathname + window.location.search + window.location.hash
+  ) {
     return;
   }
 

@@ -3,16 +3,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 
 import {
+  getHighlightProjectCount,
   getProjectCountByCategory,
+  getProjectFilterCategorySlugs,
+  getProjectPageFilterSlugs,
   getTotalProjectCount,
   PROJECT_CATEGORIES,
-  projects,
+  PROJECT_HIGHLIGHTS_FILTER,
+  getProjectsForPage,
 } from "../../data/projects";
 import { site } from "../../data/site";
 
 const categoryCounts = getProjectCountByCategory();
 const totalProjectCount = getTotalProjectCount();
-const categorySlugs = PROJECT_CATEGORIES.map((category) => category.slug);
+const highlightProjectCount = getHighlightProjectCount();
+const categorySlugs = getProjectPageFilterSlugs();
+const projectsForPage = getProjectsForPage();
 ---
 
 <BaseLayout
@@ -43,6 +49,19 @@ const categorySlugs = PROJECT_CATEGORIES.map((category) => category.slug);
               >({totalProjectCount})</span
             >
           </button>
+          <button
+            type="button"
+            class="project-filter-segment"
+            data-project-filter={PROJECT_HIGHLIGHTS_FILTER.slug}
+            role="radio"
+            aria-checked="false"
+            aria-label={`${PROJECT_HIGHLIGHTS_FILTER.label}, ${highlightProjectCount} projects`}
+          >
+            {PROJECT_HIGHLIGHTS_FILTER.label}
+            <span class="project-filter-count" aria-hidden="true">
+              ({highlightProjectCount})
+            </span>
+          </button>
           {
             PROJECT_CATEGORIES.map((category) => (
               <button
@@ -66,10 +85,12 @@ const categorySlugs = PROJECT_CATEGORIES.map((category) => category.slug);
 
     <div class="grid gap-8 lg:grid-cols-2">
       {
-        projects.map((project) => (
+        projectsForPage.map((project) => (
           <div
             data-project-filter-item
-            data-project-categories={project.projectCategories.join(",")}
+            data-project-categories={getProjectFilterCategorySlugs(project).join(
+              ",",
+            )}
           >
             <ProjectShowcase project={project} />
           </div>
