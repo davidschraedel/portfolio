@@ -195,6 +195,33 @@
       "videoUrl": null
     },
     {
+      "id": "adventure-works-pipeline",
+      "slug": "adventure-works-pipeline",
+      "name": "Adventure Works Data Engineering Pipeline",
+      "date": "2026-04",
+      "objective": "With sales data in PostgreSQL, support chat in MongoDB, and clickstream events behind a REST API, disparate systems prevent stakeholders from tying campaigns to conversions or browsing patterns to purchases.",
+      "impact": "I built an end-to-end pipeline that lands all three sources in Snowflake via a watermark-based Python ETL processor and a Prefect-orchestrated API flow, transforms them through 18 tested dbt models with dbt Cloud CI, and exposes the compiled graph to Snowsight and MCP-compatible agents through a dbt MCP server.",
+      "stack": [
+        "Python",
+        "Snowflake",
+        "dbt",
+        "Prefect",
+        "Docker",
+        "PostgreSQL",
+        "MongoDB",
+        "SQL"
+      ],
+      "projectCategories": ["data", "applied-ai"],
+      "layout": "media-right",
+      "featured": true,
+      "highlights": true,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/snowflake-dbt-data-engineering-pipeline",
+      "previewImageKey": "adventure-works-pipeline",
+      "previewAlt": "Snowsight dashboard of Adventure Works sales volume by date and customer country",
+      "videoUrl": null
+    },
+    {
       "id": "photo-book-generator",
       "slug": "photo-book-generator",
       "name": "Photo Book Generator",
