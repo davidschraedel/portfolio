@@ -227,7 +227,7 @@
       "name": "Photo Book Generator",
       "date": "2026-07",
       "objective": "Building a 70-page family photo book in PowerPoint by hand takes a long time, and online photo book services are marginally easier with an increased price.",
-      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
+      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5 hours.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "projectCategories": ["automation"],
       "layout": "media-right",
