@@ -200,7 +200,7 @@
       "name": "Adventure Works Data Engineering Pipeline",
       "date": "2026-04",
       "objective": "With sales data in PostgreSQL, support chat in MongoDB, and clickstream events behind a REST API, disparate systems prevent stakeholders from tying campaigns to conversions or browsing patterns to purchases.",
-      "impact": "I built an end-to-end pipeline that lands all three sources in Snowflake via a watermark-based Python ETL processor and a Prefect-orchestrated API flow, transforms them through 18 tested dbt models with dbt Cloud CI, and exposes the compiled graph to Snowsight and MCP-compatible agents through a dbt MCP server.",
+      "impact": "I built an end-to-end pipeline that lands all three sources in Snowflake via a watermark-based Python ETL processor and a Prefect-orchestrated API flow, transforms them through 18 dbt models backed by 27 tests, runs dbt Cloud CI, and exposes the compiled graph to Snowsight and MCP-compatible agents through a dbt MCP server.",
       "stack": [
         "Python",
         "Snowflake",
