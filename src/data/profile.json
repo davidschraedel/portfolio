@@ -227,7 +227,7 @@
       "name": "Photo Book Generator",
       "date": "2026-07",
       "objective": "Building a 70-page family photo book in PowerPoint by hand takes a long time, and online photo book services are marginally easier with an increased price.",
-      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5–8 hours.",
+      "impact": "I built a Python script that builds templated PowerPoint pages, auto-fills photos, and outputs print-ready files, cutting 30+ hours of manual work on 15 books to 5 hours.",
       "stack": ["Python", "Microsoft PowerPoint"],
       "projectCategories": ["automation"],
       "layout": "media-right",
@@ -327,7 +327,7 @@
       "githubUrl": "https://github.com/maddiehutch1/MicroDeckApp",
       "previewImageKey": "microdeck",
       "previewAlt": "MicroDeck iOS habit initiation app concept",
-      "videoUrl": null
+      "videoUrl": "https://drive.google.com/file/d/10_RZFOYe3DZW6duysibg2JBBWr9ZruvS/view?usp=sharing"
     },
     {
       "id": "reading-list-api",
@@ -424,6 +424,24 @@
       "githubUrl": "https://github.com/davidschraedel/google-apps-script",
       "previewImageKey": "calendar-dashboard",
       "previewAlt": "Calendar time breakdown in Looker Studio",
+      "videoUrl": null
+    },
+    {
+      "id": "thrifthood",
+      "slug": "thrifthood",
+      "name": "Thrifthood",
+      "date": "2024-12",
+      "objective": "Thrifthood, a vintage retailer, relied on a small circle's instincts to buy inventory, with little shared view of what actually sold—leading to missed micro-trends, slow movers, and sourcing decisions few people could make confidently.",
+      "impact": "In a team of 4, I helped with an agentic solution prototype: LLM-assisted tags on Square order data, a filterable sales dashboard, and advisor agents for trends, marketplace deal surfacing (human approval only), and read-only sales Q&A.",
+      "stack": ["Next.js", "TypeScript", "Supabase", "LangChain", "OpenAI"],
+      "projectCategories": ["applied-ai", "data", "automation"],
+      "layout": "media-right",
+      "featured": true,
+      "highlights": true,
+      "demoUrl": "https://canva.link/v4uslnvcovzzwoq",
+      "githubUrl": null,
+      "previewImageKey": "thrifthood",
+      "previewAlt": "Thrifthood sales analytics dashboard with trend and deal-sourcing views",
       "videoUrl": null
     },
     {
