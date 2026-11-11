@@ -2,6 +2,12 @@
 
 A concise history of changes.
 
+## 2026-11-10 (projects — Thrifthood)
+
+- Thrifthood `objective` / `impact`: client problem + team-of-4 contribution framing; trimmed `stack`.
+- Added **Thrifthood** to `profile.json` (full-stack closed loop); featured + highlights. Add `src/assets/portfolio/thrifthood.png` before build/deploy.
+- update resume
+
 ## 2026-10-16 (projects — Wingd)
 
 - Updated hero image.
