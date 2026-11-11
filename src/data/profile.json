@@ -430,7 +430,7 @@
       "id": "thrifthood",
       "slug": "thrifthood",
       "name": "Thrifthood",
-      "date": "2024-12",
+      "date": "2025-12",
       "objective": "Thrifthood, a vintage retailer, relied on a small circle's instincts to buy inventory, with little shared view of what actually sold—leading to missed micro-trends, slow movers, and sourcing decisions few people could make confidently.",
       "impact": "In a team of 4, I helped with an agentic solution prototype: LLM-assisted tags on Square order data, a filterable sales dashboard, and advisor agents for trends, marketplace deal surfacing (human approval only), and read-only sales Q&A.",
       "stack": ["Next.js", "TypeScript", "Supabase", "LangChain", "OpenAI"],
