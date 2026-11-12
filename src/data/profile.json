@@ -150,6 +150,24 @@
   ],
   "projects": [
     {
+      "id": "2048-bot",
+      "slug": "2048-bot",
+      "name": "2048 Playwright Bot",
+      "date": "2026-11",
+      "objective": "I wanted a closed-loop browser automation proof of concept for Playwright projects. I wanted to observe and navigate a live page's state, decide next action, act, and repeat, without LLMs or external solvers.",
+      "impact": "I built a Playwright bot that reads the 2048 board from the brower's DOM, chooses legal moves with a deterministic in-memory strategy, syncs on DOM updates after each keystroke, and runs until win, game over, or a configured move cap.",
+      "stack": ["TypeScript", "Playwright"],
+      "projectCategories": ["automation"],
+      "layout": "media-right",
+      "featured": false,
+      "highlights": false,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/2048-bot",
+      "previewImageKey": "2048-bot",
+      "previewAlt": "2048 game board with numbered tiles during a headed Playwright run",
+      "videoUrl": null
+    },
+    {
       "id": "cue",
       "slug": "cue",
       "name": "Cue",
