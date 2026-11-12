@@ -150,6 +150,24 @@
   ],
   "projects": [
     {
+      "id": "2048-bot",
+      "slug": "2048-bot",
+      "name": "2048 Playwright Bot",
+      "date": "2026-11",
+      "objective": "I wanted a closed-loop browser automation proof of concept for Playwright projects. I wanted to observe and navigate a live page's state, decide next action, act, and repeat, without LLMs or external solvers.",
+      "impact": "I built a Playwright bot that reads the 2048 board from the brower's DOM, chooses legal moves with a deterministic in-memory strategy, syncs on DOM updates after each keystroke, and runs until win, game over, or a configured move cap.",
+      "stack": ["TypeScript", "Playwright"],
+      "projectCategories": ["automation"],
+      "layout": "media-right",
+      "featured": false,
+      "highlights": false,
+      "demoUrl": null,
+      "githubUrl": "https://github.com/davidschraedel/2048-bot",
+      "previewImageKey": "2048-bot",
+      "previewAlt": "2048 game board with numbered tiles during a headed Playwright run",
+      "videoUrl": null
+    },
+    {
       "id": "cue",
       "slug": "cue",
       "name": "Cue",
@@ -200,7 +218,7 @@
       "name": "Adventure Works Data Engineering Pipeline",
       "date": "2026-04",
       "objective": "With sales data in PostgreSQL, support chat in MongoDB, and clickstream events behind a REST API, disparate systems prevent stakeholders from tying campaigns to conversions or browsing patterns to purchases.",
-      "impact": "I built an end-to-end pipeline that lands all three sources in Snowflake via a watermark-based Python ETL processor and a Prefect-orchestrated API flow, transforms them through 18 tested dbt models with dbt Cloud CI, and exposes the compiled graph to Snowsight and MCP-compatible agents through a dbt MCP server.",
+      "impact": "I built an end-to-end pipeline that lands all three sources in Snowflake via a watermark-based Python ETL processor and a Prefect-orchestrated API flow, transforms them through 18 dbt models backed by 27 tests, runs dbt Cloud CI, and exposes the compiled graph to Snowsight and MCP-compatible agents through a dbt MCP server.",
       "stack": [
         "Python",
         "Snowflake",
@@ -245,7 +263,7 @@
       "name": "YouTube Transcript Pipeline",
       "date": "2026-05",
       "objective": "Hours of spoken content in YouTube playlists are locked in the UI and not queryable or exportable, and integrated tools like NotebookLM are limited in capability, control, and experience.",
-      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6M+ words of transcripts into a clean, queryable dataset for analysis.",
+      "impact": "I built a Python pipeline, with an idempotent medallion architecture, that ingests YouTube playlists and turns ~6.7M+ words of transcripts into a clean, queryable dataset for analysis.",
       "stack": ["Python", "DuckDB", "SQL"],
       "projectCategories": ["data", "applied-ai"],
       "layout": "text-only",
