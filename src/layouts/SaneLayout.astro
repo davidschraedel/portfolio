@@ -1,0 +1,104 @@
+---
+import "../styles/sane.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Stay Vibrant %↑",
+  description = "Stay Vibrant — creative archive.",
+  noindex = true,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en" class="sane-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="sane-backdrop" aria-hidden="true">
+      <video
+        id="sane-bg-video"
+        class="sane-bg-video"
+        autoplay
+        loop
+        muted
+        playsinline
+      >
+        <source src={`${base}sane/running.mp4`} type="video/mp4" />
+      </video>
+      <div class="sane-backdrop-dim" aria-hidden="true"></div>
+      <canvas
+        id="sane-zoom-canvas"
+        class="sane-zoom-canvas"
+        data-sprite={`${base}sane/cloud.png`}
+      ></canvas>
+    </div>
+
+    <header class="sane-header">
+      <nav aria-label="Sane" class="sane-nav">
+        <a href={`${base}creative`} class="sane-brand" aria-label="Creative portfolio home">
+          <img
+            src={`${base}sane/sane.svg`}
+            alt=""
+            class="sane-brand-logo"
+            width="40"
+            height="40"
+          />
+        </a>
+
+        <ul class="sane-nav-list">
+          <li>
+            <a href="#youtube" class="sane-nav-link" data-sane-jump="1">
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="#instagram" class="sane-nav-link" data-sane-jump="2">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#spotify" class="sane-nav-link" data-sane-jump="3">
+              Spotify
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="sane-viewport" class="sane-viewport" tabindex="0">
+      <div id="sane-world" class="sane-world">
+        <slot />
+      </div>
+    </div>
+
+    <script src="../scripts/sane-zoom-canvas.ts"></script>
+    <script src="../scripts/sane-scroll.ts"></script>
+    <script>
+      const video = document.getElementById("sane-bg-video");
+      if (video instanceof HTMLVideoElement) {
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const syncVideo = () => {
+          if (reduced.matches) {
+            video.pause();
+            video.removeAttribute("src");
+            video.load();
+          }
+        };
+        syncVideo();
+        reduced.addEventListener("change", syncVideo);
+      }
+    </script>
+  </body>
+</html>
